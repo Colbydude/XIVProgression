@@ -174,6 +174,7 @@ function updateDetails(data)
 		primals_string += "</tr>";
 	}
 
+	// Output.
 	$("#raids").html(raids_string);
 	$("#ex-primals").html(primals_string);
 
