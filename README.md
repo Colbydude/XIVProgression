@@ -9,12 +9,24 @@ More functionality will be added in future updates. :D
 
 **Website:** http://ffxiv.voidteam.net/progression/
 
+Release Notes
+-------------
+
+*July 6th, 2014*
+
+ - Load data based on URL parameters.
+ - URL automatically changes when the form is submitted (must have a compatible HTML5 browser).
+ - BCoB and SCoB is broken down by each turn using the "Mapping of the Realm" achievements.
+ - Results will now show all content, with uncleared instances marked in red.
+
+*July 5th, 2014*
+ - Initial Release.
+
 Currently Planned Features
 --------------------------
 
- - Load data automatically from URL parameters.
  - Get and display Character ilvl and gear.
  - Check progression based on gear if achievements are not public.
- - Break progression down by each Turn (when applicable).
  - FC checks to calculate overall progression and average ilvl among members.
  - Add other notable achievements such as Relics, PVP Ranks, etc.
+ - Add minimum iLvl as required by the game for each instance, as well as a "Recommended" iLvl by the community.

@@ -1,5 +1,15 @@
 <?php
 	require_once("includes/lodestone-api.php");
+
+	if (isset($_GET["name"]))
+		$name = urldecode($_GET["name"]);
+	else
+		$name = NULL;
+
+	if (isset($_GET["server"]))
+		$server = urldecode($_GET["server"]);
+	else
+		$server = NULL;
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +20,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="A simple tool to check a character's raid progression in FFXIV.">
 		<meta name="keywords" content="FFXIV, Final Fantasy XIV, A Realm Reborn, ARR, Progression, Checker, Tool">
-		<meta name="author" content="Punk Programmer">
+		<meta name="author" content="VoidTeam">
 		<link href="http://ffxiv.voidteam.net/progression" rel="canonical">
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
@@ -56,94 +66,109 @@
 					<form id="check-form">
 						<div class="form-group">
 							<label for="name">Character Name</label>
-							<input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+							<input type="text" id="name" name="name" class="form-control" <?php echo isset($name) ? 'value="'.urldecode($_GET["name"]).'"' : ''; ?> placeholder="John Doe" required>
 						</div>
 						<div class="form-group">
 							<label for="server">Server</label>
 							<select id="server" name="server" class="form-control">
-								<option value="Adamantoise">Adamantoise</option>
-								<option value="Aegis">Aegis</option>
-								<option value="Alexander">Alexander</option>
-								<option value="Anima">Anima</option>
-								<option value="Asura">Asura</option>
-								<option value="Atomos">Atomos</option>
-								<option value="Bahamut">Bahamut</option>
-								<option value="Balmung">Balmung</option>
-								<option value="Behemoth">Behemoth</option>
-								<option value="Belias">Belias</option>
-								<option value="Brynhildr">Brynhildr</option>
-								<option value="Cactuar">Cactuar</option>
-								<option value="Carbuncle">Carbuncle</option>
-								<option value="Cerberus">Cerberus</option>
-								<option value="Chocobo">Chocobo</option>
-								<option value="Coeurl">Coeurl</option>
-								<option value="Diabolos">Diabolos</option>
-								<option value="Durandal">Durandal</option>
-								<option value="Excalibur">Excalibur</option>
-								<option value="Exodus">Exodus</option>
-								<option value="Faerie">Faerie</option>
-								<option value="Famfrit">Famfrit</option>
-								<option value="Fenrir">Fenrir</option>
-								<option value="Garuda">Garuda</option>
-								<option value="Gilgamesh">Gilgamesh</option>
-								<option value="Goblin">Goblin</option>
-								<option value="Gungnir">Gungnir</option>
-								<option value="Hades">Hades</option>
-								<option value="Hyperion">Hyperion</option>
-								<option value="Ifrit">Ifrit</option>
-								<option value="Ixion">Ixion</option>
-								<option value="Jenova">Jenova</option>
-								<option value="Kujata">Kujata</option>
-								<option value="Lamia">Lamia</option>
-								<option value="Leviathan">Leviathan</option>
-								<option value="Lich">Lich</option>
-								<option value="Malboro">Malboro</option>
-								<option value="Mandragora">Mandragora</option>
-								<option value="Masamune">Masamune</option>
-								<option value="Mateus">Mateus</option>
-								<option value="Midgardsormr">Midgardsormr</option>
-								<option value="Moogle">Moogle</option>
-								<option value="Odin">Odin</option>
-								<option value="Pandaemonium">Pandaemonium</option>
-								<option value="Phoenix">Phoenix</option>
-								<option value="Ragnarok">Ragnarok</option>
-								<option value="Ramuh">Ramuh</option>
-								<option value="Ridill">Ridill</option>
-								<option value="Sargatanas">Sargatanas</option>
-								<option value="Shinryu">Shinryu</option>
-								<option value="Shiva">Shiva</option>
-								<option value="Siren">Siren</option>
-								<option value="Tiamat">Tiamat</option>
-								<option value="Titan">Titan</option>
-								<option value="Tonberry">Tonberry</option>
-								<option value="Typhon">Typhon</option>
-								<option value="Ultima">Ultima</option>
-								<option value="Ultros">Ultros</option>
-								<option value="Unicorn">Unicorn</option>
-								<option value="Valefor">Valefor</option>
-								<option value="Yojimbo">Yojimbo</option>
-								<option value="Zalera">Zalera</option>
-								<option value="Zeromus">Zeromus</option>
-								<option value="Zodiark">Zodiark</option>
+								<option value="Adamantoise" <?php echo $server == "Adamantoise" ? "selected" : ''; ?>>Adamantoise</option>
+								<option value="Aegis" <?php echo $server == "Aegis" ? "selected" : ''; ?>>Aegis</option>
+								<option value="Alexander" <?php echo $server == "Alexander" ? "selected" : ''; ?>>Alexander</option>
+								<option value="Anima" <?php echo $server == "Anima" ? "selected" : ''; ?>>Anima</option>
+								<option value="Asura" <?php echo $server == "Asura" ? "selected" : ''; ?>>Asura</option>
+								<option value="Atomos" <?php echo $server == "Atomos" ? "selected" : ''; ?>>Atomos</option>
+								<option value="Bahamut" <?php echo $server == "Bahamut" ? "selected" : ''; ?>>Bahamut</option>
+								<option value="Balmung" <?php echo $server == "Balmung" ? "selected" : ''; ?>>Balmung</option>
+								<option value="Behemoth" <?php echo $server == "Behemoth" ? "selected" : ''; ?>>Behemoth</option>
+								<option value="Belias" <?php echo $server == "Belias" ? "selected" : ''; ?>>Belias</option>
+								<option value="Brynhildr" <?php echo $server == "Brynhildr" ? "selected" : ''; ?>>Brynhildr</option>
+								<option value="Cactuar" <?php echo $server == "Cactuar" ? "selected" : ''; ?>>Cactuar</option>
+								<option value="Carbuncle" <?php echo $server == "Carbuncle" ? "selected" : ''; ?>>Carbuncle</option>
+								<option value="Cerberus" <?php echo $server == "Cerberus" ? "selected" : ''; ?>>Cerberus</option>
+								<option value="Chocobo" <?php echo $server == "Chocobo" ? "selected" : ''; ?>>Chocobo</option>
+								<option value="Coeurl" <?php echo $server == "Coeurl" ? "selected" : ''; ?>>Coeurl</option>
+								<option value="Diabolos" <?php echo $server == "Diabolos" ? "selected" : ''; ?>>Diabolos</option>
+								<option value="Durandal" <?php echo $server == "Durandal" ? "selected" : ''; ?>>Durandal</option>
+								<option value="Excalibur" <?php echo $server == "Excalibur" ? "selected" : ''; ?>>Excalibur</option>
+								<option value="Exodus" <?php echo $server == "Exodus" ? "selected" : ''; ?>>Exodus</option>
+								<option value="Faerie" <?php echo $server == "Faerie" ? "selected" : ''; ?>>Faerie</option>
+								<option value="Famfrit" <?php echo $server == "Famfrit" ? "selected" : ''; ?>>Famfrit</option>
+								<option value="Fenrir" <?php echo $server == "Fenrir" ? "selected" : ''; ?>>Fenrir</option>
+								<option value="Garuda" <?php echo $server == "Garuda" ? "selected" : ''; ?>>Garuda</option>
+								<option value="Gilgamesh" <?php echo $server == "Gilgamesh" ? "selected" : ''; ?>>Gilgamesh</option>
+								<option value="Goblin" <?php echo $server == "Goblin" ? "selected" : ''; ?>>Goblin</option>
+								<option value="Gungnir" <?php echo $server == "Gungnir" ? "selected" : ''; ?>>Gungnir</option>
+								<option value="Hades" <?php echo $server == "Hades" ? "selected" : ''; ?>>Hades</option>
+								<option value="Hyperion" <?php echo $server == "Hyperion" ? "selected" : ''; ?>>Hyperion</option>
+								<option value="Ifrit" <?php echo $server == "Ifrit" ? "selected" : ''; ?>>Ifrit</option>
+								<option value="Ixion" <?php echo $server == "Ixion" ? "selected" : ''; ?>>Ixion</option>
+								<option value="Jenova" <?php echo $server == "Jenova" ? "selected" : ''; ?>>Jenova</option>
+								<option value="Kujata" <?php echo $server == "Kujata" ? "selected" : ''; ?>>Kujata</option>
+								<option value="Lamia" <?php echo $server == "Lamia" ? "selected" : ''; ?>>Lamia</option>
+								<option value="Leviathan" <?php echo $server == "Leviathan" ? "selected" : ''; ?>>Leviathan</option>
+								<option value="Lich" <?php echo $server == "Lich" ? "selected" : ''; ?>>Lich</option>
+								<option value="Malboro" <?php echo $server == "Malboro" ? "selected" : ''; ?>>Malboro</option>
+								<option value="Mandragora" <?php echo $server == "Mandragora" ? "selected" : ''; ?>>Mandragora</option>
+								<option value="Masamune" <?php echo $server == "Masamune" ? "selected" : ''; ?>>Masamune</option>
+								<option value="Mateus" <?php echo $server == "Mateus" ? "selected" : ''; ?>>Mateus</option>
+								<option value="Midgardsormr" <?php echo $server == "Midgardsormr" ? "selected" : ''; ?>>Midgardsormr</option>
+								<option value="Moogle" <?php echo $server == "Moogle" ? "selected" : ''; ?>>Moogle</option>
+								<option value="Odin" <?php echo $server == "Odin" ? "selected" : ''; ?>>Odin</option>
+								<option value="Pandaemonium" <?php echo $server == "Pandaemonium" ? "selected" : ''; ?>>Pandaemonium</option>
+								<option value="Phoenix" <?php echo $server == "Phoenix" ? "selected" : ''; ?>>Phoenix</option>
+								<option value="Ragnarok" <?php echo $server == "Ragnarok" ? "selected" : ''; ?>>Ragnarok</option>
+								<option value="Ramuh" <?php echo $server == "Ramuh" ? "selected" : ''; ?>>Ramuh</option>
+								<option value="Ridill" <?php echo $server == "Ridill" ? "selected" : ''; ?>>Ridill</option>
+								<option value="Sargatanas" <?php echo $server == "Sargatanas" ? "selected" : ''; ?>>Sargatanas</option>
+								<option value="Shinryu" <?php echo $server == "Shinryu" ? "selected" : ''; ?>>Shinryu</option>
+								<option value="Shiva" <?php echo $server == "Shiva" ? "selected" : ''; ?>>Shiva</option>
+								<option value="Siren" <?php echo $server == "Siren" ? "selected" : ''; ?>>Siren</option>
+								<option value="Tiamat" <?php echo $server == "Tiamat" ? "selected" : ''; ?>>Tiamat</option>
+								<option value="Titan" <?php echo $server == "Titan" ? "selected" : ''; ?>>Titan</option>
+								<option value="Tonberry" <?php echo $server == "Tonberry" ? "selected" : ''; ?>>Tonberry</option>
+								<option value="Typhon" <?php echo $server == "Typhon" ? "selected" : ''; ?>>Typhon</option>
+								<option value="Ultima" <?php echo $server == "Ultima" ? "selected" : ''; ?>>Ultima</option>
+								<option value="Ultros" <?php echo $server == "Ultros" ? "selected" : ''; ?>>Ultros</option>
+								<option value="Unicorn" <?php echo $server == "Unicorn" ? "selected" : ''; ?>>Unicorn</option>
+								<option value="Valefor" <?php echo $server == "Valefor" ? "selected" : ''; ?>>Valefor</option>
+								<option value="Yojimbo" <?php echo $server == "Yojimbo" ? "selected" : ''; ?>>Yojimbo</option>
+								<option value="Zalera" <?php echo $server == "Zalera" ? "selected" : ''; ?>>Zalera</option>
+								<option value="Zeromus" <?php echo $server == "Zeromus" ? "selected" : ''; ?>>Zeromus</option>
+								<option value="Zodiark" <?php echo $server == "Zodiark" ? "selected" : ''; ?>>Zodiark</option>
 							</select>
 						</div>
-						<button type="submit" class="btn btn-primary">Check</button>
+						<button type="submit" id="submit" name="submit" class="btn btn-primary">Check</button>
 					</form>
 					<br>
-					<p class="text-muted"><small>Tool Last Updated: July 6th 2014<br>By <a href="https:/twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small></p>
+					<p class="text-muted"><small>Tool Last Updated: July 6th 2014<br>By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small></p>
 				</div>
 				<div class="col-sm-8">
-					<div id="data">
+					<div id="data" style="display: none;">
 						<h2>Raids</h2>
 						<div class="table-responsive">
 							<table class="table table-striped table-condensed" id="raids">
-								
+								<thead>
+									<tr>
+										<th>&nbsp;</th>
+										<th>Instance</th>
+										<th>Cleared on</th>
+										<th>Times</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
 							</table>
 						</div>
 						<h2>EX Primals</h2>
 						<div class="table-responsive">
 							<table class="table table-striped table-condensed" id="ex-primals">
-
+								<thead>
+									<tr>
+										<th>&nbsp;</th>
+										<th>Instance</th>
+										<th>Cleared on</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
 							</table>
 						</div>
 					</div>
