@@ -8,3 +8,13 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 More functionality will be added in future updates. :D
 
 **Website:** http://ffxiv.voidteam.net/progression/
+
+Currently Planned Features
+--------------------------
+
+ - Load data automatically from URL parameters.
+ - Get and display Character ilvl and gear.
+ - Check progression based on gear if achievements are not public.
+ - Break progression down by each Turn (when applicable).
+ - FC checks to calculate overall progression and average ilvl among members.
+ - Add other notable achievements such as Relics, PVP Ranks, etc.
