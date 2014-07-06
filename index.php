@@ -152,12 +152,13 @@
 										<th>&nbsp;</th>
 										<th>Instance</th>
 										<th>Cleared on</th>
-										<th>Times</th>
+										<th>Times*</th>
 									</tr>
 								</thead>
 								<tbody></tbody>
 							</table>
 						</div>
+						<p><small>* This number only reflects the number based off of the "The Binds that Tie" and "In Another Bind" achievements, not actual clears.<br>** Note that individual Turn clears can only roughly be determined by the "Mapping the Realm: X" achievements, so the results may not be accurate.</small></p>
 						<h2>EX Primals</h2>
 						<div class="table-responsive">
 							<table class="table table-striped table-condensed" id="ex-primals">
