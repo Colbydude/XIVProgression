@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic);
+
+body
+{
+	font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding-top: 80px;
+}
+
+a
+{
+	color: #3371a5;
+}
+
+a:hover, a:focus
+{
+	color: #193e5f;
+}
+
+.navbar-default
+{
+	background-color: #3371a5;
+	border-color: #295d89;
+}
+
+.navbar-default .navbar-brand
+{
+	color: #e4e4e4;
+	font-weight: 500;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
+{
+	color: white;
+}
+
+.navbar-default .navbar-nav > li > a
+{
+	color: #e4e4e4;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
+{
+	color: white;
+}
+
+.jumbotron
+{
+	margin-top: -50px;
+	padding-bottom: 25px;
+}
+
+.jumbotron p:first-child
+{
+	margin-top: 20px;
+}
