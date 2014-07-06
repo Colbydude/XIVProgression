@@ -22,25 +22,27 @@ a:hover, a:focus
 	border-color: #295d89;
 }
 
-.navbar-default .navbar-brand
-{
-	color: #e4e4e4;
-	font-weight: 500;
-}
-
+.navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
 {
 	color: white;
+	font-weight: 500;
 }
 
-.navbar-default .navbar-nav > li > a
-{
-	color: #e4e4e4;
-}
-
+.navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
 {
 	color: white;
+}
+
+.navbar-default .navbar-toggle
+{
+	border-color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar
+{
+	background-color: white;
 }
 
 .jumbotron

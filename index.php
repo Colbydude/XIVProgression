@@ -130,7 +130,7 @@
 						<button type="submit" class="btn btn-primary">Check</button>
 					</form>
 					<br>
-					<p class="text-muted"><small>Tool Last Updated: June 5th 2014<br>By <a href="https:/twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small></p>
+					<p class="text-muted"><small>Tool Last Updated: July 6th 2014<br>By <a href="https:/twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small></p>
 				</div>
 				<div class="col-sm-8">
 					<div id="data">

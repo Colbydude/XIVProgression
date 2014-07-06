@@ -14,6 +14,7 @@ function checkProgression()
 	$("#data").hide();
 	$("#loading").show();
 
+	$("#loading h1").text("Collecting data. Please wait a moment...");
 	$.ajax(
 	{
 		type: "GET",
@@ -31,7 +32,6 @@ function checkProgression()
 			}
 			else
 			{
-				$("#loading h1").text("Collecting data. Please wait a moment...");
 				updateDetails(data);
 			}
 		},
