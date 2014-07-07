@@ -12,6 +12,10 @@ More functionality will be added in future updates. :D
 Release Notes
 -------------
 
+*July 7th, 2014*
+
+ - Made a slight change to the Lodestone API so I can associate each achievement by it's ID instead of the sequential number it's given. This way, when patches come out, I won't have to manually go through and figure out which achievement is which.
+
 *July 6th, 2014*
 
  - Load data based on URL parameters.

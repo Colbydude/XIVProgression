@@ -1969,7 +1969,7 @@
 				$this->TotalAchievements++;
                 
 				// Append temp data
-				$NewList[] = $Temp;
+				$NewList[$Temp['id']] = $Temp;
 			}
 
 			// Set points percentage
