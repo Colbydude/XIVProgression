@@ -140,7 +140,7 @@
 						<button type="submit" id="submit" name="submit" class="btn btn-primary">Check</button>
 					</form>
 					<br>
-					<p class="text-muted"><small>Tool Last Updated: July 7th 2014<br>By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small></p>
+					<p class="text-muted"><small>Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker/blob/master/README.md" target="_blank">July 8th 2014</a><br>By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small></p>
 				</div>
 				<div class="col-sm-8">
 					<div id="data" style="display: none;">

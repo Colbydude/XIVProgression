@@ -12,6 +12,12 @@ More functionality will be added in future updates. :D
 Release Notes
 -------------
 
+*July 8th, 2014*
+ - Added results for Syrcus Tower and Striking Tree EX (Ramuh).
+ - Added results for the Second Coil of Bahamut (Savage). Note that the achievements for clearing indivdual turns are actually clears, instead of mapping achievements. There is also no overall clear achievement, so the number of clears will not be used.
+ - Removed the number of clears from Labyrinth of the Ancients and Syrcus Tower.
+ - Made the update date point to this README file.
+
 *July 7th, 2014*
 
  - Made a slight change to the Lodestone API so I can associate each achievement by it's ID instead of the sequential number it's given. This way, when patches come out, I won't have to manually go through and figure out which achievement is which.

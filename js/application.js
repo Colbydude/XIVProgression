@@ -121,8 +121,7 @@ function updateDetails(data)
 		raids_string += "<tr>";
 			raids_string += "<td>&nbsp;</td>"; // TODO: Icon
 			raids_string += "<td>Labyrinth of the Ancients</td>";
-			raids_string += "<td>" + clear_date.toDateString() + "</td>";
-			raids_string += "<td>1</td>";
+			raids_string += "<td colspan=\"2\">" + clear_date.toDateString() + "</td>";
 		raids_string += "</tr>";
 	}
 	else
@@ -175,6 +174,57 @@ function updateDetails(data)
 				raids_string += "<td>&nbsp;</td>"; // TODO: Icon
 				raids_string += "<td>- Turn " + (i + 1) + "</td>";
 				raids_string += "<td colspan=\"2\">No corresponding achievement</td>";
+			raids_string += "</tr>";
+		}
+		else
+		{
+			raids_string += "<tr class=\"danger small\">";
+				raids_string += "<td>&nbsp;</td>"; // TODO: Icon
+				raids_string += "<td colspan=\"3\">- Turn " + (i + 1) + "</td>";
+			raids_string += "</tr>";
+		}
+	}
+
+	// Syrcus Tower.
+	if (data["Raids"]["Syrcus Tower"]["cleared"])
+	{
+		clear_date = new Date();
+		clear_date.setTime((data["Raids"]["Syrcus Tower"]["date"] + "0000000000000").slice(0, 13));
+		raids_string += "<tr>";
+			raids_string += "<td>&nbsp;</td>"; // TODO: Icon
+			raids_string += "<td>Syrcus Tower</td>";
+			raids_string += "<td colspan=\"2\">" + clear_date.toDateString() + "</td>";
+		raids_string += "</tr>";
+	}
+	else
+	{
+		raids_string += "<tr class=\"danger\"><td>&nbsp;</td><td colspan=\"3\">Syrcus Tower</td></tr>";
+	}
+
+	// Second Coil of Bahamut (Savage)
+	if (data["Raids"]["Second Coil of Bahamut (Savage)"]["cleared"])
+	{
+		raids_string += "<tr>";
+			raids_string += "<td>&nbsp;</td>";
+			raids_string += "<td colspan=\"3\">Second Coil of Bahamut (Savage)</td>";
+		raids_string += "</tr>";
+	}
+	else
+	{
+		raids_string += "<tr class=\"danger\"><td>&nbsp;</td><td colspan=\"3\">Second Coil of Bahamut (Savage)</td></tr>";
+	}
+	// Individual SCoB Turns.
+	for (i = 0; i < 4; i++)
+	{
+		if (data["Raids"]["Second Coil of Bahamut (Savage)"]["turns"]["Turn " + (i + 1)]["cleared"] == true)
+		{
+			clear_date = new Date();
+			clear_date.setTime((data["Raids"]["Second Coil of Bahamut (Savage)"]["turns"]["Turn " + (i + 1)]["date"] + "0000000000000").slice(0, 13));
+			raids_string += "<tr class=\"small\">";
+				raids_string += "<td>&nbsp;</td>"; // TODO: Icon
+				raids_string += "<td>- Turn " + (i + 1) + "</td>";
+				raids_string += "<td>" + clear_date.toDateString() + "</td>";
+				raids_string += "<td>&nbsp;</td>";
 			raids_string += "</tr>";
 		}
 		else
@@ -267,6 +317,22 @@ function updateDetails(data)
 	else
 	{
 		primals_string += "<tr class=\"danger\"><td>&nbsp;</td><td colspan=\"2\">Thornmarch (Good King Moggle Mog XII)</td></tr>";
+	}
+
+	// Striking Tree.
+	if (data["EX Primals"]["Striking Tree"]["cleared"])
+	{
+		clear_date = new Date();
+		clear_date.setTime((data["EX Primals"]["Striking Tree"]["date"] + "0000000000000").slice(0, 13));
+		primals_string += "<tr>";
+			primals_string += "<td>&nbsp;</td>";	// TODO: Icon
+			primals_string += "<td>Striking Tree (Ramuh)</td>";
+			primals_string += "<td>" + clear_date.toDateString() + "</td>";
+		primals_string += "</tr>";
+	}
+	else
+	{
+		primals_string += "<tr class=\"danger\"><td>&nbsp;</td><td colspan=\"2\">Striking Tree (Ramuh)</td></tr>";
 	}
 
 	// Output.

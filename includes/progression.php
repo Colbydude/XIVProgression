@@ -32,9 +32,10 @@
 		if ($BattleAchievements && $ExplorationAchievements)
 		{
 			$Progression = array();
-			$Raids = array("Binding Coil of Bahamut" => array("cleared" => FALSE), "Labyrinth of the Ancients" => array("cleared" => FALSE), "Second Coil of Bahamut" => array("cleared" => FALSE));
+			$Raids = array("Binding Coil of Bahamut" => array("cleared" => FALSE), "Labyrinth of the Ancients" => array("cleared" => FALSE), "Second Coil of Bahamut" => array("cleared" => FALSE), "Syrcus Tower" => array("cleared" => FALSE), "Second Coil of Bahamut (Savage)" => array("cleared" => FALSE));
 				$BCoBTurns = array("Turn 1" => array("explored" => FALSE), "Turn 2" => array("explored" => FALSE), "Turn 3" => array("explored" => FALSE), "Turn 4" => array("explored" => "Unknown"), "Turn 5" => array("explored" => FALSE));
 				$SCoBTurns = array("Turn 1" => array("explored" => FALSE), "Turn 2" => array("explored" => FALSE), "Turn 3" => array("explored" => FALSE), "Turn 4" => array("explored" => "Unknown"));
+				$SCoBSTurns = array("Turn 1" => array("cleared" => FALSE), "Turn 2" => array("cleared" => FALSE), "Turn 3" => array("cleared" => FALSE), "Turn 4" => array("cleared" => FALSE));
 			$EXPrimals = array("Bowl of Embers" => array("cleared" => FALSE), "Howling Eye" => array("cleared" => FALSE), "Navel" => array("cleared" => FALSE), "Whorleater" => array("cleared" => FALSE), "Thornmarch" => array("cleared" => FALSE), "Striking Tree" => array("cleared" => FALSE));
 
 			// ----- RAIDS ----- \\
@@ -123,6 +124,40 @@
 
 			$Raids["Second Coil of Bahamut"]["turns"] = $SCoBTurns;
 
+			// Syrcus Tower.
+			if ($BattleAchievements[995]["obtained"])	// Life is a Syrcus
+				$Raids["Syrcus Tower"] = array("cleared" => TRUE, "date" => $BattleAchievements[995]["date"]);
+
+			// Second Coil of Bahamut (Savage).
+
+			// --- Individual Turns --- \\
+			if ($BattleAchievements[997]["obtained"])	// A Flower By Any Other Name
+			{
+				$SCoBSTurns["Turn 1"]["cleared"] = TRUE;
+				$SCoBSTurns["Turn 1"]["date"] = $BattleAchievements[997]["date"];
+			}
+			if ($BattleAchievements[998]["obtained"])	// Seconds
+			{
+				$SCoBSTurns["Turn 2"]["cleared"] = TRUE;
+				$SCoBSTurns["Turn 2"]["date"] = $BattleAchievements[998]["date"];
+			}
+			if ($BattleAchievements[999]["obtained"])	// Obtanium
+			{
+				$SCoBSTurns["Turn 3"]["cleared"] = TRUE;
+				$SCoBSTurns["Turn 3"]["date"] = $BattleAchievements[999]["date"];
+			}
+			if ($BattleAchievements[1000]["obtained"])	// The Crying Game
+			{
+				$SCoBSTurns["Turn 4"]["cleared"] = TRUE;
+				$SCoBSTurns["Turn 4"]["date"] = $BattleAchievements[1000]["date"];
+			}
+
+			// --- Full Clears --- \\
+			if ($SCoBSTurns["Turn 1"]["cleared"] && $SCoBSTurns["Turn 2"]["cleared"] && $SCoBSTurns["Turn 3"]["cleared"] && $SCoBSTurns["Turn 4"]["cleared"])
+				$Raids["Second Coil of Bahamut (Savage)"] = array("cleared" => TRUE);
+
+			$Raids["Second Coil of Bahamut (Savage)"]["turns"] = $SCoBSTurns;
+
 			// ----- EX Primals ----- \\
 			// Ifrit EX.
 			if ($BattleAchievements[855]["obtained"])	// Going Up in Flames
@@ -139,6 +174,9 @@
 			// Good King Mog EX.
 			if ($BattleAchievements[894]["obtained"])	// Good Kingslayer
 				$EXPrimals["Thornmarch"] = array("cleared" => TRUE, "date" => $BattleAchievements[894]["date"]);
+			// Ramuh EX.
+			if ($BattleAchievements[994]["obtained"])	// Contempt of Court
+				$EXPrimals["Striking Tree"] = array("cleared" => TRUE, "date" => $BattleAchievements[994]["date"]);
 
 			$Progression["Raids"] = $Raids;
 			$Progression["EX Primals"] = $EXPrimals;
