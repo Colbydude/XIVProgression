@@ -12,6 +12,11 @@
 	$name = urldecode($_GET["name"]);
 	$server = urldecode($_GET["server"]);
 
+	// Output arrays.
+	$Output = array();
+	$Char = array();
+	$Progression = array();
+
 	// Parse the character.
 	$Character = $API->get(array(
 		"name" => $name, 
@@ -20,13 +25,16 @@
 
 	if ($Character)
 	{
-		$CharID = $Character->getID();
+		// Associate Character Data.
+		$Char = array("id" => $Character->getID(), "name" => $name, "server" => $server, "profile" => $Character->getLodestone(), "portrait" => $Character->getPortrait(), "active_class" => ucfirst(trim($Character->getActiveClass())), "active_class_level" => $Character->getActiveLevel(), "active_avg_ilvl" => $Character->getGear()["item_level_average"]);
+		if ($Character->getActiveJob())
+			$Char["active_class"] = ucfirst(trim($Character->getActiveJob()["name"]));
 
 		// Parse achievements
 		// Kind of sketchy on using all these absolute numbers, need to find a better way to do this if possible.
-		$API->parseAchievementsByCategory(1, $CharID);
+		$API->parseAchievementsByCategory(1, $Char["id"]);
 		$BattleAchievements = $API->getAchievements()[1]->get();
-		$API->parseAchievementsByCategory(11, $CharID);					// Why is this 11 and not 7?
+		$API->parseAchievementsByCategory(11, $Char["id"]);				// Why is this 11 and not 7?
 		$ExplorationAchievements = $API->getAchievements()[11]->get();
 		
 		if ($BattleAchievements && $ExplorationAchievements)
@@ -188,9 +196,11 @@
 	}
 	else
 	{
-		$Progression = array("Error" => "Character not found.");
+		$Char = array("Error" => "Character not found.");
 	}
+	
+	// Combine arrays.
+	$Output = array("Character" => $Char, "Progression" => $Progression);
 
 	// Display in JSON.
-	echo json_encode($Progression);
-?>
+	echo json_encode($Output);

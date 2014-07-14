@@ -65,3 +65,22 @@ a:hover, a:focus
 {
 	padding: 2px 5px;
 }
+
+.table-condensed > tbody > tr > td:first-child
+{
+	text-align: center;
+}
+
+.xivdb-icon
+{
+	border-radius: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+.xivdb-icon-sm
+{
+	border-radius: 2px;
+	height: 12px;
+	width: 12px;
+}

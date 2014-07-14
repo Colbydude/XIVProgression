@@ -140,10 +140,25 @@
 						<button type="submit" id="submit" name="submit" class="btn btn-primary">Check</button>
 					</form>
 					<br>
-					<p class="text-muted"><small>Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker/blob/master/README.md" target="_blank">July 8th 2014</a><br>By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small></p>
+					<p class="text-muted"><small>Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker/blob/master/README.md" target="_blank">July 14th 2014</a><br>By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small></p>
 				</div>
 				<div class="col-sm-8">
-					<div id="data" style="display: none;">
+					<div id="character-data" style="display: none;">
+						<div class="row">
+							<div class="hidden-xs col-sm-4">
+								<p><img class="img-responsive img-thumbnail" id="character_portrait" src="//placehold.it/264x360" alt="Placeholder"></p>
+							</div>
+							<div class="col-sm-8">
+								<h1 id="character_name" style="margin-top: 0;"></h1>
+								<p>
+									<strong>Active Class:</strong> <span id="active_class"></span> [<span id="active_class_level"></span>]<br>
+									<strong>Average iLvl:</strong> <span id="active_avg_ilvl"></span>
+								</p>
+								<p><a class="btn btn-primary" id="lodestone_profile" href="http://na.finalfantasyxiv.com" target="_blank">View Lodestone Profile</a></p>
+							</div>
+						</div>
+					</div>
+					<div id="progression-data" style="display: none;">
 						<h2>Raids</h2>
 						<div class="table-responsive">
 							<table class="table table-striped table-condensed" id="raids">

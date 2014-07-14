@@ -12,7 +12,13 @@ More functionality will be added in future updates. :D
 Release Notes
 -------------
 
+*July 14th, 2014*
+
+ - Added icons for better understanding how the achievements work. TODO: XIVDB Tooltips.
+ - Added basic character profile displaying character portrait, active class and level, and average item level.
+
 *July 8th, 2014*
+
  - Added results for Syrcus Tower and Striking Tree EX (Ramuh).
  - Added results for the Second Coil of Bahamut (Savage). Note that the achievements for clearing indivdual turns are actually clears, instead of mapping achievements. There is also no overall clear achievement, so the number of clears will not be used.
  - Removed the number of clears from Labyrinth of the Ancients and Syrcus Tower.
