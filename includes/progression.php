@@ -1,11 +1,12 @@
-<?php
+<?php header('Content-Type: application/json');
+
 	// Force turn off any error reporting (cause this is kind of sloppy).
 	error_reporting(0);
 
 	// Require API.
 	require_once("lodestone-api.php");
 
-	// Initialize a LodestoneAPI Obkect
+	// Initialize a LodestoneAPI Object
 	$API = new LodestoneAPI();
 
 	// Variables.
