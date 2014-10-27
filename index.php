@@ -22,7 +22,7 @@
 		<meta name="keywords" content="FFXIV, Final Fantasy XIV, A Realm Reborn, ARR, Progression, Checker, Tool">
 		<meta name="author" content="VoidTeam">
 		<link href="http://ffxiv.voidteam.net/progression" rel="canonical">
-		<link href="/css/app.min.css" rel="stylesheet">
+		<link href="css/app.min.css" rel="stylesheet">
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -196,6 +196,6 @@
 			</div>
 		</div>
 
-		<script src="/js/app.min.js"></script>
+		<script src="js/app.min.js"></script>
 	</body>
 </html>
