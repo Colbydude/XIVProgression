@@ -1,5 +1,5 @@
 <?php
-	require_once("includes/lodestone-api.php");
+	require_once("app/vendor/lodestone-api.php");
 
 	if (isset($_GET["name"]))
 		$name = urldecode($_GET["name"]);
@@ -22,9 +22,7 @@
 		<meta name="keywords" content="FFXIV, Final Fantasy XIV, A Realm Reborn, ARR, Progression, Checker, Tool">
 		<meta name="author" content="VoidTeam">
 		<link href="http://ffxiv.voidteam.net/progression" rel="canonical">
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<script src="//code.jquery.com/jquery.js"></script>
+		<link href="/css/app.min.css" rel="stylesheet">
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -51,7 +49,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="http://ffxiv.voidteam.net/progression/">FFXIV Progression Checker</a>
+					<a class="navbar-brand" href="/">FFXIV Progression Checker</a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
@@ -140,7 +138,10 @@
 						<button type="submit" id="submit" name="submit" class="btn btn-primary">Check</button>
 					</form>
 					<br>
-					<p class="text-muted"><small>Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker/blob/master/README.md" target="_blank">July 14th 2014</a><br>By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small></p>
+					<p class="text-muted">
+						<small>Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker" target="_blank">October 27th 2014</a><br>
+						By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan</small>
+					</p>
 				</div>
 				<div class="col-sm-8">
 					<div id="character-data" style="display: none;">
@@ -194,7 +195,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="js/application.js"></script>
+
+		<script src="/js/app.min.js"></script>
 	</body>
 </html>

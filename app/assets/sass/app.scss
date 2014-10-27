@@ -1,0 +1,103 @@
+@import "variables";
+@import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "bower_components/ubuntu-fontface/ubuntu.scss";
+
+body
+{
+	font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding-top: 80px;
+}
+
+a
+{
+	color: #3371a5;
+
+	&:hover,
+	&:focus
+	{
+		color: #193e5f;
+	}
+}
+
+.navbar-default
+{
+	background-color: #3371a5;
+	border-color: #295d89;
+
+	.navbar-brand
+	{
+		&,
+		&:hover,
+		&:focus
+		{
+			color: white;
+			font-weight: 500;
+		}
+	}
+
+	.navbar-nav
+	{
+		> li
+		{
+			> a
+			{
+				&,
+				&:hover,
+				&:focus
+				{
+					color: white;
+				}
+			}
+		}
+	}
+
+	.navbar-toggle
+	{
+		border-color: white;
+
+		.icon-bar
+		{
+			background-color: white;
+		}
+	}
+}
+
+.jumbotron
+{
+	margin-top: -50px;
+	padding-bottom: 25px;
+
+	p:first-child
+	{
+		margin-top: 20px;
+	}
+}
+
+.table-condensed > thead > tr.small > th,
+.table-condensed > tbody > tr.small > th,
+.table-condensed > tfoot > tr.small > th,
+.table-condensed > thead > tr.small > td,
+.table-condensed > tbody > tr.small > td,
+.table-condensed > tfoot > tr.small > td
+{
+	padding: 2px 5px;
+}
+
+.table-condensed > tbody > tr > td:first-child
+{
+	text-align: center;
+}
+
+.xivdb-icon
+{
+	border-radius: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+.xivdb-icon-sm
+{
+	border-radius: 2px;
+	height: 12px;
+	width: 12px;
+}

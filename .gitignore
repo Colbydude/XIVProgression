@@ -1,1 +1,7 @@
-debug/
+/.idea
+/.sass-cache
+/bower_components
+/debug
+/node_modules
+.DS_Store
+Thumbs.db
