@@ -10,7 +10,7 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 Release Notes
 -------------
 
-*October 24th, 2014*
+*October 28th, 2014*
  - Hugely refactor assets for easier development.
  - Add Final Coil of Bahamut and Akh Afah Amphitheatre EX (Shiva).
  - Lodestone recieved a slight update for 2.4 breaking somethings with the Lodestone API. I'll have to wait to address these issues when the API is updated.
