@@ -76,7 +76,7 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["Raids"]["Binding Coil of Bahamut"]["date"] + "0000000000000").slice(0, 13));
 			raids_string += "<tr>";
-			raids_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000607.png?patch=230\" alt=\"The Binds that Tie\"></td>";
+			raids_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000607.png?patch=240\" alt=\"The Binds that Tie\"></td>";
 			raids_string += "<td>Binding Coil of Bahamut</td>";
 			if (data["Progression"]["Raids"]["Binding Coil of Bahamut"]["first"])
 			{
@@ -93,7 +93,7 @@ function updateDetails(data)
 		}
 		else
 		{
-			raids_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000607.png?patch=230\" alt=\"The Binds that Tie\"></td><td colspan=\"3\">Binding Coil of Bahamut</td></tr>";
+			raids_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000607.png?patch=240\" alt=\"The Binds that Tie\"></td><td colspan=\"3\">Binding Coil of Bahamut</td></tr>";
 		}
 		// Individual BCoB Turns.
 		for (i = 0; i < 5; i++)
@@ -103,7 +103,7 @@ function updateDetails(data)
 				explore_date = new Date();
 				explore_date.setTime((data["Progression"]["Raids"]["Binding Coil of Bahamut"]["turns"]["Turn " + (i + 1)]["date"] + "0000000000000").slice(0, 13));
 				raids_string += "<tr class=\"small\">";
-				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=230\" alt=\"Mapping The Realm: The Binding Coil of Bahamut\"></td>";
+				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=240\" alt=\"Mapping The Realm: The Binding Coil of Bahamut\"></td>";
 				raids_string += "<td>- Turn " + (i + 1) + "</td>";
 				raids_string += "<td>" + explore_date.toDateString() + "</td>";
 				raids_string += "<td>&nbsp;</td>";
@@ -120,7 +120,7 @@ function updateDetails(data)
 			else
 			{
 				raids_string += "<tr class=\"danger small\">";
-				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=230\" alt=\"Mapping The Realm: The Binding Coil of Bahamut\"></td>";
+				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=240\" alt=\"Mapping The Realm: The Binding Coil of Bahamut\"></td>";
 				raids_string += "<td colspan=\"3\">- Turn " + (i + 1) + "</td>";
 				raids_string += "</tr>";
 			}
@@ -132,14 +132,14 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["Raids"]["Labyrinth of the Ancients"]["date"] + "0000000000000").slice(0, 13));
 			raids_string += "<tr>";
-			raids_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003774.png?patch=230\" alt=\"You Call That A Labyrinth\"></td>";
+			raids_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003774.png?patch=240\" alt=\"You Call That A Labyrinth\"></td>";
 			raids_string += "<td>Labyrinth of the Ancients</td>";
 			raids_string += "<td colspan=\"2\">" + clear_date.toDateString() + "</td>";
 			raids_string += "</tr>";
 		}
 		else
 		{
-			raids_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003774.png?patch=230\" alt=\"You Call That A Labyrinth\"></td><td colspan=\"3\">Labyrinth of the Ancients</td></tr>";
+			raids_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003774.png?patch=240\" alt=\"You Call That A Labyrinth\"></td><td colspan=\"3\">Labyrinth of the Ancients</td></tr>";
 		}
 
 		// Second Coil of Bahamut.
@@ -148,7 +148,7 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["Raids"]["Second Coil of Bahamut"]["date"] + "0000000000000").slice(0, 13));
 			raids_string += "<tr>";
-			raids_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003304.png?patch=230\" alt=\"In Another Bind\"></td>";
+			raids_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003304.png?patch=240\" alt=\"In Another Bind\"></td>";
 			raids_string += "<td>Second Coil of Bahamut</td>";
 			if (data["Progression"]["Raids"]["Second Coil of Bahamut"]["first"])
 			{
@@ -165,7 +165,7 @@ function updateDetails(data)
 		}
 		else
 		{
-			raids_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003304.png?patch=230\" alt=\"In Another Bind\"></td><td colspan=\"3\">Second Coil of Bahamut</td></tr>";
+			raids_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003304.png?patch=240\" alt=\"In Another Bind\"></td><td colspan=\"3\">Second Coil of Bahamut</td></tr>";
 		}
 		// Individual SCoB Turns.
 		for (i = 0; i < 4; i++)
@@ -175,7 +175,7 @@ function updateDetails(data)
 				explore_date = new Date();
 				explore_date.setTime((data["Progression"]["Raids"]["Second Coil of Bahamut"]["turns"]["Turn " + (i + 1)]["date"] + "0000000000000").slice(0, 13));
 				raids_string += "<tr class=\"small\">";
-				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=230\" alt=\"Mapping The Realm: The Second Coil of Bahamut\"></td>";
+				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=240\" alt=\"Mapping The Realm: The Second Coil of Bahamut\"></td>";
 				raids_string += "<td>- Turn " + (i + 1) + "</td>";
 				raids_string += "<td>" + explore_date.toDateString() + "</td>";
 				raids_string += "<td>&nbsp;</td>";
@@ -192,7 +192,7 @@ function updateDetails(data)
 			else
 			{
 				raids_string += "<tr class=\"danger small\">";
-				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=230\" alt=\"Mapping The Realm: The Second Coil of Bahamut\"></td>";
+				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=240\" alt=\"Mapping The Realm: The Second Coil of Bahamut\"></td>";
 				raids_string += "<td colspan=\"3\">- Turn " + (i + 1) + "</td>";
 				raids_string += "</tr>";
 			}
@@ -204,14 +204,14 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["Raids"]["Syrcus Tower"]["date"] + "0000000000000").slice(0, 13));
 			raids_string += "<tr>";
-			raids_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003774.png?patch=230\" alt=\"Life Is A Syrcus\"></td>";
+			raids_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003774.png?patch=240\" alt=\"Life Is A Syrcus\"></td>";
 			raids_string += "<td>Syrcus Tower</td>";
 			raids_string += "<td colspan=\"2\">" + clear_date.toDateString() + "</td>";
 			raids_string += "</tr>";
 		}
 		else
 		{
-			raids_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003774.png?patch=230\" alt=\"Life Is A Syrcus\"></td><td colspan=\"3\">Syrcus Tower</td></tr>";
+			raids_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003774.png?patch=240\" alt=\"Life Is A Syrcus\"></td><td colspan=\"3\">Syrcus Tower</td></tr>";
 		}
 
 		// Second Coil of Bahamut (Savage)
@@ -234,7 +234,7 @@ function updateDetails(data)
 				clear_date = new Date();
 				clear_date.setTime((data["Progression"]["Raids"]["Second Coil of Bahamut (Savage)"]["turns"]["Turn " + (i + 1)]["date"] + "0000000000000").slice(0, 13));
 				raids_string += "<tr class=\"small\">";
-				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003304.png?patch=230\" alt=\"In Another Bind\"></td>";
+				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003304.png?patch=240\" alt=\"In Another Bind\"></td>";
 				raids_string += "<td>- Turn " + (i + 1) + "</td>";
 				raids_string += "<td>" + clear_date.toDateString() + "</td>";
 				raids_string += "<td>&nbsp;</td>";
@@ -243,7 +243,63 @@ function updateDetails(data)
 			else
 			{
 				raids_string += "<tr class=\"danger small\">";
-				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003304.png?patch=230\" alt=\"In Another Bind\"></td>";
+				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003304.png?patch=240\" alt=\"In Another Bind\"></td>";
+				raids_string += "<td colspan=\"3\">- Turn " + (i + 1) + "</td>";
+				raids_string += "</tr>";
+			}
+		}
+
+		// Final Coil of Bahamut.
+		if (data["Progression"]["Raids"]["Final Coil of Bahamut"]["cleared"])
+		{
+			clear_date = new Date();
+			clear_date.setTime((data["Progression"]["Raids"]["Final Coil of Bahamut"]["date"] + "0000000000000").slice(0, 13));
+			raids_string += "<tr>";
+			raids_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003762.png?patch=240\" alt=\"Out of a Bind\"></td>";
+			raids_string += "<td>Final Coil of Bahamut</td>";
+			if (data["Progression"]["Raids"]["Final Coil of Bahamut"]["first"])
+			{
+				first_date = new Date();
+				first_date.setTime((data["Progression"]["Raids"]["Final Coil of Bahamut"]["first"] + "0000000000000").slice(0, 13));
+				raids_string += "<td><strong>First:</strong> " + first_date.toDateString() + "<br><strong>Recent:</strong> " + clear_date.toDateString() + "</td>";
+			}
+			else
+			{
+				raids_string += "<td>" + clear_date.toDateString() + "</td>";
+			}
+			raids_string += "<td>" + data["Progression"]["Raids"]["Final Coil of Bahamut"]["times"] + "</td>";
+			raids_string += "</tr>";
+		}
+		else
+		{
+			raids_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/003000/003762.png?patch=240\" alt=\"Out of a Bind\"></td><td colspan=\"3\">Final Coil of Bahamut</td></tr>";
+		}
+		// Individual FCoB Turns.
+		for (i = 0; i < 4; i++)
+		{
+			if (data["Progression"]["Raids"]["Final Coil of Bahamut"]["turns"]["Turn " + (i + 1)]["explored"] == true)
+			{
+				explore_date = new Date();
+				explore_date.setTime((data["Progression"]["Raids"]["Final Coil of Bahamut"]["turns"]["Turn " + (i + 1)]["date"] + "0000000000000").slice(0, 13));
+				raids_string += "<tr class=\"small\">";
+				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=240\" alt=\"Mapping The Realm: The Final Coil of Bahamut\"></td>";
+				raids_string += "<td>- Turn " + (i + 1) + "</td>";
+				raids_string += "<td>" + explore_date.toDateString() + "</td>";
+				raids_string += "<td>&nbsp;</td>";
+				raids_string += "</tr>";
+			}
+			else if (data["Progression"]["Raids"]["Final Coil of Bahamut"]["turns"]["Turn " + (i + 1)]["explored"] == "Unknown")
+			{
+				raids_string += "<tr class=\"small\">";
+				raids_string += "<td>&nbsp;</td>";
+				raids_string += "<td>- Turn " + (i + 1) + "</td>";
+				raids_string += "<td colspan=\"2\">No corresponding achievement</td>";
+				raids_string += "</tr>";
+			}
+			else
+			{
+				raids_string += "<tr class=\"danger small\">";
+				raids_string += "<td><img class=\"xivdb-icon-sm\" src=\"http://xivdbimg.zamimg.com/images/icons/001000/001501.png?patch=240\" alt=\"Mapping The Realm: The Final Coil of Bahamut\"></td>";
 				raids_string += "<td colspan=\"3\">- Turn " + (i + 1) + "</td>";
 				raids_string += "</tr>";
 			}
@@ -258,14 +314,14 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["EX Primals"]["Howling Eye"]["date"] + "0000000000000").slice(0, 13));
 			primals_string += "<tr>";
-			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Gone With The Wind\"></td>";
+			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Gone With The Wind\"></td>";
 			primals_string += "<td>Howling Eye (Garuda)</td>";
 			primals_string += "<td>" + clear_date.toDateString() + "</td>";
 			primals_string += "</tr>";
 		}
 		else
 		{
-			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Gone With The Wind\"></td><td colspan=\"2\">Howling Eye (Garuda)</td></tr>";
+			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Gone With The Wind\"></td><td colspan=\"2\">Howling Eye (Garuda)</td></tr>";
 		}
 
 		// Navel.
@@ -274,14 +330,14 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["EX Primals"]["Navel"]["date"] + "0000000000000").slice(0, 13));
 			primals_string += "<tr>";
-			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Earth To Earth\"></td>";
+			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Earth To Earth\"></td>";
 			primals_string += "<td>Navel (Titan)</td>";
 			primals_string += "<td>" + clear_date.toDateString() + "</td>";
 			primals_string += "</tr>";
 		}
 		else
 		{
-			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Earth To Earth\"></td><td colspan=\"2\">Navel (Titan)</td></tr>";
+			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Earth To Earth\"></td><td colspan=\"2\">Navel (Titan)</td></tr>";
 		}
 
 		// Bowl of Embers.
@@ -290,14 +346,14 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["EX Primals"]["Bowl of Embers"]["date"] + "0000000000000").slice(0, 13));
 			primals_string += "<tr>";
-			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Going Up In Flames\"></td>";
+			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Going Up In Flames\"></td>";
 			primals_string += "<td>Bowl of Embers (Ifrit)</td>";
 			primals_string += "<td>" + clear_date.toDateString() + "</td>";
 			primals_string += "</tr>";
 		}
 		else
 		{
-			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Going Up In Flames\"></td><td colspan=\"2\">Bowl of Embers (Ifrit)</td></tr>";
+			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Going Up In Flames\"></td><td colspan=\"2\">Bowl of Embers (Ifrit)</td></tr>";
 		}
 
 		// Whorleater.
@@ -306,14 +362,14 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["EX Primals"]["Whorleater"]["date"] + "0000000000000").slice(0, 13));
 			primals_string += "<tr>";
-			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"I Eat Whorls For Breakfast\"></td>";
+			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"I Eat Whorls For Breakfast\"></td>";
 			primals_string += "<td><em>Whorleater</em> (Leviathan)</td>";
 			primals_string += "<td>" + clear_date.toDateString() + "</td>";
 			primals_string += "</tr>";
 		}
 		else
 		{
-			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"I Eat Whorls For Breakfast\"></td><td colspan=\"2\"><em>Whorleater</em> (Leviathan)</td></tr>";
+			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"I Eat Whorls For Breakfast\"></td><td colspan=\"2\"><em>Whorleater</em> (Leviathan)</td></tr>";
 		}
 
 		// Thornmarch.
@@ -322,14 +378,14 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["EX Primals"]["Thornmarch"]["date"] + "0000000000000").slice(0, 13));
 			primals_string += "<tr>";
-			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Good Kingslayer\"></td>";
+			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Good Kingslayer\"></td>";
 			primals_string += "<td>Thornmarch (Good King Moggle Mog XII)</td>";
 			primals_string += "<td>" + clear_date.toDateString() + "</td>";
 			primals_string += "</tr>";
 		}
 		else
 		{
-			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Good Kingslayer\"></td><td colspan=\"2\">Thornmarch (Good King Moggle Mog XII)</td></tr>";
+			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Good Kingslayer\"></td><td colspan=\"2\">Thornmarch (Good King Moggle Mog XII)</td></tr>";
 		}
 
 		// Striking Tree.
@@ -338,14 +394,30 @@ function updateDetails(data)
 			clear_date = new Date();
 			clear_date.setTime((data["Progression"]["EX Primals"]["Striking Tree"]["date"] + "0000000000000").slice(0, 13));
 			primals_string += "<tr>";
-			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Contempt Of Court\"></td>";
+			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Contempt Of Court\"></td>";
 			primals_string += "<td>Striking Tree (Ramuh)</td>";
 			primals_string += "<td>" + clear_date.toDateString() + "</td>";
 			primals_string += "</tr>";
 		}
 		else
 		{
-			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=230\" alt=\"Contempt Of Court\"></td><td colspan=\"2\">Striking Tree (Ramuh)</td></tr>";
+			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Contempt Of Court\"></td><td colspan=\"2\">Striking Tree (Ramuh)</td></tr>";
+		}
+
+		// Akh Afah Amphitheatre.
+		if (data["Progression"]["EX Primals"]["Akh Afah Amphitheatre"]["cleared"])
+		{
+			clear_date = new Date();
+			clear_date.setTime((data["Progression"]["EX Primals"]["Akh Afah Amphitheatre"]["date"] + "0000000000000").slice(0, 13));
+			primals_string += "<tr>";
+			primals_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Let It Go\"></td>";
+			primals_string += "<td>Akh Afah Amphitheatre (Shiva)</td>";
+			primals_string += "<td>" + clear_date.toDateString() + "</td>";
+			primals_string += "</tr>";
+		}
+		else
+		{
+			primals_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=240\" alt=\"Let It Go\"></td><td colspan=\"2\">Akh Afah Amphitheatre (Shiva)</td></tr>";
 		}
 
 		// Output.

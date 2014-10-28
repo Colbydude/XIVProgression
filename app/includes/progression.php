@@ -52,11 +52,12 @@
 		if ($BattleAchievements && $ExplorationAchievements)
 		{
 			$Progression = array();
-			$Raids = array("Binding Coil of Bahamut" => array("cleared" => FALSE), "Labyrinth of the Ancients" => array("cleared" => FALSE), "Second Coil of Bahamut" => array("cleared" => FALSE), "Syrcus Tower" => array("cleared" => FALSE), "Second Coil of Bahamut (Savage)" => array("cleared" => FALSE));
+			$Raids = array("Binding Coil of Bahamut" => array("cleared" => FALSE), "Labyrinth of the Ancients" => array("cleared" => FALSE), "Second Coil of Bahamut" => array("cleared" => FALSE), "Syrcus Tower" => array("cleared" => FALSE), "Second Coil of Bahamut (Savage)" => array("cleared" => FALSE), "Final Coil of Bahamut" => array("cleared" => FALSE));
 				$BCoBTurns = array("Turn 1" => array("explored" => FALSE), "Turn 2" => array("explored" => FALSE), "Turn 3" => array("explored" => FALSE), "Turn 4" => array("explored" => "Unknown"), "Turn 5" => array("explored" => FALSE));
 				$SCoBTurns = array("Turn 1" => array("explored" => FALSE), "Turn 2" => array("explored" => FALSE), "Turn 3" => array("explored" => FALSE), "Turn 4" => array("explored" => "Unknown"));
 				$SCoBSTurns = array("Turn 1" => array("cleared" => FALSE), "Turn 2" => array("cleared" => FALSE), "Turn 3" => array("cleared" => FALSE), "Turn 4" => array("cleared" => FALSE));
-			$EXPrimals = array("Bowl of Embers" => array("cleared" => FALSE), "Howling Eye" => array("cleared" => FALSE), "Navel" => array("cleared" => FALSE), "Whorleater" => array("cleared" => FALSE), "Thornmarch" => array("cleared" => FALSE), "Striking Tree" => array("cleared" => FALSE));
+				$FCoBTurns = array("Turn 1" => array("explored" => FALSE), "Turn 2" => array("explored" => FALSE), "Turn 3" => array("explored" => "Unknown"), "Turn 4" => array("explored" => "Unknown"));
+			$EXPrimals = array("Bowl of Embers" => array("cleared" => FALSE), "Howling Eye" => array("cleared" => FALSE), "Navel" => array("cleared" => FALSE), "Whorleater" => array("cleared" => FALSE), "Thornmarch" => array("cleared" => FALSE), "Striking Tree" => array("cleared" => FALSE), "Akh Afah Amphitheatre" => array("cleared" => FALSE));
 
 			// ----- RAIDS ----- \\
 			// Binding Coil of Bahamut.
@@ -178,6 +179,37 @@
 
 			$Raids["Second Coil of Bahamut (Savage)"]["turns"] = $SCoBSTurns;
 
+			// Final Coil of Bahamut.
+
+			// --- Individual Turns --- \\
+			if ($ExplorationAchievements[1043]["obtained"])	// Mapping the Realm: The Final Coil of Bahamut I
+			{
+				$FCoBTurns["Turn 1"]["explored"] = TRUE;
+				$FCoBTurns["Turn 1"]["date"] = $ExplorationAchievements[1043]["date"];
+			}
+			if ($ExplorationAchievements[1044]["obtained"])	// Mapping the Realm: The Final Coil of Bahamut II
+			{
+				$FCoBTurns["Turn 2"]["explored"] = TRUE;
+				$FCoBTurns["Turn 2"]["date"] = $ExplorationAchievements[1044]["date"];
+			}
+
+			// --- Full Clears --- \\
+			if ($BattleAchievements[1040]["obtained"])	// Out of a Bind I
+				$Raids["Final Coil of Bahamut"] = array("cleared" => TRUE, "date" => $BattleAchievements[1040]["date"], "times" => 1);
+			if ($BattleAchievements[1041]["obtained"])	// Out of a Bind II
+			{
+				$Raids["Final Coil of Bahamut"]["first"] = $BattleAchievements[1040]["date"];
+				$Raids["Final Coil of Bahamut"]["date"] = $BattleAchievements[1041]["date"];
+				$Raids["Final Coil of Bahamut"]["times"] = 5;
+			}
+			if ($BattleAchievements[1042]["obtained"])	// Out of a Bind III
+			{
+				$Raids["Final Coil of Bahamut"]["date"] = $BattleAchievements[1042]["date"];
+				$Raids["Final Coil of Bahamut"]["times"] = 10;
+			}
+
+			$Raids["Final Coil of Bahamut"]["turns"] = $FCoBTurns;
+
 			// ----- EX Primals ----- \\
 			// Ifrit EX.
 			if ($BattleAchievements[855]["obtained"])	// Going Up in Flames
@@ -197,6 +229,9 @@
 			// Ramuh EX.
 			if ($BattleAchievements[994]["obtained"])	// Contempt of Court
 				$EXPrimals["Striking Tree"] = array("cleared" => TRUE, "date" => $BattleAchievements[994]["date"]);
+			// Shiva EX.
+			if ($BattleAchievements[1045]["obtained"])	// Let It Go
+				$EXPrimals["Striking Tree"] = array("cleared" => TRUE, "date" => $BattleAchievements[1045]["date"]);
 
 			$Progression["Raids"] = $Raids;
 			$Progression["EX Primals"] = $EXPrimals;
