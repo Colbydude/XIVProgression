@@ -3,5 +3,6 @@
 /bower_components
 /debug
 /node_modules
+/vendor
 .DS_Store
 Thumbs.db

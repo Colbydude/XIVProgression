@@ -1,11 +1,12 @@
 <?php header('Content-Type: application/json');
+
 	// TODO: L2API
 
 	// Force turn off any error reporting (cause this is kind of sloppy).
 	error_reporting(0);
 
 	// Require API.
-	require_once("../vendor/lodestone-api.php");
+	require_once("../../vendor/viion/xivpads-lodestoneapi/api.php");
 
 	// Initialize a LodestoneAPI Object
 	$API = new LodestoneAPI();
@@ -44,10 +45,8 @@
 
 		// Parse achievements
 		// Kind of sketchy on using all these absolute numbers, need to find a better way to do this if possible.
-		$API->parseAchievementsByCategory(1, $Char["id"]);
-		$BattleAchievements = $API->getAchievements()[1]->get();
-		$API->parseAchievementsByCategory(11, $Char["id"]);				// Why is this 11 and not 7?
-		$ExplorationAchievements = $API->getAchievements()[11]->get();
+		$BattleAchievements = $API->parseAchievementsByCategory(1, $Char["id"])->get();
+		$ExplorationAchievements = $API->parseAchievementsByCategory(11, $Char["id"])->get();
 		
 		if ($BattleAchievements && $ExplorationAchievements)
 		{

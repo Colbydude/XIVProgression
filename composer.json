@@ -1,0 +1,16 @@
+{
+  "name": "colbydude/ffxiv-progression-checker",
+  "description": "Simple interface for checking a character's raid progression for FFXIV.",
+  "homepage": "http://ffxiv.voidteam.net/progression",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Colby Terry",
+      "email": "colbydude@voidteam.net",
+      "homepage": "http://colbydude.com"
+    }
+  ],
+  "require": {
+    "viion/xivpads-lodestoneapi": "dev-master"
+  }
+}
