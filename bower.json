@@ -8,7 +8,7 @@
     "node_modules"
   ],
   "dependencies": {
-    "bootstrap-sass-official": "~3.2.0",
+    "bootstrap-sass-official": "3.3.0",
     "jquery": "~2.1.1",
     "ubuntu-fontface": "~0.1.3"
   }
