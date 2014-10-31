@@ -230,7 +230,7 @@
 				$EXPrimals["Striking Tree"] = array("cleared" => TRUE, "date" => $BattleAchievements[994]["date"]);
 			// Shiva EX.
 			if ($BattleAchievements[1045]["obtained"])	// Let It Go
-				$EXPrimals["Striking Tree"] = array("cleared" => TRUE, "date" => $BattleAchievements[1045]["date"]);
+				$EXPrimals["Akh Afah Amphitheatre"] = array("cleared" => TRUE, "date" => $BattleAchievements[1045]["date"]);
 
 			$Progression["Raids"] = $Raids;
 			$Progression["EX Primals"] = $EXPrimals;

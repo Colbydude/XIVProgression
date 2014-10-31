@@ -140,7 +140,7 @@
 					<br>
 					<p class="text-muted">
 						<small>
-							Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker" target="_blank">October 28th 2014</a><br>
+							Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker" target="_blank">October 31st 2014</a><br>
 							By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan<br>
 							<br>
 							The most recent 2.4 Lodestone update seems to have broken determining a character's ilvl. This message will be gone when it is fixed.
