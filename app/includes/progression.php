@@ -1,9 +1,9 @@
-<?php header('Content-Type: application/json');
+<?php //header('Content-Type: application/json');
 
 	// TODO: L2API
 
 	// Force turn off any error reporting (cause this is kind of sloppy).
-	error_reporting(0);
+	//error_reporting(0);
 
 	// Require API.
 	require_once("../../vendor/viion/xivpads-lodestoneapi/api.php");
@@ -45,11 +45,14 @@
 
 		// Parse achievements
 		// Kind of sketchy on using all these absolute numbers, need to find a better way to do this if possible.
-		$BattleAchievements = $API->parseAchievementsByCategory(1, $Char["id"])->get();
-		$ExplorationAchievements = $API->parseAchievementsByCategory(11, $Char["id"])->get();
+		$BattleAchievements = $API->parseAchievementsByCategory(1, $Char["id"]);
+		$ExplorationAchievements = $API->parseAchievementsByCategory(11, $Char["id"]);
 		
 		if ($BattleAchievements && $ExplorationAchievements)
 		{
+			$BattleAchievements = $BattleAchievements->get();
+			$ExplorationAchievements = $ExplorationAchievements->get();
+
 			$Progression = array();
 			$Raids = array("Binding Coil of Bahamut" => array("cleared" => FALSE), "Labyrinth of the Ancients" => array("cleared" => FALSE), "Second Coil of Bahamut" => array("cleared" => FALSE), "Syrcus Tower" => array("cleared" => FALSE), "Second Coil of Bahamut (Savage)" => array("cleared" => FALSE), "Final Coil of Bahamut" => array("cleared" => FALSE));
 				$BCoBTurns = array("Turn 1" => array("explored" => FALSE), "Turn 2" => array("explored" => FALSE), "Turn 3" => array("explored" => FALSE), "Turn 4" => array("explored" => "Unknown"), "Turn 5" => array("explored" => FALSE));
