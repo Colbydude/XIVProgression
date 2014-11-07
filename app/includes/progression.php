@@ -1,9 +1,9 @@
-<?php //header('Content-Type: application/json');
+<?php header('Content-Type: application/json');
 
 	// TODO: L2API
 
 	// Force turn off any error reporting (cause this is kind of sloppy).
-	//error_reporting(0);
+	error_reporting(0);
 
 	// Require API.
 	require_once("../../vendor/viion/xivpads-lodestoneapi/api.php");
