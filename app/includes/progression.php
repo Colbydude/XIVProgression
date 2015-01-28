@@ -6,7 +6,7 @@
 	error_reporting(0);
 
 	// Require API.
-	require_once("../../vendor/viion/xivpads-lodestoneapi/api.php");
+	require_once("../../vendor/viion/xivpads-lodestoneapi/API.php");
 
 	// Initialize a LodestoneAPI Object
 	$API = new LodestoneAPI();

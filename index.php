@@ -1,5 +1,5 @@
 <?php
-	require_once("vendor/viion/xivpads-lodestoneapi/api.php");
+	require_once("vendor/viion/xivpads-lodestoneapi/API.php");
 
 	if (isset($_GET["name"]))
 		$name = urldecode($_GET["name"]);
