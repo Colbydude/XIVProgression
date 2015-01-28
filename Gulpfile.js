@@ -28,7 +28,7 @@ gulp.task('css', function()
 	return gulp.src(paths.dev.sass + 'app.scss')
 		.pipe(sass())
 		.pipe(autoprefixer('last 10 version'))
-		.pipe(minify({keepBreaks: false, keepSpecialComments: 0}))
+		//.pipe(minify({keepBreaks: false, keepSpecialComments: 0}))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(paths.build.css))
 		.pipe(notify('SASS compiled, prefixed, and minified to CSS.'));

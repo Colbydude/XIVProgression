@@ -140,7 +140,7 @@
 					<br>
 					<p class="text-muted">
 						<small>
-							Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker" target="_blank">November 7th 2014</a><br>
+							Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker" target="_blank">January 28th 2014</a><br>
 							By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan
 						</small>
 					</p>
@@ -162,9 +162,9 @@
 						</div>
 					</div>
 					<div id="progression-data" style="display: none;">
-						<h2>Raids</h2>
+						<h2>8-Man Raids</h2>
 						<div class="table-responsive">
-							<table class="table table-striped table-condensed" id="raids">
+							<table class="table table-striped table-condensed" id="raids-8">
 								<thead>
 									<tr>
 										<th>&nbsp;</th>
@@ -177,9 +177,23 @@
 							</table>
 						</div>
 						<p><small>* This number only reflects the number based off of the "The Binds that Tie" and "In Another Bind" achievements, not actual clears.<br>** Note that individual Turn clears can only roughly be determined by the "Mapping the Realm: X" achievements, so the results may not be accurate.</small></p>
-						<h2>EX Primals</h2>
+						<h2>24-Man Raids</h2>
 						<div class="table-responsive">
-							<table class="table table-striped table-condensed" id="ex-primals">
+							<table class="table table-striped table-condensed" id="raids-24">
+								<thead>
+									<tr>
+										<th>&nbsp;</th>
+										<th>Instance</th>
+										<th>Cleared on</th>
+										<th>Times*</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+						<h2>Trials</h2>
+						<div class="table-responsive">
+							<table class="table table-striped table-condensed" id="trials">
 								<thead>
 									<tr>
 										<th>&nbsp;</th>
