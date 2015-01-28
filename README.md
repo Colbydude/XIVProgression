@@ -10,6 +10,10 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 Release Notes
 -------------
 
+*January 28th, 2015*
+ - Update for 2.5.0 Content.
+ - Split raids into 8-man and 24-man.
+
 *October 28th, 2014*
  - Hugely refactor assets for easier development.
  - Add Final Coil of Bahamut and Akh Afah Amphitheatre EX (Shiva).
