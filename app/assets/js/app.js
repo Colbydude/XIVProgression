@@ -485,6 +485,22 @@ function updateDetails(data)
 			trials_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=250\" alt=\"Secret Ascian Man\"></td><td colspan=\"2\">Chrysalis (Nabriales)</td></tr>";
 		}
 
+		// Steps of Faith.
+		if (data["Progression"]["Trials"]["Steps of Faith"]["cleared"])
+		{
+			clear_date = new Date();
+			clear_date.setTime((data["Progression"]["Trials"]["Steps of Faith"]["date"] + "0000000000000").slice(0, 13));
+			trials_string += "<tr>";
+			trials_string += "<td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=250\" alt=\"Broken Bridges\"></td>";
+			trials_string += "<td>Steps of Faith (Vishap)</td>";
+			trials_string += "<td>" + clear_date.toDateString() + "</td>";
+			trials_string += "</tr>";
+		}
+		else
+		{
+			trials_string += "<tr class=\"danger\"><td><img class=\"xivdb-icon\" src=\"http://xivdbimg.zamimg.com/images/icons/000000/000517.png?patch=250\" alt=\"Broken Bridges\"></td><td colspan=\"2\">Steps of Faith (Vishap)</td></tr>";
+		}
+
 		// Output.
 		$("#raids-8 tbody").html(raids_8_string);
 		$("#raids-24 tbody").html(raids_24_string);

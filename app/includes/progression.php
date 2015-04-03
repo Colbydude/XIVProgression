@@ -22,7 +22,7 @@
 
 	// Parse the character.
 	$Character = $API->get(array(
-		"name" => $name, 
+		"name" => $name,
 		"server" => $server
 	));
 
@@ -47,7 +47,7 @@
 		// Kind of sketchy on using all these absolute numbers, need to find a better way to do this if possible.
 		$BattleAchievements = $API->parseAchievementsByCategory(1, $Char["id"]);
 		$ExplorationAchievements = $API->parseAchievementsByCategory(11, $Char["id"]);
-		
+
 		if ($BattleAchievements && $ExplorationAchievements)
 		{
 			$BattleAchievements = $BattleAchievements->get();
@@ -79,7 +79,8 @@
 				"Akh Afah Amphitheatre" => array("cleared" => FALSE),
 				"Urth's Fount" => array("cleared" => FALSE),
 				"Battle in the Big Keep" => array("cleared" => FALSE),
-				"Chrysalis" => array("cleared" => FALSE)
+				"Chrysalis" => array("cleared" => FALSE),
+				"Steps of Faith" => array("cleared" => FALSE)
 			);
 
 			// ----- RAIDS ----- \\
@@ -268,6 +269,9 @@
 			// Nabriales.
 			if ($BattleAchievements[1067]["obtained"])	// Secret Ascian Man
 				$Trials["Chrysalis"] = array("cleared" => TRUE, "date" => $BattleAchievements[1067]["date"]);
+			// Vishap.
+			if ($BattleAchievements[1065]["obtained"])	// Broken Bridges
+				$Trials["Steps of Faith"] = array("cleared" => TRUE, "date" => $BattleAchievements[1065]["date"]);
 
 			$Progression["Raids"] = $Raids;
 			$Progression["Trials"] = $Trials;
@@ -281,7 +285,7 @@
 	{
 		$Char = array("Error" => "Character not found.");
 	}
-	
+
 	// Combine arrays.
 	$Output = array("Character" => $Char, "Progression" => $Progression);
 
