@@ -11,14 +11,14 @@ uglify = require('gulp-uglify');				// Minifies JS.
 // --- PATHS
 var paths = {
 	'dev': {
-		'js': './app/assets/js/',
-		'sass': './app/assets/sass/',
+		'js': './resources/assets/js/',
+		'sass': './resources/assets/sass/',
 		'vendor': './bower_components/'
 	},
 	'build': {
-		'css': './css/',
-		'fonts': './fonts/',
-		'js': './js/'
+		'css': './public/css/',
+		'fonts': './public/fonts/',
+		'js': './public/js/'
 	}
 };
 
@@ -28,7 +28,7 @@ gulp.task('css', function()
 	return gulp.src(paths.dev.sass + 'app.scss')
 		.pipe(sass())
 		.pipe(autoprefixer('last 10 version'))
-		//.pipe(minify({keepBreaks: false, keepSpecialComments: 0}))
+		.pipe(minify({keepBreaks: false, keepSpecialComments: 0}))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(paths.build.css))
 		.pipe(notify('SASS compiled, prefixed, and minified to CSS.'));
@@ -36,11 +36,17 @@ gulp.task('css', function()
 
 gulp.task('js', function()
 {
+	gulp.src([
+			paths.dev.vendor + 'jquery/dist/jquery.js',
+			paths.dev.vendor + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
+		])
+		.pipe(concat('vendor.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.build.js));
+
 	return gulp.src([
-		paths.dev.vendor + 'jquery/dist/jquery.js',
-		paths.dev.vendor + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
-		paths.dev.js     + 'app.js'
-	])
+			paths.dev.js	+ '**/*.js'
+		])
 		.pipe(concat('app.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.build.js))
