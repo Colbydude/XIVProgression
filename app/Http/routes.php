@@ -11,6 +11,15 @@
 |
 */
 
-$app->get('/', function() use ($app) {
+$app->get('/', function() use ($app)
+{
     return $app->welcome();
+});
+
+$app->get('/progression', function(Illuminate\Http\Request $request)
+{
+    $name = $request->input('name');
+    $server = $request->input('server');
+
+    return view('pages/progression')->with(compact('name', 'server'));
 });

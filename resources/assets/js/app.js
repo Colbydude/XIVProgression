@@ -26,7 +26,7 @@ function checkProgression()
 	$.ajax(
 		{
 			type: "GET",
-			url: 'app/includes/progression.php',
+			url: 'includes/progression.php',
 			dataType: "json",
 			data:{
 				name: $("#name").val(),
