@@ -13,7 +13,7 @@
 
 $app->get('/', function() use ($app)
 {
-    return $app->welcome();
+    return view('pages/home');
 });
 
 $app->get('/progression', function(Illuminate\Http\Request $request)
