@@ -10,6 +10,9 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+*June 3rd, 2015*
+ - Fix error when trying to access with a trailing slash.
+
 *April 17th, 2015*
  - Start to import project into the Lumen framework.
 
