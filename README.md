@@ -10,6 +10,13 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+*June 20th, 2015*
+ - Update to Lumen 5.1.
+ - Refactor with PSR-2 Standards.
+ - Refactor to use the LodestoneAPI v5.
+ - Display Character Data even if public achievements are not enabled.
+ - Heavensward content coming soon!!
+
 *June 3rd, 2015*
  - Fix error when trying to access with a trailing slash.
 

@@ -3,6 +3,9 @@
 /bower_components
 /debug
 /node_modules
+/public/css
+/public/fonts
+/public/js
 /vendor
 .env
 .DS_Store

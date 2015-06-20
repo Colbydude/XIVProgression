@@ -11,15 +11,7 @@
 |
 */
 
-$app->get('/', function() use ($app)
-{
-    return view('pages/home');
-});
+$app->get('/',              ['as' => 'index', 'uses' => 'Controller@index']);
+$app->get('/progression',   ['as' => 'progression', 'uses' => 'Controller@progression']);
 
-$app->get('/progression', function(Illuminate\Http\Request $request)
-{
-    $name = $request->input('name');
-    $server = $request->input('server');
-
-    return view('pages/progression')->with(compact('name', 'server'));
-});
+$app->post('/api',          ['as' => 'api', 'uses' => 'ApiController@check']);

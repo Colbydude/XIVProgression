@@ -84,12 +84,12 @@
                             <option value="Zodiark" {{ $server == "Zodiark" ? "selected" : '' }}>Zodiark</option>
                         </select>
                     </div>
-                    <button type="submit" id="submit" name="submit" class="btn btn-primary">Check</button>
+                    <button type="submit" class="btn btn-primary">Check</button>
                 </form>
                 <br>
                 <p class="text-muted">
                     <small>
-                        Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker" target="_blank">April 2nd, 2015</a><br>
+                        Tool Last Updated: <a href="https://github.com/Colbydude/FFXIV-Progression-Checker" target="_blank">June 20th, 2015</a><br>
                         By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan
                     </small>
                 </p>
@@ -147,7 +147,7 @@
                                 <tr>
                                     <th>&nbsp;</th>
                                     <th>Instance</th>
-                                    <th>Cleared on</th>
+                                    <th colspan="2">Cleared on</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
