@@ -154,6 +154,7 @@ function displayEmptyRow(instanceName, small)
 function displayRaidRowByClears(instanceName, achievementData)
 {
     usedAchievement = achievementData[0];
+    firstAchievement = achievementData[0];
     lastAchievement = achievementData[0];
 
     for (var i = 0, length = achievementData.length; i < length; i++)
@@ -171,10 +172,27 @@ function displayRaidRowByClears(instanceName, achievementData)
         clear_date = new Date();
         clear_date.setTime((usedAchievement['time'] + "0000000000000").slice(0, 13));
 
+        clear_row = '<td>&nbsp;</td>';
+
+        // Display only first date if the achievement is first clear achievement.
+        if (usedAchievement['name'] == firstAchievement['name'])
+        {
+            clear_row = '<td>' + clear_date.toDateString() + '</td>';
+        }
+        // Otherwise display both the first and most recent clear date.
+        else if (usedAchievement['name'] != firstAchievement['name'])
+        {
+            first_date = new Date();
+            first_date.setTime((firstAchievement['time'] + "0000000000000").slice(0, 13));
+
+            clear_row = '<td><strong>First:</strong> ' + first_date.toDateString() + '<br><strong>Recent:</strong> ' + clear_date.toDateString() + '</td>';
+        }
+
+        // Output.
         return  '<tr>' +
                     '<td><img class="xivdb-icon" src="' + usedAchievement['icon'] + '" alt="' + usedAchievement['name'] + '"></td>' +
                     '<td><strong>' + instanceName + '</strong></td>' +
-                    '<td>' + clear_date.toDateString() + '</td>' +
+                    clear_row +
                     '<td>' + usedAchievement['times'] + '</td>' +
                 '</tr>';
     }
