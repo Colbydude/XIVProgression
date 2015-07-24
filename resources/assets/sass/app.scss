@@ -1,11 +1,13 @@
 @import "variables";
-@import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
-@import "bower_components/ubuntu-fontface/ubuntu.scss";
+@import "bower_components/materialize/sass/materialize.scss";
+@import "bower_components/fontawesome/scss/font-awesome.scss";
+
+@import "modules/multi-column";
 
 body
 {
-    font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-top: 80px;
+    background-color: color("grey", "darken-4");
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a
@@ -19,85 +21,106 @@ a
     }
 }
 
-.navbar-default
+h1
 {
-    background-color: #3371a5;
-    border-color: #295d89;
+    @media (max-width: $medium-screen)
+    {
+        font-size: 36px;
+    }
+}
 
-    .navbar-brand
+h2
+{
+    @media (max-width: $medium-screen)
+    {
+        font-size: 30px;
+    }
+}
+
+nav
+{
+    margin-bottom: 20px;
+
+    a
     {
         &,
         &:hover,
         &:focus
         {
             color: white;
-            font-weight: 500;
         }
     }
 
-    .navbar-nav
+    ul > li > a
     {
-        > li
+        &.icon-link
         {
-            > a
+            font-size: 32px;
+
+            @media (max-width: $small-screen)
             {
-                &,
-                &:hover,
-                &:focus
-                {
-                    color: white;
-                }
+                font-size: 24px;
             }
         }
     }
 
-    .navbar-toggle
+    .brand-logo
     {
-        border-color: white;
+        left: auto;
+        text-align: left;
+        transform: none;
 
-        .icon-bar
+        @media (max-width: $small-screen)
         {
-            background-color: white;
+            font-size: 18px;
         }
     }
 }
 
-.jumbotron
+.btn
 {
-    margin-top: -50px;
-    padding-bottom: 25px;
-
-    p:first-child
+    &,
+    &:hover,
+    &:focus
     {
-        margin-top: 20px;
+        color: white;
     }
 }
 
-.table-condensed > thead > tr.small > th,
-.table-condensed > tbody > tr.small > th,
-.table-condensed > tfoot > tr.small > th,
-.table-condensed > thead > tr.small > td,
-.table-condensed > tbody > tr.small > td,
-.table-condensed > tfoot > tr.small > td
+.card.instance-card
 {
-    padding: 2px 5px;
-}
+    height: auto !important;
 
-.table-condensed > tbody > tr > td:first-child
-{
-    text-align: center;
+    .card-image
+    {
+        background-position: center center;
+        background-size: cover;
+        text-shadow: 1px 1px 3px #000000;
+
+        .card-title
+        {
+            padding: 10px;
+        }
+
+        .instance-info
+        {
+            padding: 0 5px;
+            text-align: right;
+        }
+    }
 }
 
 .xivdb-icon
 {
     border-radius: 4px;
     height: 16px;
+    text-align: center;
+    vertical-align: middle;
     width: 16px;
 }
 
-.xivdb-icon-sm
+#loading
 {
-    border-radius: 2px;
-    height: 12px;
-    width: 12px;
+    padding: 40px 0;
+    text-align: center;
 }

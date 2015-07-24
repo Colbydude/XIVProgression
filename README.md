@@ -10,6 +10,11 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+*July 24th, 2015*
+ - Implement a brand new redesign.
+ - Update for 3.0.5 Content.
+ - Use relative path to include the Lodestone API. Composer gets wonky here.
+
 *June 20th, 2015*
  - Update to Lumen 5.1.
  - Refactor with PSR-2 Standards.

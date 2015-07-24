@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
+
+// Composer isn't working correctly...
+include(__DIR__ . '/../../../vendor/viion/xivpads-lodestoneapi/api-autoloader.php');
 use Viion\Lodestone\LodestoneAPI;
 
 class ApiController extends BaseController
@@ -37,6 +40,12 @@ class ApiController extends BaseController
                 $achievements->list[1040]['times'] = 1;     // Out of a Bind I
                 $achievements->list[1041]['times'] = 5;     // Out of a Bind II
                 $achievements->list[1042]['times'] = 10;    // Out of a Bind III
+                $achievements->list[1228]['times'] = 1;     // Sins of the Father I
+                $achievements->list[1229]['times'] = 5;     // Sins of the Father II
+                $achievements->list[1230]['times'] = 10;    // Sins of the Father III
+                $achievements->list[1231]['times'] = 1;     // Sins of the Savage Father I
+                $achievements->list[1232]['times'] = 5;     // Sins of the Savage Father II
+                $achievements->list[1233]['times'] = 10;    // Sins of the Savage Father III
 
                 // Get the only achievements we need.
                 $achievements = [
@@ -71,6 +80,16 @@ class ApiController extends BaseController
                     '883' => $achievements->list[883],      // You Call That a Labyrinth
                     '995' => $achievements->list[995],      // Life is a Syrcus
                     '1068' => $achievements->list[1068],    // Let the Sun Shine In
+                    // Alexander
+                    '1228' => $achievements->list[1228],    // Sins of the Father I
+                    '1229' => $achievements->list[1229],    // Sins of the Father II
+                    '1230' => $achievements->list[1230],    // Sins of the Father III
+                    '1231' => $achievements->list[1231],    // Sins of the Savage Father I
+                    '1232' => $achievements->list[1232],    // Sins of the Savage Father II
+                    '1233' => $achievements->list[1233],    // Sins of the Savage Father III
+                    '1216' => $achievements->list[1216],    // Mapping the Realm: Alexander I
+                    '1217' => $achievements->list[1217],    // Mapping the Realm: Alexander II
+                    '1218' => $achievements->list[1218],    // Mapping the Realm: Alexander III
 
                     // --- Trials --- \\
                     '855' => $achievements->list[855],      // Going Up in Flames
@@ -84,6 +103,8 @@ class ApiController extends BaseController
                     '1066' => $achievements->list[1066],    // Enough Expository Banter
                     '1067' => $achievements->list[1067],    // Secret Ascian Man
                     '1065' => $achievements->list[1065],    // Broken Bridges
+                    '1220' => $achievements->list[1220],    // Limitless
+                    '1221' => $achievements->list[1221]     // Hive Mind
                 ];
             }
             else

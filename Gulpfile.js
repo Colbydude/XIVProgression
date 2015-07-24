@@ -37,8 +37,9 @@ gulp.task('styles', function()
 // Task fonts.
 gulp.task('fonts', function()
 {
-    gulp.src([paths.dev.vendor + 'bootstrap-sass-official/assets/fonts/bootstrap/**/*.*']).pipe(gulp.dest(paths.build.fonts + 'bootstrap/'));
-    gulp.src([paths.dev.vendor + 'ubuntu-fontface/fonts/**/*.*']).pipe(gulp.dest(paths.build.fonts + 'ubuntu/'));
+    gulp.src([paths.dev.vendor + 'fontawesome/fonts/**/*.*']).pipe(gulp.dest(paths.build.fonts + 'fontawesome/'));
+    gulp.src([paths.dev.vendor + 'materialize/dist/font/material-design-icons/**/*.*']).pipe(gulp.dest(paths.build.fonts + 'material-design-icons/'));
+    gulp.src([paths.dev.vendor + 'materialize/dist/font/roboto/**/*.*']).pipe(gulp.dest(paths.build.fonts + 'roboto/'));
 });
 
 // Task scripts.
@@ -46,7 +47,7 @@ gulp.task('scripts', function()
 {
     gulp.src([
             paths.dev.vendor + 'jquery/dist/jquery.js',
-            paths.dev.vendor + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
+            paths.dev.vendor + 'materialize/dist/js/materialize.js',
         ])
         .pipe(concat('vendor.min.js'))
         .pipe(uglify())
