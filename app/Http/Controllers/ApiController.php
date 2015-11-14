@@ -90,6 +90,8 @@ class ApiController extends BaseController
                     '1216' => $achievements->list[1216],    // Mapping the Realm: Alexander I
                     '1217' => $achievements->list[1217],    // Mapping the Realm: Alexander II
                     '1218' => $achievements->list[1218],    // Mapping the Realm: Alexander III
+                    // Void Ark
+                    '1399' => $achievements->list[1399],    // Touching the Void
 
                     // --- Trials --- \\
                     '855' => $achievements->list[855],      // Going Up in Flames
@@ -104,7 +106,8 @@ class ApiController extends BaseController
                     '1067' => $achievements->list[1067],    // Secret Ascian Man
                     '1065' => $achievements->list[1065],    // Broken Bridges
                     '1220' => $achievements->list[1220],    // Limitless
-                    '1221' => $achievements->list[1221]     // Hive Mind
+                    '1221' => $achievements->list[1221],    // Hive Mind
+                    '1400' => $achievements->list[1400]     // The King and Die
                 ];
             }
             else
