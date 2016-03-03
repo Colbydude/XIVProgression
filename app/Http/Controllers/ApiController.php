@@ -46,6 +46,12 @@ class ApiController extends BaseController
                 $achievements->list[1231]['times'] = 1;     // Sins of the Savage Father I
                 $achievements->list[1232]['times'] = 5;     // Sins of the Savage Father II
                 $achievements->list[1233]['times'] = 10;    // Sins of the Savage Father III
+                $achievements->list[1476]['times'] = 1;     // Sins of the Son I
+                $achievements->list[1477]['times'] = 5;     // Sins of the Son II
+                $achievements->list[1478]['times'] = 10;    // Sins of the Son III
+                $achievements->list[1479]['times'] = 1;     // Sins of the Savage Son I
+                $achievements->list[1480]['times'] = 5;     // Sins of the Savage Son II
+                $achievements->list[1481]['times'] = 10;    // Sins of the Savage Son III
 
                 // Get the only achievements we need.
                 $achievements = [
@@ -80,18 +86,28 @@ class ApiController extends BaseController
                     '883' => $achievements->list[883],      // You Call That a Labyrinth
                     '995' => $achievements->list[995],      // Life is a Syrcus
                     '1068' => $achievements->list[1068],    // Let the Sun Shine In
-                    // Alexander
+                    // Alexander: Gordias
                     '1228' => $achievements->list[1228],    // Sins of the Father I
                     '1229' => $achievements->list[1229],    // Sins of the Father II
                     '1230' => $achievements->list[1230],    // Sins of the Father III
                     '1231' => $achievements->list[1231],    // Sins of the Savage Father I
                     '1232' => $achievements->list[1232],    // Sins of the Savage Father II
                     '1233' => $achievements->list[1233],    // Sins of the Savage Father III
-                    '1216' => $achievements->list[1216],    // Mapping the Realm: Alexander I
-                    '1217' => $achievements->list[1217],    // Mapping the Realm: Alexander II
-                    '1218' => $achievements->list[1218],    // Mapping the Realm: Alexander III
+                    '1216' => $achievements->list[1216],    // Mapping the Realm: Gordias I
+                    '1217' => $achievements->list[1217],    // Mapping the Realm: Gordias II
+                    '1218' => $achievements->list[1218],    // Mapping the Realm: Gordias III
                     // Void Ark
                     '1399' => $achievements->list[1399],    // Touching the Void
+                    // Alexander: Midas
+                    '1476' => $achievements->list[1476],    // Sins of the Son I
+                    '1477' => $achievements->list[1477],    // Sins of the Son II
+                    '1478' => $achievements->list[1478],    // Sins of the Son III
+                    '1479' => $achievements->list[1479],    // Sins of the Savage Son I
+                    '1480' => $achievements->list[1480],    // Sins of the Savage Son II
+                    '1481' => $achievements->list[1481],    // Sins of the Savage Son III
+                    '1482' => $achievements->list[1482],    // Mapping the Realm: Midas I
+                    '1483' => $achievements->list[1483],    // Mapping the Realm: Midas II
+                    '1484' => $achievements->list[1484],    // Mapping the Realm: Midas III
 
                     // --- Trials --- \\
                     '855' => $achievements->list[855],      // Going Up in Flames
@@ -107,7 +123,8 @@ class ApiController extends BaseController
                     '1065' => $achievements->list[1065],    // Broken Bridges
                     '1220' => $achievements->list[1220],    // Limitless
                     '1221' => $achievements->list[1221],    // Hive Mind
-                    '1400' => $achievements->list[1400]     // The King and Die
+                    '1400' => $achievements->list[1400],    // The King and Die
+                    '1485' => $achievements->list[1485],    // Veni Veni Venias
                 ];
             }
             else

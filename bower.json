@@ -10,6 +10,6 @@
   "dependencies": {
     "fontawesome": "~4.3.0",
     "jquery": "~2.1.4",
-    "materialize": "~0.97.0"
+    "materialize": "0.97.0"
   }
 }

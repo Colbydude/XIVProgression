@@ -59,7 +59,7 @@ gulp.task('scripts', function()
         .pipe(concat('app.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.build.js))
-        .pipe(notify('JS compiled and minified.'))
+        .pipe(notify('JS compiled and minified.'));
 });
 
 // Task watch.

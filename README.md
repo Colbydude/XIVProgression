@@ -10,6 +10,9 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+*March 2nd, 2016*
+ - Update for 3.2 Content.
+
 *November 13th, 2015*
  - Update for 3.1 Content.
 
