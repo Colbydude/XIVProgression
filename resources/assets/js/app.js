@@ -275,7 +275,7 @@ function displayCardWithTurnsByClears(instanceName, achievementData, turnData, i
             first_date.setTime((firstAchievement.time + "0000000000000").slice(0, 13));
 
             clear_date = '<strong>First:</strong> ' + first_date.toDateString() + '<br><strong>Recent:</strong> ' + clear_date.toDateString();
-            clear_times = usedAchievement.time + ' times';
+            clear_times = usedAchievement.times + ' times';
         }
     }
 
