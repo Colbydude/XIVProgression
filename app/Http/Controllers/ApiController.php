@@ -53,6 +53,8 @@ class ApiController extends BaseController
                 $achievements->list[1480]['times'] = 5;     // Sins of the Savage Son II
                 $achievements->list[1481]['times'] = 10;    // Sins of the Savage Son III
 
+
+
                 // Get the only achievements we need.
                 $achievements = [
                     // --- Raids -- \\
@@ -108,6 +110,8 @@ class ApiController extends BaseController
                     '1482' => $achievements->list[1482],    // Mapping the Realm: Midas I
                     '1483' => $achievements->list[1483],    // Mapping the Realm: Midas II
                     '1484' => $achievements->list[1484],    // Mapping the Realm: Midas III
+                    // Weeping City of Mhach
+                    '1574' => $achievements->list[1574],    // Ex Mhachina
 
                     // --- Trials --- \\
                     '855' => $achievements->list[855],      // Going Up in Flames
@@ -125,6 +129,7 @@ class ApiController extends BaseController
                     '1221' => $achievements->list[1221],    // Hive Mind
                     '1400' => $achievements->list[1400],    // The King and Die
                     '1485' => $achievements->list[1485],    // Veni Veni Venias
+                    '1601' => $achievements->list[1601],    // Let Me Be Your Hogg
                 ];
             }
             else

@@ -171,7 +171,8 @@ function updateDetails(data)
             raid24Data = displaySimpleCard('Labryinth of the Ancients', data.achievements['883'], 'labyrinth_of_the_ancients.jpg') +
                          displaySimpleCard('Syrcus Tower', data.achievements['995'], 'syrcus_tower.jpg') +
                          displaySimpleCard('World of Darkness', data.achievements['1068'], 'world_of_darkness.jpg') +
-                         displaySimpleCard('Void Ark', data.achievements['1399'], 'void_ark.jpg');
+                         displaySimpleCard('Void Ark', data.achievements['1399'], 'void_ark.jpg') +
+                         displaySimpleCard('Weeping City of Mhach', data.achievements['1574'], 'weeping_city.jpg');
 
             trialsData = displaySimpleCard('The Howling Eye', data.achievements['856'], 'garuda_ex.jpg') +
                          displaySimpleCard('The Navel', data.achievements['857'], 'titan_ex.jpg') +
@@ -187,7 +188,9 @@ function updateDetails(data)
                          displaySimpleCard('The Limitless Blue', data.achievements['1220'], 'bismark_ex.jpg') +
                          displaySimpleCard('Thok ast Thok', data.achievements['1221'], 'ravana_ex.jpg') +
                          displaySimpleCard('The Minstrel\'s Ballad: Thordan\'s Reign', data.achievements['1400'], 'kotr_hm.jpg') +
-                         displaySimpleCard('Containment Bay S1T7', data.achievements['1485'], 'sephirot_ex.jpg');
+                         displaySimpleCard('Containment Bay S1T7', data.achievements['1485'], 'sephirot_ex.jpg') +
+                         displaySimpleCard('The Minstrel\'s Ballad: Nidhogg\'s Rage', data.achievements['1601'], 'nidhogg_hm.jpg');
+
 
             $('#raids-8').html(raid8Data);
             $('#raids-24').html(raid24Data);
