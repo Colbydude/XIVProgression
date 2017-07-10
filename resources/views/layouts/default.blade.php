@@ -4,16 +4,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>@yield('meta_title', 'VoidTeam Free Company')</title>
         <meta name="description" content="@yield('meta_description', 'VoidTeam Free Company for Final Fantasy XIV: A Realm Reborn.')">
         <meta name="keywords" content="@yield('meta_keywords', 'VoidTeam, Free Company, FFXIV, Final Fantasy XIV, A Realm Reborn, ARR, Heavensward')">
         <meta name="author" content="@yield('meta_author', 'VoidTeam Network')">
-        <link href="@yield('meta_canonical', 'http://ffxiv.voidteam.net')" rel="canonical">
+        <link href="@yield('meta_canonical', 'https://ffxiv.voidteam.net')" rel="canonical">
 
         @yield('additional_meta')
 
-        <link href="/css/app.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
         @yield('additional_css')
 
@@ -29,8 +30,9 @@
     <body>
         @yield('content')
 
-        <script src="/js/vendor.min.js"></script>
+        <script src="{{ mix('/js/app.js') }}"></script>
         @yield('scripts')
+
         {{-- Google Analytics --}}
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

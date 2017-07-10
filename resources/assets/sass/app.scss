@@ -1,117 +1,83 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
 @import "variables";
-@import "bower_components/materialize/sass/materialize.scss";
-@import "bower_components/fontawesome/scss/font-awesome.scss";
 
-@import "modules/multi-column";
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-body
-{
-    background-color: color("grey", "darken-4");
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// Font Awesome
+@import "node_modules/font-awesome/scss/font-awesome";
+
+// Components.
+@import "components/multi-columns-row";
+
+body {
+    background-color: #333;
 }
 
-a
-{
-    color: #3371a5;
-
-    &:hover,
-    &:focus
-    {
-        color: #193e5f;
-    }
-}
-
-h1
-{
-    @media (max-width: $medium-screen)
-    {
+h1 {
+    @media (max-width: $screen-md) {
         font-size: 36px;
     }
 }
 
-h2
-{
-    @media (max-width: $medium-screen)
-    {
+h2 {
+    @media (max-width: $screen-md) {
         font-size: 30px;
     }
 }
 
-nav
-{
+.navbar-inverse {
+    background-color: #1b1b1b;
     margin-bottom: 20px;
 
-    a
-    {
-        &,
-        &:hover,
-        &:focus
-        {
-            color: white;
-        }
-    }
-
-    ul > li > a
-    {
-        &.icon-link
-        {
-            font-size: 32px;
-
-            @media (max-width: $small-screen)
-            {
-                font-size: 24px;
-            }
-        }
-    }
-
-    .brand-logo
-    {
-        left: auto;
-        text-align: left;
-        transform: none;
-
-        @media (max-width: $small-screen)
-        {
-            font-size: 18px;
+    ul > li > a {
+        &.icon-link {
+            font-size: 22px;
         }
     }
 }
 
-.btn
-{
+.btn {
     &,
     &:hover,
-    &:focus
-    {
+    &:focus {
         color: white;
     }
 }
 
-.card.instance-card
-{
-    height: auto !important;
+.instance-panel {
+    border: none;
 
-    .card-image
-    {
+    .panel-image {
         background-position: center center;
         background-size: cover;
+        min-height: 101px;
+        position: relative;
         text-shadow: 1px 1px 3px #000000;
 
-        .card-title
-        {
-            padding: 10px;
+        .panel-title {
+            bottom: 0;
+            color: white;
+            padding: 0 5px;
+            position: absolute;
         }
 
-        .instance-info
-        {
+        .instance-info {
             padding: 0 5px;
             text-align: right;
         }
     }
 }
 
-.xivdb-icon
-{
+.text-light {
+    color: white;
+}
+
+.xivdb-icon {
     border-radius: 4px;
     height: 16px;
     text-align: center;
@@ -119,8 +85,7 @@ nav
     width: 16px;
 }
 
-#loading
-{
+#loading {
     padding: 40px 0;
     text-align: center;
 }

@@ -1,16 +1,16 @@
-$(document).ready(function ()
-{
+// Bootstrapper.
+require('./bootstrap');
+
+$(document).ready(function () {
     // Get data immediately if URL parameters are defined.
     var name = $('#name').val().trim();
     var server = $('#server').val().trim();
 
-    if (name.length && server.length)
-    {
+    if (name.length && server.length) {
         checkProgression();
     }
 
-    $('#check-form').submit(function(e)
-    {
+    $('#check-form').submit(function(e) {
         e.preventDefault();
         checkProgression();
         history.pushState({}, '', '?name=' + $('#name').val() + '&server=' + $('#server').val());
@@ -25,42 +25,32 @@ function checkProgression()
     $('#loading .preloader-wrapper').show();
 
     $('#loading h1').text('Fetching data...');
-    $.ajax(
-    {
-        type: 'POST',
-        url: '/api',
-        dataType: 'json',
-        data:{
-            name: $('#name').val(),
-            server: $('#server').val()
-        },
-        success: function (data)
-        {
-            updateDetails(data);
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown)
-        {
-            // Error actions.
-            $('#loading h1').text('A failure occurred in attempting to fetch the data.');
-            $('#loading .preloader-wrapper').hide();
-        }
+
+    axios.post('/api/progression', {
+        name: $('#name').val(),
+        server: $('#server').val()
+    })
+    .then(function (response) {
+        updateDetails(response.data);
+    })
+    .catch(function (error) {
+        console.log(error);
+        $('#loading h1').text('A failure occurred in attempting to fetch the data.');
+        $('#loading .preloader-wrapper').hide();
     });
 }
 
 function updateDetails(data)
 {
-    if (!('error' in data.character))
-    {
+    if (!('error' in data.character)) {
         $('#character_portrait').attr('src', data.character.portrait);
         $('#character_name').text(data.character.name);
         $('#lodestone_profile').attr('href', 'http://na.finalfantasyxiv.com/lodestone/character/' + data.character.id);
-        $('#active_class').html(data.character.activeJob !== null ? data.character.activeJob : data.character.activeClass);
-        $('#active_class_level').html(data.character.activeLevel);
-        $('#active_avg_ilvl').html(data.character.gearStats.average);
+        $('#active_class').html(data.character.active_class.name);
+        $('#active_class_level').html(data.character.active_class.level);
         $('#character-data').show();
 
-        if (!('error' in data.achievements))
-        {
+        if (!('error' in data.achievements)) {
             raid8Data = displayCardWithTurnsByClears('The Binding Coil of Bahamut',
                             new Array(
                                 data.achievements['747'],
@@ -199,14 +189,12 @@ function updateDetails(data)
             $('#loading').hide();
             $('#progression-data').show();
         }
-        else
-        {
+        else {
             $('#loading h1').text(data.achievements.error);
             $('#loading .preloader-wrapper').hide();
         }
     }
-    else
-    {
+    else {
         $('#loading h1').text(data.character.error);
         $('#loading .preloader-wrapper').hide();
     }
@@ -217,21 +205,18 @@ function displaySimpleCard(instanceName, achievementData, image)
     var clear_date = '';
     var grayscale = "grayscale_";
 
-    if (achievementData.obtained)
-    {
-        clear_date = new Date();
-        clear_date.setTime((achievementData.time + "0000000000000").slice(0, 13));
-        clear_date = clear_date.toDateString();
+    if (achievementData.timestamp !== null) {
+        clear_date = moment(achievementData.timestamp).format('MMMM Do YYYY, h:mm a');
         grayscale = '';
     }
 
-    return  '<div class="col s12 m6 l4">' +
-                '<div class="card small instance-card hoverable">' +
-                    '<div class="card-image" style="background-image: url(\'/img/cards/' + grayscale + image + '\');">' +
-                        '<div class="instance-info white-text">' +
+    return  '<div class="col-md-6 col-lg-4">' +
+                '<div class="panel panel-default instance-panel">' +
+                    '<div class="panel-image" style="background-image: url(\'/img/cards/' + grayscale + image + '\');">' +
+                        '<div class="instance-info text-light">' +
                             '<span class="instance-clear-date">' + clear_date + '</span>' +
                         '</div>' +
-                        '<span class="card-title">' + instanceName + '</span>' +
+                        '<span class="panel-title">' + instanceName + '</span>' +
                     '</div>' +
                 '</div>' +
             '</div>';
@@ -249,51 +234,46 @@ function displayCardWithTurnsByClears(instanceName, achievementData, turnData, i
     var firstAchievement = achievementData[0];
     var lastAchievement = achievementData[0];
 
-    for (var i = 0, length = achievementData.length; i < length; i++)
-    {
-        if (i == length - 1 && achievementData[i].obtained)
+    for (var i = 0, length = achievementData.length; i < length; i++) {
+        if (i == length - 1 && achievementData[i].obtained) {
             usedAchievement = achievementData[i];
-        else if (i != length - 1 && achievementData[i].obtained)
+        }
+        else if (i != length - 1 && achievementData[i].obtained) {
             lastAchievement = achievementData[i];
-        else
+        }
+        else {
             usedAchievement = lastAchievement;
+        }
     }
 
-    if (usedAchievement.obtained)
-    {
-        clear_date = new Date();
-        clear_date.setTime((usedAchievement.time + "0000000000000").slice(0, 13));
+    if (usedAchievement.timestamp !== null) {
+        clear_date = moment(usedAchievement.timestamp).format('MMMM Do YYYY, h:mm a');
         grayscale = '';
 
         // Display only first date if the achievement is first clear achievement.
-        if (usedAchievement.name == firstAchievement.name)
-        {
-            clear_date = clear_date.toDateString();
+        if (usedAchievement.name == firstAchievement.name) {
             clear_times = '1 time';
         }
         // Otherwise display both the first and most recent clear date.
-        else if (usedAchievement.name != firstAchievement.name)
-        {
-            first_date = new Date();
-            first_date.setTime((firstAchievement.time + "0000000000000").slice(0, 13));
+        else if (usedAchievement.name != firstAchievement.name) {
+            first_date = moment(firstAchievement.timestamp).format('MMMM Do YYYY, h:mm a');
 
-            clear_date = '<strong>First:</strong> ' + first_date.toDateString() + '<br><strong>Recent:</strong> ' + clear_date.toDateString();
+            clear_date = '<strong>First:</strong> ' + first_date + '<br><strong>Recent:</strong> ' + clear_date;
             clear_times = usedAchievement.times + ' times';
         }
     }
 
-    return  '<div class="col s12 m6 l4">' +
-                '<div class="card small instance-card hoverable">' +
-                    '<div class="card-image" style="background-image: url(\'/img/cards/' + grayscale + image + '\');">' +
-                        '<div class="instance-info white-text">' +
+    return  '<div class="col-md-6 col-lg-4">' +
+                '<div class="panel panel-default instance-panel">' +
+                    '<div class="panel-image" style="background-image: url(\'/img/cards/' + grayscale + image + '\');">' +
+                        '<div class="instance-info text-light">' +
                             '<span class="instance-clear-date">' + clear_date + '</span><br>' +
                             '<small><span class="instance-clear-times">' + clear_times + '</span></small>' +
                         '</div>' +
-                        '<span class="card-title">' + instanceName + '</span>' +
+                        '<span class="panel-title">' + instanceName + '</span>' +
                     '</div>' +
-                    '<table class="condensed striped table-responsive">' +
+                    '<table class="table table-condensed table-striped">' +
                         '<thead>' +
-                            '<th>&nbsp;</th>' +
                             '<th>Instance</th>' +
                             '<th>Cleared</th>' +
                         '</thead>' +
@@ -312,28 +292,26 @@ function displayCardWithTurnsByTurns(instanceName, achievementData, turnData, im
     var cleared = true;
     var grayscale = "grayscale_";
 
-    achievementData.forEach(function (achievement)
-    {
-        if (achievement.obtained === false)
+    achievementData.forEach(function (achievement) {
+        if (achievement.timestamp === null) {
             cleared = false;
+        }
     });
 
-    if (cleared)
-    {
+    if (cleared) {
         grayscale = '';
     }
 
-    return  '<div class="col s12 m6 l4">' +
-                '<div class="card small instance-card hoverable">' +
-                    '<div class="card-image" style="background-image: url(\'/img/cards/' + grayscale + image + '\');">' +
-                        '<div class="instance-info white-text">' +
+    return  '<div class="col-md-6 col-lg-4">' +
+                '<div class="panel panel-default instance-panel">' +
+                    '<div class="panel-image" style="background-image: url(\'/img/cards/' + grayscale + image + '\');">' +
+                        '<div class="instance-info text-light">' +
                             //'<span class="instance-clear-date">' + clear_date + '</span>' +
                         '</div>' +
-                        '<span class="card-title">' + instanceName + '</span>' +
+                        '<span class="panel-title">' + instanceName + '</span>' +
                     '</div>' +
-                    '<table class="condensed striped table-responsive">' +
+                    '<table class="table table-condensed table-striped">' +
                         '<thead>' +
-                            '<th>&nbsp;</th>' +
                             '<th>Instance</th>' +
                             '<th>Cleared</th>' +
                         '</thead>' +
@@ -349,17 +327,11 @@ function displayRow(instanceName, achievementData)
 {
     var clear_date = 'Not yet cleared.';
 
-    if (achievementData.obtained)
-    {
-
-        clear_date = new Date();
-        clear_date.setTime((achievementData.time + "0000000000000").slice(0, 13));
-
-        clear_date = clear_date.toDateString();
+    if (achievementData.timestamp !== null) {
+        clear_date = moment(achievementData.timestamp).format('MMMM Do YYYY, h:mm a');
     }
 
     return  '<tr>' +
-                '<td><img class="xivdb-icon" src="' + achievementData.icon + '" alt="' + achievementData.name + '"></td>' +
                 '<td>' + instanceName + '</td>' +
                 '<td>' + clear_date + '</td>' +
             '</tr>';
@@ -368,8 +340,7 @@ function displayRow(instanceName, achievementData)
 function displayEmptyRow(instanceName)
 {
     return  '<tr>' +
-                '<td>&nbsp;</td>' +
                 '<td>' + instanceName + '</td>' +
-                '<td colspan="2">No corresponding achievement.</td>' +
+                '<td>No corresponding achievement.</td>' +
             '</tr>';
 }
