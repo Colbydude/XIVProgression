@@ -156,13 +156,66 @@ function updateDetails(data)
                                 displayEmptyRow('Arm of the Son (Savage)'),
                                 displayEmptyRow('Burden of the Son (Savage)')
                             ),
-                        'a8.jpg');
+                        'a8.jpg') +
+                        displayCardWithTurnsByClears('Alexander: The Creator',
+                            new Array(
+                                data.achievements['1639'],
+                                data.achievements['1640'],
+                                data.achievements['1641']
+                            ),
+                            new Array(
+                                displayRow('Eyes of the Creator', data.achievements['1645']),
+                                displayRow('Breath of the Creator', data.achievements['1646']),
+                                displayRow('Heart of the Creator', data.achievements['1647']),
+                                displayEmptyRow('Soul of the Creator')
+                            ),
+                        'a12.jpg') +
+                        displayCardWithTurnsByClears('Alexander: The Creator (Savage)',
+                            new Array(
+                                data.achievements['1642'],
+                                data.achievements['1643'],
+                                data.achievements['1644']
+                            ),
+                            new Array(
+                                displayEmptyRow('Eyes of the Creator (Savage)'),
+                                displayEmptyRow('Breath of the Creator (Savage)'),
+                                displayEmptyRow('Heart of the Creator (Savage)'),
+                                displayEmptyRow('Soul of the Creator (Savage)')
+                            ),
+                        'a12.jpg') +
+                        displayCardWithTurnsByClears('Interdimensional Rift: Deltascape',
+                            new Array(
+                                data.achievements['1895'],
+                                data.achievements['1896'],
+                                data.achievements['1897']
+                            ),
+                            new Array(
+                                displayEmptyRow('V1.0'),
+                                displayEmptyRow('V2.0'),
+                                displayEmptyRow('V3.0'),
+                                displayEmptyRow('V4.0')
+                            ),
+                        'ird4.jpg') +
+                        displayCardWithTurnsByClears('Interdimensional Rift: Deltascape (Savage)',
+                            new Array(
+                                data.achievements['1898'],
+                                data.achievements['1899'],
+                                data.achievements['1900']
+                            ),
+                            new Array(
+                                displayEmptyRow('V1.0 (Savage)'),
+                                displayEmptyRow('V2.0 (Savage)'),
+                                displayEmptyRow('V3.0 (Savage)'),
+                                displayEmptyRow('V4.0 (Savage)')
+                            ),
+                        'ird4.jpg');
 
             raid24Data = displaySimpleCard('Labryinth of the Ancients', data.achievements['883'], 'labyrinth_of_the_ancients.jpg') +
                          displaySimpleCard('Syrcus Tower', data.achievements['995'], 'syrcus_tower.jpg') +
                          displaySimpleCard('World of Darkness', data.achievements['1068'], 'world_of_darkness.jpg') +
                          displaySimpleCard('Void Ark', data.achievements['1399'], 'void_ark.jpg') +
-                         displaySimpleCard('Weeping City of Mhach', data.achievements['1574'], 'weeping_city.jpg');
+                         displaySimpleCard('Weeping City of Mhach', data.achievements['1574'], 'weeping_city.jpg') +
+                         displaySimpleCard('Dun Scaith', data.achievements['1689'], 'dun_scaith.jpg');
 
             trialsData = displaySimpleCard('The Howling Eye', data.achievements['856'], 'garuda_ex.jpg') +
                          displaySimpleCard('The Navel', data.achievements['857'], 'titan_ex.jpg') +
@@ -179,7 +232,11 @@ function updateDetails(data)
                          displaySimpleCard('Thok ast Thok', data.achievements['1221'], 'ravana_ex.jpg') +
                          displaySimpleCard('The Minstrel\'s Ballad: Thordan\'s Reign', data.achievements['1400'], 'kotr_hm.jpg') +
                          displaySimpleCard('Containment Bay S1T7', data.achievements['1485'], 'sephirot_ex.jpg') +
-                         displaySimpleCard('The Minstrel\'s Ballad: Nidhogg\'s Rage', data.achievements['1601'], 'nidhogg_hm.jpg');
+                         displaySimpleCard('The Minstrel\'s Ballad: Nidhogg\'s Rage', data.achievements['1601'], 'nidhogg_hm.jpg') +
+                         displaySimpleCard('Containment Bay P1T6', data.achievements['1636'], 'sophia_ex.jpg') +
+                         displaySimpleCard('Containment Bay Z1T9', data.achievements['1685'], 'zurvan_ex.jpg') +
+                         displaySimpleCard('Emanation', data.achievements['1901'], 'lakshmi_ex.jpg') +
+                         displaySimpleCard('The Pool of Tribute', data.achievements['1902'], 'susano_ex.jpg');
 
 
             $('#raids-8').html(raid8Data);

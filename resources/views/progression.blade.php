@@ -93,9 +93,8 @@
                 </div>
                 <p class="text-light">
                     <small>
-                        Tool Last Updated: <a href="https://github.com/Colbydude/FFXIVProgressionChecker" target="_blank">July 10th, 2017</a><br>
-                        By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan<br>
-                        Further updates coming later this week.
+                        Tool Last Updated: <a href="https://github.com/Colbydude/FFXIVProgressionChecker" target="_blank">August 2nd, 2017</a><br>
+                        By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan
                     </small>
                 </p>
             </div>

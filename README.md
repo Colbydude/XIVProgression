@@ -10,6 +10,13 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+*August 2nd, 2017*
+- Update for 4.05 Content.
+- Update for 4.01 Content.
+- Update for 4.0 Content.
+- Update for 3.5 Content.
+- Update for 3.4 Content.
+
 *July 10th, 2017*
  - Update app to Laravel 5.4.
  - Implement first phase redesign.
