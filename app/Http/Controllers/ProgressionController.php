@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Character;
 use Illuminate\Http\Request;
 use Lodestone\Api as LodestoneApi;
+use Log;
 
 class ProgressionController extends Controller
 {
@@ -29,75 +31,80 @@ class ProgressionController extends Controller
      */
     public function fetch(Request $request)
     {
-        // Instantiate API.
-        $api = new LodestoneApi();
+        Log::info($request->all());
 
         // POST variables.
         $name = $request->input('name');
         $server = $request->input('server');
 
-        try {
-            // Search for the character.
-            $search = (Object) $api->searchCharacter($name, $server);
+        // Check the database for the character already.
+        $character = Character::where('name', $name)->where('server', $server)->first();
 
-            if (empty($search->results)) {
-                return response()->json([
-                    'character' => ['error' => 'Character not found.']
+        if ($character == null) {
+            // Instantiate API.
+            $api = new LodestoneApi();
+
+            try {
+                // Search for the character on the Lodestone.
+                $search = $api->searchCharacter($name, $server);
+
+                if (empty($search->getCharacters())) {
+                    return response()->json(['error' => 'Character not found.'], 404);
+                }
+
+                $result = $search->getCharacters()[0]->toArray();
+
+                $character = Character::create([
+                    'lodestone_id' => $result['id'],
+                    'name' => $result['name'],
+                    'server' => $result['server'],
+                    'avatar' => $result['avatar']
                 ]);
             }
-
-            // Set ID from results.
-            $id = $search->results[0]['id'];
-
-            // Get character information.
-            $character = (Object) $api->getCharacter($id);
-
-            // Get character's achievements.
-            $battleAchievements = $api->getCharacterAchievements($id, 1);
-
-            // First check if achievements are private.
-            if ($battleAchievements == "private") {
-                return response()->json([
-                    'character' => $character,
-                    'achievements' => ['error' => 'This character does not have public achievement viewing enabled.']
-                ]);
+            catch (HttpMaintenanceValidationException $e) {
+                return response()->json(['error' => 'Lodestone is down for maintenance.'], 403);
             }
-
-            // Fetch the rest of the achievements.
-            $characterAchievements = $api->getCharacterAchievements($id, 2);
-            $explorationAchievements = $api->getCharacterAchievements($id, 11);
-
-            $achievements = (Object) [
-                // NOTE: We're "adding" arrays to retain keys.
-                'list' => $battleAchievements['list'] + $characterAchievements['list'] + $explorationAchievements['list'],
-                'points' => [
-                    'possible' => $battleAchievements['points']['possible'] + $characterAchievements['points']['possible'] + $explorationAchievements['points']['possible'],
-                    'obtained' => $battleAchievements['points']['obtained'] + $characterAchievements['points']['obtained'] + $explorationAchievements['points']['obtained'],
-                ]
-            ];
-
-            $achievements = $this->formatAchievements($achievements);
+            catch (HttpNotFoundValidationException $e) {
+                return response()->json(['error' => 'Character not found.'], 404);
+            }
+            catch (ValidationException $e) {
+                return response()->json(['error' => 'Unexpected data found. Lodestone may have updated.'], 400);
+            }
         }
-        catch (HttpMaintenanceValidationException $e) {
+
+        return response()->json($character, 200);
+
+        // Set ID from results.
+        /*$id = $search->results[0]['id'];
+
+        // Get character information.
+        $character = (Object) $api->getCharacter($id);
+
+        // Get character's achievements.
+        $battleAchievements = $api->getCharacterAchievements($id, 1);
+
+        // First check if achievements are private.
+        if ($battleAchievements == "private") {
             return response()->json([
-                'character' => ['error' => 'Lodestone is down for maintenance.']
-            ]);
-        }
-        catch (HttpNotFoundValidationException $e) {
-            return response()->json([
-                'character' => ['error' => 'Character not found.']
-            ]);
-        }
-        catch (ValidationException $e) {
-            return response()->json([
-                'character' => ['error' => 'Unexpected data found. Lodestone may have updated.']
+                'character' => $character,
+                'achievements' => ['error' => 'This character does not have public achievement viewing enabled.']
             ]);
         }
 
-        return response()->json([
-            'character' => $character,
-            'achievements' => $achievements
-        ]);
+        // Fetch the rest of the achievements.
+        $characterAchievements = $api->getCharacterAchievements($id, 2);
+        $explorationAchievements = $api->getCharacterAchievements($id, 11);
+
+        $achievements = (Object) [
+            // NOTE: We're "adding" arrays to retain keys.
+            'list' => $battleAchievements['list'] + $characterAchievements['list'] + $explorationAchievements['list'],
+            'points' => [
+                'possible' => $battleAchievements['points']['possible'] + $characterAchievements['points']['possible'] + $explorationAchievements['points']['possible'],
+                'obtained' => $battleAchievements['points']['obtained'] + $characterAchievements['points']['obtained'] + $explorationAchievements['points']['obtained'],
+            ]
+        ];
+
+        $achievements = $this->formatAchievements($achievements);*/
     }
 
     /**

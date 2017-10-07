@@ -13,4 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::match(['GET', 'POST'], '/progression', 'ProgressionController@fetch');
+Route::match(['GET', 'POST'], '/fetch', 'ProgressionController@fetch');

@@ -12,13 +12,13 @@
         <meta name="author" content="@yield('meta_author', 'VoidTeam Network')">
         <link href="@yield('meta_canonical', 'https://ffxiv.voidteam.net')" rel="canonical">
 
-        @yield('additional_meta')
+        @stack('additional_meta')
 
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
-        @yield('additional_css')
+        @stack('additional_css')
 
-        @yield('header_scripts')
+        @stack('header_scripts')
 
         {{-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --}}
         {{-- WARNING: Respond.js doesn't work if you view the page via file:// --}}
@@ -28,10 +28,12 @@
         <![endif]-->
     </head>
     <body>
-        @yield('content')
+        <div id="app">
+            @yield('content')
+        </div>
 
         <script src="{{ mix('/js/app.js') }}"></script>
-        @yield('scripts')
+        @stack('scripts')
 
         {{-- Google Analytics --}}
         <script>
