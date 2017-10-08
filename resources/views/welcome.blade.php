@@ -1,62 +1,69 @@
-@extends('layouts.default')
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('additional_css')
-    <link href="//fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <style>
-        html
-        {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-        }
+        <title>VoidTeam Free Company</title>
+        <meta name="description" content="VoidTeam Free Company for Final Fantasy XIV Online.">
+        <meta name="keywords" content="VoidTeam, Free Company, FFXIV, Final Fantasy XIV, A Realm Reborn, ARR, Heavensward, Stormblood">
+        <meta name="author" content="VoidTeam Network">
+        <link href="https://ffxiv.voidteam.net" rel="canonical">
 
-        body
-        {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('../img/stormblood-bg.jpg');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
-        }
+        {{-- Fonts --}}
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200" rel="stylesheet" type="text/css">
 
-        .container
-        {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
-        }
+        {{-- Styles --}}
+        <style>
+            html, body {
+                background-color: #fff;
+                color: white;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
 
-        .content
-        {
-            text-align: center;
-            display: inline-block;
-        }
+            body {
+                background-image: url('../img/stormblood-bg.jpg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
 
-        .title
-        {
-            font-size: 96px;
-            margin-bottom: 40px;
-        }
+            .full-height {
+                height: 100vh;
+            }
 
-        .quote
-        {
-            font-size: 24px;
-        }
-    </style>
-@stop
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
 
-@section('content')
-    <div class="container">
-        <div class="content">
-            <div class="title">&lt;VOID&gt;</div>
+            .position-ref {
+                position: relative;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            <div class="content">
+                <div class="title">
+                    &lt;VOID&gt;
+                </div>
+            </div>
         </div>
-    </div>
-@stop
+
+        @include('layouts.partials.google-analytics')
+    </body>
+</html>

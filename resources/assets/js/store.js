@@ -1,15 +1,23 @@
 import axios from 'axios';
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { AchievementCards } from './achievement-card-data';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
+        achievementCards: AchievementCards,
         achievements: null,
         achievementsLoading: false,
         character: null,
         characterLoading: false
+    },
+
+    getters: {
+        getAchievement: (state, getters) => (id) => {
+            return state.achievements[id];
+        }
     },
 
     mutations: {
@@ -33,7 +41,7 @@ export default new Vuex.Store({
     actions: {
         fetchAchievementsFromXIVDB (context, id) {
             $.ajax({
-                url: 'https://api.xivdb.com/character/' + id + '?data=achievements_obtained',
+                url: 'https://api.xivdb.com/character/' + id + '?data=achievements',
                 dataType: 'json',
             })
             .done(data =>  {

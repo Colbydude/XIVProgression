@@ -37,9 +37,9 @@
 
         data () {
             return {
-                name: '',
-                server: '',
-                servers: [
+                name: '',           // Currently input character name.
+                server: '',         // Currently selected server.
+                servers: [          // List of available servers.
                     'Adamantoise',
                     'Aegis',
                     'Alexander',

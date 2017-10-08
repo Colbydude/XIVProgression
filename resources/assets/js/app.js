@@ -8,7 +8,9 @@
 require('./bootstrap');
 import store from './store';
 
+
 window.Vue = require('vue');
+Vue.prototype.$time = moment;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16,6 +18,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('achievement-card', require('./components/achievement-card'));
 Vue.component('achievements-list', require('./components/achievements-list'));
 Vue.component('character-pane', require('./components/character-pane'));
 Vue.component('search-form', require('./components/search-form'));

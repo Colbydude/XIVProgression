@@ -18,7 +18,6 @@ class CreateCharactersTable extends Migration
             $table->unsignedInteger('lodestone_id');
             $table->string('name');
             $table->string('server');
-            $table->string('avatar');
             $table->timestamps();
         });
     }
