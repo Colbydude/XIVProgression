@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Character;
+use Exception;
 use Illuminate\Http\Request;
 use Lodestone\Api as LodestoneApi;
+use Lodestone\Validator\Exceptions\HttpMaintenanceValidationException;
+use Lodestone\Validator\Exceptions\HttpNotFoundValidationException;
+use Lodestone\Validator\Exceptions\ValidationException;
 use Log;
 
 class ProgressionController extends Controller
@@ -41,10 +45,10 @@ class ProgressionController extends Controller
         $character = Character::where('name', $name)->where('server', $server)->first();
 
         if ($character == null) {
-            // Instantiate API.
-            $api = new LodestoneApi();
-
             try {
+                // Instantiate API.
+                $api = new LodestoneApi();
+
                 // Search for the character on the Lodestone.
                 $search = $api->searchCharacter($name, $server);
 
@@ -54,7 +58,6 @@ class ProgressionController extends Controller
 
                 $result = $search->getCharacters()[0]->toArray();
 
-                // NOTE: Not sure why I get two requests hitting this, but this works.
                 $character = Character::updateOrCreate([
                     'lodestone_id' => $result['id'],
                     'name' => $result['name'],
@@ -69,6 +72,9 @@ class ProgressionController extends Controller
             }
             catch (ValidationException $e) {
                 return response()->json(['error' => 'Unexpected data found. Lodestone may have updated.'], 400);
+            }
+            catch (Exception $e) {
+                return response()->json(['error' => 'Unexpected error occurred.'], 500);
             }
         }
 

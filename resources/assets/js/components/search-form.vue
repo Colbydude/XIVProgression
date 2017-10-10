@@ -1,5 +1,5 @@
 <template>
-    <form id="search-form" @submit="fetch">
+    <form id="search-form" @submit="formSubmit">
         <div class="form-group">
             <label for="name">Character Name</label>
             <input type="text" id="name" name="name" class="form-control" v-model="name" required>
@@ -31,7 +31,7 @@
 
             // Fetch initial data if provided from the URL.
             if (this.name !== '' && this.server !== '') {
-                this.fetch(event);
+                this.fetch();
             }
         },
 
@@ -115,7 +115,7 @@
             /**
              * Fetch character information from DB. If character is not in DB, fetch it from the Lodestone.
              */
-            fetch (event) {
+            fetch () {
                 this.setCharacterLoading(true);
                 this.setAchievementsLoading(true);
 
@@ -130,11 +130,27 @@
                     this.fetchAchievementsFromXIVDB(response.data.lodestone_id);
                 })
                 .catch(error => {
-                    console.log(error);
+                    console.log(error.response);
+
+                    // TODO: Pretty this up.
+                    if (error.response.data.error !== undefined) {
+                        alert(error.response.data.error);
+                    }
+
+                    this.setCharacterLoading(false);
+                    this.setAchievementsLoading(false);
                 });
 
                 // NOTE: Return false so the form doesn't actually submit.
                 return false;
+            },
+
+            /**
+             * Run when the form is submitted.
+             */
+            formSubmit (event) {
+                event.preventDefault();
+                this.fetch();
             },
 
             ...mapActions(['fetchAchievementsFromXIVDB', 'fetchCharacterFromXIVDB']),

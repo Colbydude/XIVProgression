@@ -21,6 +21,7 @@ Vue.prototype.$time = moment;
 Vue.component('achievement-card', require('./components/achievement-card'));
 Vue.component('achievements-list', require('./components/achievements-list'));
 Vue.component('character-pane', require('./components/character-pane'));
+Vue.component('job-list-item', require('./components/job-list-item'));
 Vue.component('search-form', require('./components/search-form'));
 
 const app = new Vue({
