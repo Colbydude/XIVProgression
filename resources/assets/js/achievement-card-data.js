@@ -243,6 +243,13 @@ export const AchievementCards = {
             expansion: 'Heavensward',
             achievement_id: 1689,
             image: 'dun_scaith.jpg'
+        },
+        {
+            name: 'The Royal City of Rabanastre',               // Zodiac Thriller
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 1992,
+            image: 'rabanastre.jpg'
         }
     ],
     'trials': [
@@ -338,7 +345,7 @@ export const AchievementCards = {
             image: 'ravana_ex.jpg'
         },
         {
-            name: 'The Minstrel\'s Ballad: Thordan\'s Reign',   // The Kiing and Die
+            name: 'Minstrel\'s Ballad: Thordan\'s Reign',       // The Kiing and Die
             type: 'single',
             expansion: 'Heavensward',
             achievement_id: 1400,
@@ -352,7 +359,7 @@ export const AchievementCards = {
             image: 'sephirot_ex.jpg'
         },
         {
-            name: 'The Minstrel\'s Ballad: Nidhogg\'s Rage',    // Let Me Be Your Hogg
+            name: 'Minstrel\'s Ballad: Nidhogg\'s Rage',        // Let Me Be Your Hogg
             type: 'single',
             expansion: 'Heavensward',
             achievement_id: 1601,
@@ -385,6 +392,13 @@ export const AchievementCards = {
             expansion: 'Stormblood',
             achievement_id: 1902,
             image: 'susano_ex.jpg',
+        },
+        {
+            name: 'Minstrel\'s Ballad: Shinryu\'s Domain',      // How to Slay Your Dragon 2
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 1989,
+            image: 'shinryu_ex.jpg'
         }
     ]
 }

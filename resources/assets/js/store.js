@@ -50,6 +50,13 @@ export default new Vuex.Store({
             })
             .fail(error => {
                 console.log(error);
+
+                // TODO: Pretty this up.
+                if (error.responseJSON.error !== undefined) {
+                    alert(error.responseJSON.error);
+                }
+
+                context.commit('setAchievementsLoading', false);
             });
         },
 
@@ -64,6 +71,13 @@ export default new Vuex.Store({
             })
             .fail(error => {
                 console.log(error);
+
+                // TODO: Pretty this up.
+                if (error.responseJSON.error !== undefined) {
+                    alert(error.responseJSON.error);
+                }
+
+                context.commit('setCharacterLoading', false);
             });
         }
     }

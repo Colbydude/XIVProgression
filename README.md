@@ -14,6 +14,7 @@ Release Notes
 - Full rebuild using Vue and referencing the XIVDB API for better performance.
 - Addition of link to character's XIVDB Profile.
 - Addition of character's class information.
+- Update for 4.1 Content.
 
 *August 2nd, 2017*
 - Update for 4.05 Content.
