@@ -10,6 +10,9 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+*October 27th, 2017*
+- Update for 4.11 Content.
+
 *October 10th, 2017*
 - Full rebuild using Vue and referencing the XIVDB API for better performance.
 - Addition of link to character's XIVDB Profile.

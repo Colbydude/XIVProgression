@@ -199,6 +199,13 @@ export const AchievementCards = {
                 {name: 'V3.0 (Savage)'},
                 {name: 'V4.0 (Savage)'}
             ]
+        },
+        {
+            name: 'The Unending Coil of Bahamut',               // Resistance is Futile
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 1993,
+            image: 'bahamut_prime_ultimate.jpg'
         }
     ],
     '24-man': [
