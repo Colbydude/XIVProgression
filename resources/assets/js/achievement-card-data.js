@@ -206,6 +206,40 @@ export const AchievementCards = {
             expansion: 'Stormblood',
             achievement_id: 1993,
             image: 'bahamut_prime_ultimate.jpg'
+        },
+        {
+            name: 'Omega: Sigmascape',
+            type: 'clear-by-clears',
+            expansion: 'Stormblood',
+            image: 'os4.jpg',
+            achievementData: [
+                {id: 2024, times: 1},                           // I Am The Sigma, I Am The Omega I
+                {id: 2025, times: 5},                           // I Am The Sigma, I Am The Omega II
+                {id: 2026, times: 10}                           // I Am The Sigma, I Am The Omega III
+            ],
+            turnData: [
+                {name: 'V1.0'},
+                {name: 'V2.0'},
+                {name: 'V3.0'},
+                {name: 'V4.0'}
+            ]
+        },
+        {
+            name: 'Omega: Sigmascape (Savage)',
+            type: 'clear-by-clears',
+            expansion: 'Stormblood',
+            image: 'os4.jpg',
+            achievementData: [
+                {id: 2027, times: 1},                           // I Am The Savage Sigma, I Am The Savage Omega I
+                {id: 2028, times: 5},                           // I Am The Savage Sigma, I Am The Savage Omega II
+                {id: 2029, times: 10}                           // I Am The Savage Sigma, I Am The Savage Omega III
+            ],
+            turnData: [
+                {name: 'V1.0 (Savage)'},
+                {name: 'V2.0 (Savage)'},
+                {name: 'V3.0 (Savage)'},
+                {name: 'V4.0 (Savage)'}
+            ]
         }
     ],
     '24-man': [
@@ -406,6 +440,13 @@ export const AchievementCards = {
             expansion: 'Stormblood',
             achievement_id: 1989,
             image: 'shinryu_ex.jpg'
+        },
+        {
+            name: 'The Jade Stoa',                              // Rock Warrior
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 2023,
+            image: 'byakko_ex.jpg'
         }
     ]
-}
+};
