@@ -291,6 +291,13 @@ export const AchievementCards = {
             expansion: 'Stormblood',
             achievement_id: 1992,
             image: 'rabanastre.jpg'
+        },
+        {
+            name: 'The Ridorana Lighthouse',                    // Didn't Stop, Made It Pop
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 2106,
+            image: 'ridorana.jpg'
         }
     ],
     'trials': [
@@ -447,6 +454,13 @@ export const AchievementCards = {
             expansion: 'Stormblood',
             achievement_id: 2023,
             image: 'byakko_ex.jpg'
+        },
+        {
+            name: 'Minstrel\'s Ballad: Tsukuyomi\'s Pain',      // Happy Death Day To Who
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 2060,
+            image: 'tsukuyomi_ex.jpg'
         }
     ]
 };
