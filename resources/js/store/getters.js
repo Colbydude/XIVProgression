@@ -1,7 +1,7 @@
-export const getAchievement = (state, getters) => (id) => {
-    return state.achievements.List.filter(a => a.ID = id);
+export const getAchievementById = (state) => (id) => {
+    return state.achievements.List.find(a => a.ID === id);
 };
 
 export default {
-    getAchievement
+    getAchievementById
 };

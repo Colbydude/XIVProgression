@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="turn in turnData" :key="turn.name">
-                        <td v-if="turn.icon !== undefined"><img :src="turn.icon" :alt="turn.name" class="turn-icon" width="40" height="40"></td>
+                        <td v-if="turn.icon !== undefined"><img :src="`https://xivapi.com/${turn.icon}`" :alt="turn.name" class="turn-icon" width="40" height="40"></td>
                         <td v-else>&nbsp;</td>
                         <td>{{ turn.name }}</td>
                         <td v-if="turn.id !== undefined">
@@ -72,7 +72,14 @@
     import { mapGetters } from 'vuex';
 
     export default {
-        props: ['card'],
+        name: 'AchievementCard',
+
+        props: {
+            card: {
+                type: Object,
+                required: true
+            }
+        },
 
         mounted() {
             this.setData();
@@ -87,11 +94,13 @@
             }
         },
 
-        computed: mapGetters(['getAchievement']),
+        computed: mapGetters(['getAchievementById']),
 
         methods: {
             /**
              * Sets the clear data for the card based on the card type.
+             *
+             * @return {Void}
              */
             setData () {
                 /**
@@ -101,11 +110,11 @@
                  */
                 if (this.card.type == 'clear-by-clears') {
                     this.card.achievementData.forEach(data => {
-                        var achievement = this.getAchievement(data.id);
+                        const achievement = this.getAchievementById(data.id);
 
                         if (achievement !== undefined) {
                             this.cleared = true;
-                            this.clearDate = this.$time(achievement.obtained).format('MMMM Do YYYY, h:mm a');
+                            this.clearDate = this.$time(achievement.Date * 1000).format('MMMM Do YYYY, h:mm a');
                             this.clearTimes = data.times;
                         }
                     });
@@ -132,17 +141,20 @@
                  * Single cards count as cleared simply when the achievement is present.
                  */
                 else if (this.card.type == 'single') {
-                    var achievement = this.getAchievement(this.card.achievement_id);
+                    const achievement = this.getAchievementById(this.card.achievement_id);
 
                     if (achievement !== undefined) {
                         this.cleared = true;
-                        this.clearDate = this.$time(achievement.obtained).format('MMMM Do YYYY, h:mm a');
+                        this.clearDate = this.$time(achievement.Date * 1000).format('MMMM Do YYYY, h:mm a');
                     }
                 }
             },
 
             /**
              * Sets the clear data for the card's turn data.
+             *
+             * @param  {Object}  turnData
+             * @return {Void}
              */
             setTurnData (turnData) {
                 turnData.forEach(data => {
@@ -150,14 +162,14 @@
                         return;
                     }
 
-                    var achievement = this.getAchievement(data.id);
+                    var achievement = this.getAchievementById(data.id);
 
                     data.cleared = false;
 
                     if (achievement !== undefined) {
-                        data.icon = achievement.icon;
+                        data.icon = achievement.Icon;
                         data.cleared = true;
-                        data.clearDate = this.$time(achievement.obtained).format('MMMM Do YYYY, h:mm a');
+                        data.clearDate = this.$time(achievement.Date * 1000).format('MMMM Do YYYY, h:mm a');
                     }
                 });
 
