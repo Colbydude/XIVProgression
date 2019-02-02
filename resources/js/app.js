@@ -6,11 +6,10 @@
  */
 
 import './bootstrap';
-import Achievements from './achievement-data';
 import store from './store';
+import moment from 'moment';
 
 window.Vue = require('vue');
-window.Achievements = Achievements;
 
 Vue.prototype.$time = moment;
 

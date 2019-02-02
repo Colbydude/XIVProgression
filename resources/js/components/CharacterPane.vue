@@ -1,5 +1,5 @@
 <template>
-    <div class="panel panel-default character-pane" id="character-data">
+    <div class="panel panel-default character-pane" id="character-data" v-if="status.Character.State !== -1">
         <div class="panel-body" v-if="character !== null && status.Character.State == 2">
             <div class="row">
                 <div class="col-md-4">
@@ -67,6 +67,7 @@
 </template>
 
 <script>
+    import { stateMessages } from './../data/messages';
     import { mapState } from 'vuex';
 
     export default {
@@ -86,27 +87,7 @@
              * @return {String}
              */
             stateMessage() {
-                switch (this.status.Character.State) {
-                    case 0:
-                        return 'Content is not on XIVAPI and will not be added via this request. Try again later.';
-                    case 1:
-                        return 'Content does not exist on the XIVAPI and needs adding. It should take 2 minutes or less to add the content. Try again.';
-                    case 2:
-                        return 'OK';
-                    case 3:
-                        return 'Character could not be found on the Lodestone.';
-                    case 4:
-                        return 'Character has been blacklisted from the XIVAPI.';
-                    case 5:
-                        return 'Content is private on the Lodestone, ask the owner to make the content public and then try again!';
-
-                    case 7:
-                        return 'Fetching character data...';
-                    case 8:
-                        return 'Failure communicating with progression checker backend.';
-                    case 9:
-                        return 'Failure communicating with the XIVAPI.';
-                }
+                return stateMessages[this.status.Character.State];
             },
 
             ...mapState(['character', 'status'])

@@ -1,6 +1,6 @@
 <template>
     <div class="panel panel-default achievement-card">
-        <div v-if="card.type == 'clear-by-clears'">
+        <template v-if="card.type == 'clear-by-clears'">
             <div class="panel-image" :class="{ 'not-cleared': !cleared }" :style="'background-image: url(\'/img/cards/' + card.image + '\')'">
                 <div class="instance-info text-light">
                     {{ clearDate }}</span><br>
@@ -29,8 +29,8 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div v-else-if="card.type == 'clear-by-turns'">
+        </template>
+        <template v-else-if="card.type == 'clear-by-turns'">
             <div class="panel-image" :class="{ 'not-cleared': !cleared }" :style="'background-image: url(\'/img/cards/' + card.image + '\')'">
                 <div class="instance-info text-light"></div>
                 <span class="panel-title">{{ card.name }}</span>
@@ -45,7 +45,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="turn in turnData" :key="turn.name">
-                        <td v-if="turn.icon !== undefined"><img :src="turn.icon" :alt="turn.name" class="turn-icon" width="40" height="40"></td>
+                        <td v-if="turn.icon !== undefined"><img :src="`https://xivapi.com/${turn.icon}`" :alt="turn.name" class="turn-icon" width="40" height="40"></td>
                         <td v-else>&nbsp;</td>
                         <td>{{ turn.name }}</td>
                         <td v-if="turn.id !== undefined">
@@ -56,15 +56,15 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div v-else-if="card.type == 'single'">
+        </template>
+        <template v-else-if="card.type == 'single'">
             <div class="panel-image" :class="{ 'not-cleared': !cleared }" :style="'background-image: url(\'/img/cards/' + card.image + '\')'">
                 <div class="instance-info text-light">
                     <span class="instance-clear-date">{{ clearDate }}</span>
                 </div>
                 <span class="panel-title">{{ card.name }}</span>
             </div>
-        </div>
+        </template>
     </div>
 </template>
 

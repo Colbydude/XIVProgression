@@ -17,7 +17,7 @@
 
 <script>
     import API from './../api';
-    import servers from './../servers';
+    import servers from './../data/servers';
     import { mapActions, mapMutations, mapState } from 'vuex';
 
     export default {
