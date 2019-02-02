@@ -6,7 +6,10 @@ export const getCharacterData = async ({ commit, state }, characterId) => {
 
     commit('setAchievements', null);
     commit('setCharacter', null);
-    commit('setStatus', 'loading');
+    commit('setStatus', {
+        Achievements: { State: 7 },
+        Character: { State: 7 }
+    });
 
     try {
         const response = await character(characterId, {
@@ -21,11 +24,14 @@ export const getCharacterData = async ({ commit, state }, characterId) => {
 
         commit('setAchievements', response.data.Achievements);
         commit('setCharacter', response.data.Character);
-        commit('setStatus', 'successful');
+        commit('setStatus', response.data.Info);
     } catch (e) {
         commit('setAchievements', prevAchievements);
         commit('setCharacter', prevCharacter);
-        commit('setStatus', 'failure');
+        commit('setStatus', {
+            Achievements: { State: 9 },
+            Character: { State: 9 }
+        });
     }
 };
 

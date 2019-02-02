@@ -13,7 +13,14 @@ export default new Vuex.Store({
     state: {
         achievements: null,
         character: null,
-        status: null
+        status: {
+            Achievements: {
+                State: -1
+            },
+            Character: {
+                State: -1
+            }
+        }
     },
     actions,
     getters,

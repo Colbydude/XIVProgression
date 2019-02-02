@@ -1,41 +1,48 @@
 <template>
     <li>
-        <div class="job-icon"><img :src="'/img/classes/' + jobNameToLower + '.png'" :alt="jobName" width="64" height="64"></div>
-        <div class="job-level">{{ jobLevel }}</div>
-        <div class="job-name">{{ jobName }}</div>
+        <div class="job-icon"><img :src="`/img/classes/${name.replace(' ', '')}.png`" :alt="capitalized" width="64" height="64"></div>
+        <div class="job-level">{{ classJob.Level }}</div>
+        <div class="job-name">{{ capitalized }}</div>
     </li>
 </template>
 
 <script>
+    import startCase from 'lodash/startCase';
+
     export default {
-        props: ['job', 'jobNameOverride'],
+        name: 'JobListItem',
+
+        props: {
+            classJob: {
+                type: Object,
+                required: true
+            }
+        },
 
         computed: {
-            jobName () {
-                if (this.jobNameOverride !== undefined) {
-                    return this.jobNameOverride;
-                }
-
-                return this.job.name;
+            /**
+             * Return the name, but capitalized.
+             *
+             * @return {String}
+             */
+            capitalized () {
+                return startCase(this.name);
             },
 
-            jobNameToLower () {
-                var name = this.job.name;
+            /**
+             * Return the proper class/job name depending on level.
+             *
+             * @return {String}
+             */
+            name () {
+                let name = this.classJob.Job.Name;
 
-                if (this.jobNameOverride !== undefined) {
-                    name = this.jobNameOverride;
+                if (this.classJob.Level < 30 && this.classJob.Job.Name !== 'scholar') {
+                    name = this.classJob.Class.Name;
                 }
 
-                return name.toLowerCase().replace(/ /i, '');
+                return name;
             },
-
-            jobLevel () {
-                if (this.job.level == 0 || (this.jobNameOverride == 'Scholar' && this.job.name == 'Arcanist')) {
-                    return '-';
-                }
-
-                return this.job.level;
-            }
         }
-    }
+    };
 </script>

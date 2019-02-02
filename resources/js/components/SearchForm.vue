@@ -14,111 +14,53 @@
         <button type="submit" class="btn btn-primary">Check</button>
     </form>
 </template>
+
 <script>
     import API from './../api';
+    import servers from './../servers';
     import { mapActions, mapMutations, mapState } from 'vuex';
 
     export default {
-        props: ['characterName', 'characterServer'],
+        name: 'SearchForm',
+
+        props: {
+            characterName: {
+                type: String,
+                default: ''
+            },
+            characterServer: {
+                type: String,
+                default: ''
+            }
+        },
+
+        data () {
+            return {
+                name: this.characterName,       // Currently input character name.
+                server: this.characterServer,   // Currently selected server.
+                servers: servers                // List of available servers.
+            };
+        },
 
         mounted() {
-            if (this.characterName !== undefined) {
-                this.name = this.characterName;
-            }
-
-            if (this.characterServer !== undefined) {
-                this.server = this.characterServer;
-            }
-
             // Fetch initial data if provided from the URL.
             if (this.name !== '' && this.server !== '') {
                 this.submit();
             }
         },
 
-        data () {
-            return {
-                name: '',           // Currently input character name.
-                server: '',         // Currently selected server.
-                servers: [          // List of available servers.
-                    'Adamantoise',
-                    'Aegis',
-                    'Alexander',
-                    'Anima',
-                    'Asura',
-                    'Atomos',
-                    'Bahamut',
-                    'Balmung',
-                    'Behemoth',
-                    'Belias',
-                    'Brynhildr',
-                    'Cactuar',
-                    'Carbuncle',
-                    'Cerberus',
-                    'Chocobo',
-                    'Diabolos',
-                    'Durandal',
-                    'Excalibur',
-                    'Exodus',
-                    'Faerie',
-                    'Famfrit',
-                    'Fenrir',
-                    'Garuda',
-                    'Gilgamesh',
-                    'Goblin',
-                    'Gungnir',
-                    'Hades',
-                    'Hyperion',
-                    'Ifrit',
-                    'Ixion',
-                    'Jenova',
-                    'Kujata',
-                    'Lamia',
-                    'Leviathan',
-                    'Lich',
-                    'Louisoix',
-                    'Malboro',
-                    'Mandragora',
-                    'Mateus',
-                    'Masamune',
-                    'Midgardsormr',
-                    'Moogle',
-                    'Odin',
-                    'Omega',
-                    'Pandaemonium',
-                    'Phoenix',
-                    'Ramuh',
-                    'Ragnarok',
-                    'Ridill',
-                    'Sargatanas',
-                    'Siren',
-                    'Shinryu',
-                    'Shiva',
-                    'Tiamat',
-                    'Titan',
-                    'Tonberry',
-                    'Typhon',
-                    'Ultima',
-                    'Ultros',
-                    'Unicorn',
-                    'Valefor',
-                    'Yojimbo',
-                    'Zalera',
-                    'Zeromus',
-                    'Zodiark'
-                ]
-            };
-        },
-
         methods: {
             /**
              * Submit the form to fetch character information from DB.
-             * If character is not in DB, fetch it from the Lodestone.
+             * If character is not in DB, it'll search the Lodestone for the character.
              *
              * @return {Void}
              */
             async submit () {
-                this.setStatus('loading');
+                this.setStatus({
+                    Achievements: { State: 7 },
+                    Character: { State: 7 }
+                });
 
                 history.pushState({}, '', '?name=' + this.name + '&server=' + this.server);
 
@@ -127,12 +69,15 @@
 
                     this.getCharacterData(response.data.lodestone_id);
                 } catch (e) {
-                    console.log(e);
+                    this.setStatus({
+                        Achievements: { State: 8 },
+                        Character: { State: 8 }
+                    });
                 }
             },
 
             ...mapActions(['getCharacterData']),
             ...mapMutations(['setStatus'])
         }
-    }
+    };
 </script>

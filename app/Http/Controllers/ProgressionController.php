@@ -9,7 +9,6 @@ use Lodestone\Api as LodestoneApi;
 use Lodestone\Validator\Exceptions\HttpMaintenanceValidationException;
 use Lodestone\Validator\Exceptions\HttpNotFoundValidationException;
 use Lodestone\Validator\Exceptions\ValidationException;
-use Log;
 
 class ProgressionController extends Controller
 {
@@ -35,8 +34,6 @@ class ProgressionController extends Controller
      */
     public function fetch(Request $request)
     {
-        Log::info($request->all());
-
         // POST variables.
         $name = $request->input('name');
         $server = $request->input('server');
