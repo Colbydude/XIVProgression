@@ -1,4 +1,4 @@
-export const AchievementCards = {
+export default {
     '8-man': [
         {
             name: 'The Binding Coil of Bahamut',

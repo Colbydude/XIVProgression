@@ -17,7 +17,7 @@
                 </div>
                 <p class="text-light">
                     <small>
-                        Tool Last Updated: <a href="https://github.com/Colbydude/FFXIVProgressionChecker" target="_blank">May 22nd, 2018</a><br>
+                        Tool Last Updated: <a href="https://github.com/Colbydude/FFXIVProgressionChecker" target="_blank">February 2nd, 2019</a><br>
                         By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan
                     </small>
                 </p>
@@ -26,6 +26,6 @@
                 <character-pane></character-pane>
             </div>
         </div>
-        <achievements-list></achievements-list>
+        <achievement-list></achievement-list>
     </div>
 @stop

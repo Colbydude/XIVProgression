@@ -43,8 +43,3 @@ if (token) {
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
-
-/**
- * Finally, we'll load in the moment library for formatting timestamps.
- */
-window.moment = require('moment');

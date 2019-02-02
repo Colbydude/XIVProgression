@@ -1,5 +1,5 @@
 <template>
-    <form id="search-form" @submit="formSubmit">
+    <form id="search-form" @submit.prevent="submit">
         <div class="form-group">
             <label for="name">Character Name</label>
             <input type="text" id="name" name="name" class="form-control" v-model="name" required>
@@ -8,13 +8,14 @@
             <label for="server">Server</label>
             <select id="server" name="server" class="form-control" v-model="server" required>
                 <option value="" disabled selected>Choose your realm</option>
-                <option v-for="srvr in servers" :value="srvr">{{ srvr }}</option>
+                <option v-for="server in servers" :value="server">{{ server }}</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Check</button>
     </form>
 </template>
 <script>
+    import API from './../api';
     import { mapActions, mapMutations, mapState } from 'vuex';
 
     export default {
@@ -31,7 +32,7 @@
 
             // Fetch initial data if provided from the URL.
             if (this.name !== '' && this.server !== '') {
-                this.fetch();
+                this.submit();
             }
         },
 
@@ -109,52 +110,29 @@
             };
         },
 
-        computed: mapState(['achievementsLoading', 'characterLoading']),
-
         methods: {
             /**
-             * Fetch character information from DB. If character is not in DB, fetch it from the Lodestone.
+             * Submit the form to fetch character information from DB.
+             * If character is not in DB, fetch it from the Lodestone.
+             *
+             * @return {Void}
              */
-            fetch () {
-                this.setCharacterLoading(true);
-                this.setAchievementsLoading(true);
+            async submit () {
+                this.setStatus('loading');
 
                 history.pushState({}, '', '?name=' + this.name + '&server=' + this.server);
 
-                axios.get('/api/fetch', { params: {
-                    name: this.name,
-                    server: this.server
-                }})
-                .then(response => {
-                    this.fetchCharacterFromXIVDB(response.data.lodestone_id);
-                    this.fetchAchievementsFromXIVDB(response.data.lodestone_id);
-                })
-                .catch(error => {
-                    console.log(error.response);
+                try {
+                    let response = await API.search(this.name, this.server);
 
-                    // TODO: Pretty this up.
-                    if (error.response.data.error !== undefined) {
-                        alert(error.response.data.error);
-                    }
-
-                    this.setCharacterLoading(false);
-                    this.setAchievementsLoading(false);
-                });
-
-                // NOTE: Return false so the form doesn't actually submit.
-                return false;
+                    this.getCharacterData(response.data.lodestone_id);
+                } catch (e) {
+                    console.log(e);
+                }
             },
 
-            /**
-             * Run when the form is submitted.
-             */
-            formSubmit (event) {
-                event.preventDefault();
-                this.fetch();
-            },
-
-            ...mapActions(['fetchAchievementsFromXIVDB', 'fetchCharacterFromXIVDB']),
-            ...mapMutations(['setAchievementsLoading', 'setCharacterLoading'])
+            ...mapActions(['getCharacterData']),
+            ...mapMutations(['setStatus'])
         }
     }
 </script>
