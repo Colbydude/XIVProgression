@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div class="panel panel-default" v-else>
+        <div class="panel panel-default" v-else-if="status.Achievements.State === 5">
             <div class="panel-body text-center">
                 <p class="lead" style="margin-bottom: 0;">{{ stateMessage }}</p>
             </div>

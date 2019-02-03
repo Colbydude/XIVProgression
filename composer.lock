@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4bae97ef7b4add8d766943379b801e25",
+    "content-hash": "2972be4327bd01768126ec84eb0c8449",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3058,55 +3058,6 @@
             "time": "2017-11-27T11:13:29+00:00"
         },
         {
-            "name": "viion/lodestone-php",
-            "version": "1.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/viion/lodestone-php.git",
-                "reference": "1e2ba7ae15519e117f18f6243e208c12bfdd9d36"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/viion/lodestone-php/zipball/1e2ba7ae15519e117f18f6243e208c12bfdd9d36",
-                "reference": "1e2ba7ae15519e117f18f6243e208c12bfdd9d36",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0",
-                "symfony/css-selector": ">=3.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Lodestone\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Josh Freeman",
-                    "email": "josh@viion.co.uk",
-                    "homepage": "http://xivdb.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Small lodestone parser built in PHP. Relys on the XIVDB API for some data conversion.",
-            "homepage": "https://github.com/viion/lodestone-php",
-            "keywords": [
-                "ffxiv",
-                "lodestone",
-                "parser",
-                "php"
-            ],
-            "time": "2018-06-24T14:17:02+00:00"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v2.6.1",
             "source": {
@@ -3156,6 +3107,21 @@
                 "environment"
             ],
             "time": "2019-01-29T11:11:52+00:00"
+        },
+        {
+            "name": "xivapi/xivapi-php",
+            "version": "1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Colbydude/xivapi-php",
+                "reference": "master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XIVAPI\\": "src/"
+                }
+            }
         },
         {
             "name": "zendframework/zend-diactoros",

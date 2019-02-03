@@ -69,6 +69,15 @@
 
                     this.getCharacterData(response.data.lodestone_id);
                 } catch (e) {
+                    if (e.response.status === 404) {
+                        this.setStatus({
+                            Achievements: { State: 3 },
+                            Character: { State: 3 }
+                        });
+
+                        return;
+                    }
+
                     this.setStatus({
                         Achievements: { State: 8 },
                         Character: { State: 8 }
