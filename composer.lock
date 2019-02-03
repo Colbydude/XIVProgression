@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2972be4327bd01768126ec84eb0c8449",
+    "content-hash": "010a81940d0d0338a34887ed534e0999",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3110,18 +3110,52 @@
         },
         {
             "name": "xivapi/xivapi-php",
-            "version": "1.2.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Colbydude/xivapi-php",
-                "reference": "master"
+                "url": "https://github.com/xivapi/xivapi-php.git",
+                "reference": "cba262b31a303c504685f9c4281214df512cea01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xivapi/xivapi-php/zipball/cba262b31a303c504685f9c4281214df512cea01",
+                "reference": "cba262b31a303c504685f9c4281214df512cea01",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
+                "psr-0": {
                     "XIVAPI\\": "src/"
                 }
-            }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Freeman",
+                    "email": "josh@viion.co.uk",
+                    "homepage": "http://xivapi.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP SDK for xivapi.com",
+            "homepage": "https://github.com/xivapi/xivapi-php",
+            "keywords": [
+                "api",
+                "ffxiv",
+                "php",
+                "sdk"
+            ],
+            "time": "2019-02-03T20:36:46+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -4953,7 +4987,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "xivapi/xivapi-php": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
