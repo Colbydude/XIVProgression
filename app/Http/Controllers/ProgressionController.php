@@ -5,11 +5,7 @@ namespace App\Http\Controllers;
 use App\Character;
 use Exception;
 use Illuminate\Http\Request;
-use Lodestone\Api as LodestoneApi;
-use Lodestone\Validator\Exceptions\HttpMaintenanceValidationException;
-use Lodestone\Validator\Exceptions\HttpNotFoundValidationException;
-use Lodestone\Validator\Exceptions\ValidationException;
-use Log;
+use XIVAPI\XIVAPI;
 
 class ProgressionController extends Controller
 {
@@ -35,8 +31,6 @@ class ProgressionController extends Controller
      */
     public function fetch(Request $request)
     {
-        Log::info($request->all());
-
         // POST variables.
         $name = $request->input('name');
         $server = $request->input('server');
@@ -47,31 +41,26 @@ class ProgressionController extends Controller
         if ($character == null) {
             try {
                 // Instantiate API.
-                $api = new LodestoneApi();
+                $api = new XIVAPI();
 
-                // Search for the character on the Lodestone.
-                $search = $api->searchCharacter($name, $server);
+                // Set env.
+                $api->environment->key(config('services.xivapi.key'));
 
-                if (empty($search->getCharacters())) {
+                // Search for the character.
+                $response = $api->character->search($name, $server);
+
+                if (empty($response->Results)) {
                     return response()->json(['error' => 'Character not found.'], 404);
                 }
 
-                $result = $search->getCharacters()[0]->toArray();
+                // Save the character to our DB.
+                $result = $response->Results[0];
 
                 $character = Character::updateOrCreate([
-                    'lodestone_id' => $result['id'],
-                    'name' => $result['name'],
-                    'server' => $result['server']
+                    'lodestone_id' => $result->ID,
+                    'name' => $result->Name,
+                    'server' => $result->Server
                 ]);
-            }
-            catch (HttpMaintenanceValidationException $e) {
-                return response()->json(['error' => 'Lodestone is down for maintenance.'], 403);
-            }
-            catch (HttpNotFoundValidationException $e) {
-                return response()->json(['error' => 'Character not found.'], 404);
-            }
-            catch (ValidationException $e) {
-                return response()->json(['error' => 'Unexpected data found. Lodestone may have updated.'], 400);
             }
             catch (Exception $e) {
                 return response()->json(['error' => 'Unexpected error occurred.'], 500);
