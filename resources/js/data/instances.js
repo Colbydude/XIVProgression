@@ -242,7 +242,7 @@ export default {
             ]
         },
         {
-            name: 'The Weapon\'s Refrain',               // Resistance is Futile
+            name: 'The Weapon\'s Refrain',                      // Resistance is Futile
             type: 'single',
             expansion: 'Stormblood',
             achievement_id: 2107,
@@ -254,9 +254,9 @@ export default {
             expansion: 'Stormblood',
             image: 'oa4.png',
             achievementData: [
-                { id: 2118, times: 1 },                           // I Am The Alpha, I Am The Omega I
-                { id: 2119, times: 5 },                           // I Am The Alpha, I Am The Omega II
-                { id: 2120, times: 10 }                           // I Am The Alpha, I Am The Omega III
+                { id: 2118, times: 1 },                         // I Am The Alpha, I Am The Omega I
+                { id: 2119, times: 5 },                         // I Am The Alpha, I Am The Omega II
+                { id: 2120, times: 10 }                         // I Am The Alpha, I Am The Omega III
             ],
             turnData: [
                 { name: 'V1.0' },
@@ -271,9 +271,9 @@ export default {
             expansion: 'Stormblood',
             image: 'oas4.png',
             achievementData: [
-                { id: 2121, times: 1 },                           // I Am The Savage Alpha, I Am The Savage Omega I
-                { id: 2121, times: 5 },                           // I Am The Savage Alpha, I Am The Savage Omega II
-                { id: 2121, times: 10 }                           // I Am The Savage Alpha, I Am The Savage Omega III
+                { id: 2121, times: 1 },                         // I Am The Savage Alpha, I Am The Savage Omega I
+                { id: 2122, times: 5 },                         // I Am The Savage Alpha, I Am The Savage Omega II
+                { id: 2123, times: 10 }                         // I Am The Savage Alpha, I Am The Savage Omega III
             ],
             turnData: [
                 { name: 'V1.0 (Savage)' },

@@ -1,24 +1,24 @@
 <template>
-    <div class="achievements" v-if="status.Achievements.State !== -1">
+    <div class="instances" v-if="status.Achievements.State !== -1">
         <template v-if="achievements != null && status.Achievements.State == 2">
             <h2 class="text-light">8-Man Raids</h2>
             <div class="row multi-columns-row">
-                <div class="col-md-6 col-lg-4" v-for="card in achievementData['8-man']" :key="card.name">
-                    <achievement-card :card="card"></achievement-card>
+                <div class="col-md-6 col-lg-4" v-for="card in instances['8-man']" :key="card.name">
+                    <instance-card :card="card"></instance-card>
                 </div>
             </div>
 
             <h2 class="text-light">24-Man Raids</h2>
             <div class="row multi-columns-row">
-                <div class="col-md-6 col-lg-4" v-for="card in achievementData['24-man']" :key="card.name">
-                    <achievement-card :card="card"></achievement-card>
+                <div class="col-md-6 col-lg-4" v-for="card in instances['24-man']" :key="card.name">
+                    <instance-card :card="card"></instance-card>
                 </div>
             </div>
 
             <h2 class="text-light">Trials</h2>
             <div class="row multi-columns-row">
-                <div class="col-md-6 col-lg-4" v-for="card in achievementData['trials']" :key="card.name">
-                    <achievement-card :card="card"></achievement-card>
+                <div class="col-md-6 col-lg-4" v-for="card in instances['trials']" :key="card.name">
+                    <instance-card :card="card"></instance-card>
                 </div>
             </div>
         </template>
@@ -42,21 +42,21 @@
 </template>
 
 <script>
-    import Achievements from './../data/achievements';
+    import Instances from './../data/instances';
     import { stateMessages } from './../data/messages';
     import { mapState } from 'vuex';
 
     export default {
-        name: 'AchievementList',
+        name: 'InstanceList',
 
         computed: {
             /**
-             * List of all achievement data.
+             * List of all instance data.
              *
              * @return {Object}
              */
-            achievementData () {
-                return Achievements;
+            instances () {
+                return Instances;
             },
 
             /**

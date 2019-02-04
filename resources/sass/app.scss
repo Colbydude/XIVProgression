@@ -135,13 +135,13 @@ select.form-control {
     }
 }
 
-.achievement-card {
+.instance-card {
     border: none;
 
     .panel-image {
-        background-color: black;
+        background-color: white;
         background-position: center center;
-        background-size: cover;
+        background-size: 100% 100%;
         min-height: 100px;
         position: relative;
         text-shadow: 1px 1px 3px #000000;

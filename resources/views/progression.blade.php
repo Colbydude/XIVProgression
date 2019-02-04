@@ -33,6 +33,6 @@
             </div>
         </div>
 
-        <achievement-list />
+        <instance-list />
     </div>
 @stop

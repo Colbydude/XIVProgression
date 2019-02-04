@@ -1,5 +1,5 @@
 <template>
-    <div class="panel panel-default achievement-card">
+    <div class="panel panel-default instance-card">
         <template v-if="card.type == 'clear-by-clears'">
             <div class="panel-image" :class="{ 'not-cleared': !cleared }" :style="'background-image: url(\'/img/cards/' + card.image + '\')'">
                 <div class="instance-info text-light">
@@ -72,7 +72,7 @@
     import { mapGetters } from 'vuex';
 
     export default {
-        name: 'AchievementCard',
+        name: 'InstanceCard',
 
         props: {
             card: {
