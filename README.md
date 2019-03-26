@@ -5,12 +5,15 @@ FFXIV Progression Checker
 
 This tool is used for quickly checking a character's raid progression in FFXIV. This saves the effort of having to actually go to the Lodestone and look things up. Information is collected using the [XIVAPI](https://xivapi.com) and checks for certain achievements. However, keep in mind that this tool will not work of the specified character does not have achievements viewable to the public.
 
-**Website:** http://ffxiv.voidteam.net/progression
+**Website:** http://ffxiv.voidteam.net/progression  
 **Powered By:** [Laravel](https://laravel.com/) and [Vue](https://vuejs.org/)
 
 Release Notes
 -------------
-*February 3rd, 2018*
+*March 27th, 2019*
+- Update for 4.56 Content.
+
+*February 3rd, 2019*
 - Refactor to leverage the XIVAPI since XIVDB shut down.
 - Update app to Laravel 5.7.
 - Update for 4.5 Content.

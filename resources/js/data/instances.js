@@ -530,6 +530,13 @@ export default {
             expansion: 'Stormblood',
             achievement_id: 2165,
             image: 'seiryu_ex.png'
+        },
+        {
+            name: 'Kugane Ohashi',                              // Bite Me
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 2236,
+            image: 'yojimbo_hm.png'
         }
     ]
 };
