@@ -13,6 +13,10 @@ export default new Vuex.Store({
     state: {
         achievements: null,
         character: null,
+        filters: {
+            expansion: null,
+            patch: null,
+        },
         status: {
             Achievements: {
                 State: -1

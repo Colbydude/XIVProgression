@@ -49,6 +49,10 @@ h2 {
     }
 }
 
+.btn-light {
+    @include button-variant($gray-dark, $brand-light, white);
+}
+
 .btn-dark {
     @include button-variant(white, $brand-dark, #23272b);
 }

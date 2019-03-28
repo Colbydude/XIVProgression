@@ -1,6 +1,8 @@
 <template>
     <div class="instances" v-if="status.Achievements.State !== -1">
         <template v-if="achievements != null && status.Achievements.State == 2">
+            <filters />
+
             <h2 class="text-light">8-Man Raids</h2>
             <div class="row multi-columns-row">
                 <div class="col-md-6 col-lg-4" v-for="card in instances['8-man']" :key="card.name">
