@@ -49,12 +49,21 @@ h2 {
     }
 }
 
+.btn-light {
+    @include button-variant($gray-dark, $brand-light, white);
+}
+
 .btn-dark {
     @include button-variant(white, $brand-dark, #23272b);
 }
 
 .btn, .form-control, .panel {
     border-radius: 0;
+}
+
+.btn-block .img-responsive {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 select.form-control {
