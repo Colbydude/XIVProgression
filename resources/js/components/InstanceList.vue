@@ -5,21 +5,33 @@
 
             <h2 class="text-light">8-Man Raids</h2>
             <div class="row multi-columns-row">
-                <div class="col-md-6 col-lg-4" v-for="card in instances['8-man']" :key="card.name">
+                <div
+                    class="col-md-6 col-lg-4"
+                    v-for="card in raids"
+                    :key="card.name"
+                >
                     <instance-card :card="card"></instance-card>
                 </div>
             </div>
 
             <h2 class="text-light">24-Man Raids</h2>
             <div class="row multi-columns-row">
-                <div class="col-md-6 col-lg-4" v-for="card in instances['24-man']" :key="card.name">
+                <div
+                    class="col-md-6 col-lg-4"
+                    v-for="card in allianceRaids"
+                    :key="card.name"
+                >
                     <instance-card :card="card"></instance-card>
                 </div>
             </div>
 
             <h2 class="text-light">Trials</h2>
             <div class="row multi-columns-row">
-                <div class="col-md-6 col-lg-4" v-for="card in instances['trials']" :key="card.name">
+                <div
+                    class="col-md-6 col-lg-4"
+                    v-for="card in trials"
+                    :key="card.name"
+                >
                     <instance-card :card="card"></instance-card>
                 </div>
             </div>
@@ -53,12 +65,29 @@
 
         computed: {
             /**
-             * List of all instance data.
+             * List of alliance raids/24-man instances.
              *
-             * @return {Object}
+             * @return {Array}
              */
-            instances () {
-                return Instances;
+            allianceRaids() {
+                if (this.filters.expansion.length === 0) {
+                    return Instances['24-man'];
+                }
+
+                return Instances['24-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
+            },
+
+            /**
+             * List raids/8-man instances.
+             *
+             * @return {Array}
+             */
+            raids () {
+                if (this.filters.expansion.length === 0) {
+                    return Instances['8-man'];
+                }
+
+                return Instances['8-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
             },
 
             /**
@@ -70,7 +99,20 @@
                 return stateMessages[this.status.Achievements.State];
             },
 
-            ...mapState(['achievements', 'status'])
+            /**
+             * List of trial instances.
+             *
+             * @return {Array}
+             */
+            trials() {
+                if (this.filters.expansion.length === 0) {
+                    return Instances['trials'];
+                }
+
+                return Instances['trials'].filter(instance => this.filters.expansion.includes(instance.expansion));
+            },
+
+            ...mapState(['achievements', 'filters', 'status'])
         }
     };
 </script>

@@ -14,8 +14,8 @@ export default new Vuex.Store({
         achievements: null,
         character: null,
         filters: {
-            expansion: null,
-            patch: null,
+            expansion: [],
+            patch: [],
         },
         status: {
             Achievements: {
