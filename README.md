@@ -10,6 +10,10 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+*June 28th, 2019*
+- Add Gunbreaker and Dancer jobs.
+- Prepare for 5.0 Content.
+
 *June 24th, 2019*
 - Add ability to filter instances by expansion.
 - Add Spriggan and Twintania to the list of worlds.

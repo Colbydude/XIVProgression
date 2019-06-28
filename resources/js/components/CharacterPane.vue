@@ -18,6 +18,7 @@
                                 <job-list-item :class-job="character.ClassJobs['1_19']" />  <!-- PLD -->
                                 <job-list-item :class-job="character.ClassJobs['3_21']" />  <!-- WAR -->
                                 <job-list-item :class-job="character.ClassJobs['32_32']" /> <!-- DRK -->
+                                <job-list-item :class-job="character.ClassJobs['37_37']" /> <!-- GNB -->
                             </ul>
                             <h4><img class="role-icon" src="/img/icons/healer.png" alt="Healer Icon" width="32" height="32"> Healer</h4>
                             <ul class="character-jobs">
@@ -38,6 +39,7 @@
                             <ul class="character-jobs">
                                 <job-list-item :class-job="character.ClassJobs['5_23']" />  <!-- BRD -->
                                 <job-list-item :class-job="character.ClassJobs['31_31']" /> <!-- MCH -->
+                                <job-list-item :class-job="character.ClassJobs['38_38']" /> <!-- DNC -->
                             </ul>
                             <h4><img class="role-icon" src="/img/icons/magical-ranged-dps.png" alt="Magical Ranged DPS Icon" width="32" height="32"> Magical Ranged DPS</h4>
                             <ul class="character-jobs">

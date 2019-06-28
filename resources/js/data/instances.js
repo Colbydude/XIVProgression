@@ -537,6 +537,20 @@ export default {
             expansion: 'Stormblood',
             achievement_id: 2236,
             image: 'yojimbo_hm.png'
-        }
+        },
+        // {
+        //     name: '',                                           // Ill Met by Moonlight
+        //     type: 'single',
+        //     expansion: 'Shadowbringers',
+        //     achievement_id: 2385,
+        //     image: ''
+        // },
+        // {
+        //     name: '',                                           // Proven Guilty
+        //     type: 'single',
+        //     expansion: 'Shadowbringers',
+        //     achievement_id: 2386,
+        //     image: ''
+        // }
     ]
 };
