@@ -10,6 +10,9 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+*July 2nd, 2019*
+- Update for 5.0 Content.
+
 *June 28th, 2019*
 - Add Gunbreaker and Dancer jobs.
 - Prepare for 5.0 Content.
