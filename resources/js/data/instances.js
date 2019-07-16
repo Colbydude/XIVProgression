@@ -281,6 +281,23 @@ export default {
                 { name: 'V3.0 (Savage)' },
                 { name: 'V4.0 (Savage)' }
             ]
+        },
+        {
+            name: 'Eden\'s Gate',
+            type: 'clear-by-clears',
+            expansion: 'Shadowbringers',
+            image: 'eg4.png',
+            achievementData: [
+                { id: 2409, times: 1 },                         // Paradise Found I
+                { id: 2410, times: 5 },                         // Paradise Found II
+                { id: 2411, times: 10 }                         // Paradise Found III
+            ],
+            turnData: [
+                { name: 'Resurrection' },
+                { name: 'Descent' },
+                { name: 'Inundation' },
+                { name: 'Sepulture' },
+            ]
         }
     ],
     '24-man': [
