@@ -12,6 +12,7 @@ Release Notes
 -------------
 **July 30th, 2019**
 - Update for 5.05 Content.
+- Make instances with more than one turn collapsable.
 
 **July 16th, 2019**
 - Update for 5.01 Content.

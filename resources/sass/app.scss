@@ -144,6 +144,10 @@ select.form-control {
     }
 }
 
+.has-click {
+    cursor: pointer;
+}
+
 .instance-card {
     border: none;
 
@@ -154,6 +158,15 @@ select.form-control {
         min-height: 100px;
         position: relative;
         text-shadow: 1px 1px 3px #000000;
+
+        .dropdown-indicator {
+            bottom: 0;
+            color: white;
+            font-size: 24px;
+            padding: 0 5px;
+            position: absolute;
+            right: 0;
+        }
 
         .panel-title {
             bottom: 0;

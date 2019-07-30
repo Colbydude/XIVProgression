@@ -1,14 +1,20 @@
 <template>
     <div class="panel panel-default instance-card">
         <template v-if="card.type == 'clear-by-clears'">
-            <div class="panel-image" :class="{ 'not-cleared': !cleared }" :style="'background-image: url(\'/img/cards/' + card.image + '\')'">
+            <div
+                class="panel-image has-click"
+                :class="{ 'not-cleared': !cleared }"
+                :style="'background-image: url(\'/img/cards/' + card.image + '\')'"
+                @click="isOpen = !isOpen"
+            >
                 <div class="instance-info text-light">
                     {{ clearDate }}</span><br>
                     <small v-if="cleared">{{ clearTimes }} Time<span v-if="clearTimes > 1">s</span></small>
                 </div>
                 <span class="panel-title">{{ card.name }}</span>
+                <span class="dropdown-indicator fa fa-fw fa-caret-down"></span>
             </div>
-            <table class="table table-condensed table-striped" v-if="turnData !== null">
+            <table class="table table-condensed table-striped" v-if="turnData !== null" v-show="isOpen">
                 <thead>
                     <tr>
                         <th>&nbsp;</th>
@@ -31,11 +37,17 @@
             </table>
         </template>
         <template v-else-if="card.type == 'clear-by-turns'">
-            <div class="panel-image" :class="{ 'not-cleared': !cleared }" :style="'background-image: url(\'/img/cards/' + card.image + '\')'">
+            <div
+                class="panel-image has-click"
+                :class="{ 'not-cleared': !cleared }"
+                :style="'background-image: url(\'/img/cards/' + card.image + '\')'"
+                @click="isOpen = !isOpen"
+            >
                 <div class="instance-info text-light"></div>
                 <span class="panel-title">{{ card.name }}</span>
+                <span class="dropdown-indicator fa fa-fw fa-caret-down"></span>
             </div>
-            <table class="table table-condensed table-striped" v-if="turnData !== null">
+            <table class="table table-condensed table-striped" v-if="turnData !== null" v-show="isOpen">
                 <thead>
                     <tr>
                         <th>&nbsp;</th>
@@ -90,6 +102,7 @@
                 cleared: false,     // Whether or not the card (instance) has been cleared.
                 clearDate: '',      // The clear date to display on the card.
                 clearTimes: '',     // The clear times to display on the card (only on clear-by-clears cards).
+                isOpen: false,      // Whehther or not the card's turn data is open.
                 turnData: null      // Turn data to show on the card.
             }
         },
