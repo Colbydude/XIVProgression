@@ -92,10 +92,10 @@ export default {
                 {id: 1233, times: 10}                           // Sins of the Savage Father III
             ],
             turnData: [
-                {name: 'Fist of the Father (Savage)'},
-                {name: 'Cuff of the Father (Savage)'},
-                {name: 'Arm of the Father (Savage)'},
-                {name: 'Burden of the Father (Savage)'}
+                {name: 'Fist of the Father'},
+                {name: 'Cuff of the Father'},
+                {name: 'Arm of the Father'},
+                {name: 'Burden of the Father'}
             ]
         },
         {
@@ -126,10 +126,10 @@ export default {
                 {id: 1481, times: 10}                           // Sins of the Savage Son III
             ],
             turnData: [
-                {name: 'Fist of the Son (Savage)'},
-                {name: 'Cuff of the Son (Savage)'},
-                {name: 'Arm of the Son (Savage)'},
-                {name: 'Burden of the Son (Savage)'}
+                {name: 'Fist of the Son'},
+                {name: 'Cuff of the Son'},
+                {name: 'Arm of the Son'},
+                {name: 'Burden of the Son'}
             ]
         },
         {
@@ -160,10 +160,10 @@ export default {
                 {id: 1644, times: 10}                           // Sins of the Savage Creator III
             ],
             turnData: [
-                {name: 'Eyes of the Creator (Savage)'},
-                {name: 'Breath of the Creator (Savage)'},
-                {name: 'Heart of the Creator (Savage)'},
-                {name: 'Soul of the Creator (Savage)'}
+                {name: 'Eyes of the Creator'},
+                {name: 'Breath of the Creator'},
+                {name: 'Heart of the Creator'},
+                {name: 'Soul of the Creator'}
             ]
         },
         {
@@ -194,10 +194,10 @@ export default {
                 {id: 1900, times: 10}                           // I Am The Savage Delta, I Am The Savage Omega III
             ],
             turnData: [
-                {name: 'V1.0 (Savage)'},
-                {name: 'V2.0 (Savage)'},
-                {name: 'V3.0 (Savage)'},
-                {name: 'V4.0 (Savage)'}
+                {name: 'V1.0'},
+                {name: 'V2.0'},
+                {name: 'V3.0'},
+                {name: 'V4.0'}
             ]
         },
         {
@@ -235,10 +235,10 @@ export default {
                 {id: 2029, times: 10}                           // I Am The Savage Sigma, I Am The Savage Omega III
             ],
             turnData: [
-                {name: 'V1.0 (Savage)'},
-                {name: 'V2.0 (Savage)'},
-                {name: 'V3.0 (Savage)'},
-                {name: 'V4.0 (Savage)'}
+                {name: 'V1.0'},
+                {name: 'V2.0'},
+                {name: 'V3.0'},
+                {name: 'V4.0'}
             ]
         },
         {
@@ -276,10 +276,10 @@ export default {
                 { id: 2123, times: 10 }                         // I Am The Savage Alpha, I Am The Savage Omega III
             ],
             turnData: [
-                { name: 'V1.0 (Savage)' },
-                { name: 'V2.0 (Savage)' },
-                { name: 'V3.0 (Savage)' },
-                { name: 'V4.0 (Savage)' }
+                { name: 'V1.0' },
+                { name: 'V2.0' },
+                { name: 'V3.0' },
+                { name: 'V4.0' }
             ]
         },
         {
@@ -291,6 +291,23 @@ export default {
                 { id: 2409, times: 1 },                         // Paradise Found I
                 { id: 2410, times: 5 },                         // Paradise Found II
                 { id: 2411, times: 10 }                         // Paradise Found III
+            ],
+            turnData: [
+                { name: 'Resurrection' },
+                { name: 'Descent' },
+                { name: 'Inundation' },
+                { name: 'Sepulture' },
+            ]
+        },
+        {
+            name: 'Eden\'s Gate (Savage)',
+            type: 'clear-by-clears',
+            expansion: 'Shadowbringers',
+            image: 'eg4s.png',
+            achievementData: [
+                { id: 2412, times: 1 },                         // Savage Paradise Found I
+                { id: 2413, times: 5 },                         // Savage Paradise Found II
+                { id: 2414, times: 10 }                         // Savage Paradise Found III
             ],
             turnData: [
                 { name: 'Resurrection' },
