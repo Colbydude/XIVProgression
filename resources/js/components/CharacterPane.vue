@@ -15,38 +15,38 @@
                         <div class="col-sm-6">
                             <h4><img class="role-icon" src="/img/icons/tank.png" alt="Tank Icon" width="32" height="32"> Tank</h4>
                             <ul class="character-jobs">
-                                <job-list-item :class-job="character.ClassJobs['1_19']" />  <!-- PLD -->
-                                <job-list-item :class-job="character.ClassJobs['3_21']" />  <!-- WAR -->
-                                <job-list-item :class-job="character.ClassJobs['32_32']" /> <!-- DRK -->
-                                <job-list-item :class-job="character.ClassJobs['37_37']" /> <!-- GNB -->
+                                <job-list-item :class-job="character.ClassJobs[0]" />  <!-- PLD -->
+                                <job-list-item :class-job="character.ClassJobs[1]" />  <!-- WAR -->
+                                <job-list-item :class-job="character.ClassJobs[2]" /> <!-- DRK -->
+                                <job-list-item :class-job="character.ClassJobs[3]" /> <!-- GNB -->
                             </ul>
                             <h4><img class="role-icon" src="/img/icons/healer.png" alt="Healer Icon" width="32" height="32"> Healer</h4>
                             <ul class="character-jobs">
-                                <job-list-item :class-job="character.ClassJobs['6_24']" />  <!-- WHM -->
-                                <job-list-item :class-job="character.ClassJobs['26_28']" /> <!-- SCH -->
-                                <job-list-item :class-job="character.ClassJobs['33_33']" /> <!-- AST -->
+                                <job-list-item :class-job="character.ClassJobs[8]" />  <!-- WHM -->
+                                <job-list-item :class-job="character.ClassJobs[9]" /> <!-- SCH -->
+                                <job-list-item :class-job="character.ClassJobs[10]" /> <!-- AST -->
                             </ul>
                         </div>
                         <div class="col-sm-6">
                             <h4><img class="role-icon" src="/img/icons/melee-dps.png" alt="Melee DPS Icon" width="32" height="32"> Melee DPS</h4>
                             <ul class="character-jobs">
-                                <job-list-item :class-job="character.ClassJobs['2_20']" />  <!-- MNK -->
-                                <job-list-item :class-job="character.ClassJobs['4_22']" />  <!-- DRG -->
-                                <job-list-item :class-job="character.ClassJobs['29_30']" /> <!-- NIN -->
-                                <job-list-item :class-job="character.ClassJobs['34_34']" /> <!-- SAM -->
+                                <job-list-item :class-job="character.ClassJobs[4]" />  <!-- MNK -->
+                                <job-list-item :class-job="character.ClassJobs[5]" />  <!-- DRG -->
+                                <job-list-item :class-job="character.ClassJobs[6]" /> <!-- NIN -->
+                                <job-list-item :class-job="character.ClassJobs[7]" /> <!-- SAM -->
                             </ul>
                             <h4><img class="role-icon" src="/img/icons/physical-ranged-dps.png" alt="Physical Ranged DPS Icon" width="32" height="32"> Physical Ranged DPS</h4>
                             <ul class="character-jobs">
-                                <job-list-item :class-job="character.ClassJobs['5_23']" />  <!-- BRD -->
-                                <job-list-item :class-job="character.ClassJobs['31_31']" /> <!-- MCH -->
-                                <job-list-item :class-job="character.ClassJobs['38_38']" /> <!-- DNC -->
+                                <job-list-item :class-job="character.ClassJobs[11]" />  <!-- BRD -->
+                                <job-list-item :class-job="character.ClassJobs[12]" /> <!-- MCH -->
+                                <job-list-item :class-job="character.ClassJobs[13]" /> <!-- DNC -->
                             </ul>
                             <h4><img class="role-icon" src="/img/icons/magical-ranged-dps.png" alt="Magical Ranged DPS Icon" width="32" height="32"> Magical Ranged DPS</h4>
                             <ul class="character-jobs">
-                                <job-list-item :class-job="character.ClassJobs['7_25']" />  <!-- BLM -->
-                                <job-list-item :class-job="character.ClassJobs['26_27']" /> <!-- SMN -->
-                                <job-list-item :class-job="character.ClassJobs['35_35']" /> <!-- RDM -->
-                                <job-list-item :class-job="character.ClassJobs['36_36']" /> <!-- BLU -->
+                                <job-list-item :class-job="character.ClassJobs[14]" />  <!-- BLM -->
+                                <job-list-item :class-job="character.ClassJobs[15]" /> <!-- SMN -->
+                                <job-list-item :class-job="character.ClassJobs[16]" /> <!-- RDM -->
+                                <job-list-item :class-job="character.ClassJobs[17]" /> <!-- BLU -->
                             </ul>
                         </div>
                     </div>

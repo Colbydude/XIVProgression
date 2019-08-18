@@ -22,9 +22,14 @@ export const getCharacterData = async ({ commit, state }, characterId) => {
             extended: 1
         });
 
+        console.log(response.data);
+
         commit('setAchievements', response.data.Achievements);
         commit('setCharacter', response.data.Character);
-        commit('setStatus', response.data.Info);
+        commit('setStatus', {
+            Achievements: { State: 2 },
+            Character: { State: 2 }
+        });
     } catch (e) {
         commit('setAchievements', prevAchievements);
         commit('setCharacter', prevCharacter);
