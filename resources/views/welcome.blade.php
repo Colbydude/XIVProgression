@@ -12,21 +12,21 @@
         <link href="https://ffxiv.voidteam.net" rel="canonical">
 
         {{-- Fonts --}}
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet" type="text/css">
 
         {{-- Styles --}}
         <style>
             html, body {
                 background-color: #fff;
-                color: white;
+                color: rgba(0, 0, 0, .75);
                 font-family: 'Source Sans Pro', sans-serif;
-                font-weight: 200;
+                font-weight: 300;
                 height: 100vh;
                 margin: 0;
             }
 
             body {
-                background-image: url('../img/stormblood-bg.jpg');
+                background-image: url('../img/shadowbringers-bg.jpg');
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
