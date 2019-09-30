@@ -1,7 +1,7 @@
 export default [
     'Adamantoise', 'Aegis', 'Alexander', 'Anima', 'Asura', 'Atomos',
     'Bahamut', 'Balmung', 'Behemoth', 'Belias', 'Brynhildr',
-    'Cactuar', 'Carbuncle', 'Cerberus', 'Chocobo',
+    'Cactuar', 'Carbuncle', 'Cerberus', 'Chocobo', 'Coeurl',
     'Diabolos', 'Durandal',
     'Excalibur', 'Exodus',
     'Faerie', 'Famfrit', 'Fenrir',
