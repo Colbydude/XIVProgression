@@ -14,4 +14,13 @@ class Character extends Model
     protected $fillable = [
         'lodestone_id', 'name', 'server'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'lodestone_id' => 'string',
+    ];
 }

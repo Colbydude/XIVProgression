@@ -1,0 +1,24 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Yarn Dependencies
+      uses: Borales/actions-yarn@master
+      with:
+        args: install
+    - name: Build Frontend
+      run: yarn prod
+    - name: Copy Example ENV
+      run: cp .env.example .env
+    - name: Install Composer Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+    - name: Generate Application Key
+      run: php artisan key:generate
+    - name: PHPUnit
+      run: vendor/bin/phpunit

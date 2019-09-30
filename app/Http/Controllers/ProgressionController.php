@@ -55,11 +55,17 @@ class ProgressionController extends Controller
 
                 // Save the character to our DB.
                 $result = $response->Results[0];
+                $server = preg_replace( "~\x{00a0}~siu", ' ', $result->Server); // Replace non-breaking space character with a regular space.
+
+                // Trim out the data center.
+                if (substr_count($server, ' (') > 0) {
+                    $server = explode(' (', $server)[0];
+                }
 
                 $character = Character::updateOrCreate([
                     'lodestone_id' => $result->ID,
                     'name' => $result->Name,
-                    'server' => $result->Server
+                    'server' => $server
                 ]);
             }
             catch (Exception $e) {
