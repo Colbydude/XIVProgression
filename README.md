@@ -1,5 +1,6 @@
 FFXIV Progression Checker
 =========================
+[![Actions Status](https://github.com/Colbydude/FFXIVProgressionChecker/workflows/CI/badge.svg)](https://github.com/Colbydude/FFXIVProgressionChecker/actions)
 
 *I really couldn't think of a better name...*
 
