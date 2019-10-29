@@ -380,6 +380,13 @@ export default {
             expansion: 'Stormblood',
             achievement_id: 2164,
             image: 'orbonne.png'
+        },
+        {
+            name: 'The Copied Factory',                         // The First Law
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2443,
+            image: 'the_copied_factory.png'
         }
     ],
     'trials': [
@@ -585,6 +592,13 @@ export default {
             expansion: 'Shadowbringers',
             achievement_id: 2386,
             image: 'innocence_ex.png'
+        },
+        {
+            name: 'Minstrel\'s Ballad: Hades\'s Elegy',         // Don't Look Back
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2441,
+            image: 'hades_ex.png'
         }
     ]
 };

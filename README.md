@@ -11,6 +11,9 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+**October 29th, 2019**
+- Update for 5.1 Content.
+
 **July 30th, 2019**
 - Update for 5.05 Content.
 - Make instances with more than one turn collapsable.
