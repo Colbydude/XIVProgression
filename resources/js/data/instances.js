@@ -315,7 +315,14 @@ export default {
                 { name: 'Inundation' },
                 { name: 'Sepulture' },
             ]
-        }
+        },
+        {
+            name: 'The Epic of Alexander',                      // When I Ruled The World
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2444,
+            image: 'alexander_ultimate.png'
+        },
     ],
     '24-man': [
         {
