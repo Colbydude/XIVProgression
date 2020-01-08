@@ -16,11 +16,11 @@
         "font-awesome": "^4.7.0",
         "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
-        "lodash": "^4.17.5",
+        "lodash": "^4.17.13",
         "moment": "^2.24.0",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.20.1",
-        "sass-loader": "7.*",
+        "sass-loader": "^7.1.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10",
         "vuex": "^2.4.1"

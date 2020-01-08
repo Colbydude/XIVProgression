@@ -1,6 +1,9 @@
 name: CI
 
-on: [push]
+on:
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build-and-test:
@@ -14,11 +17,11 @@ jobs:
         args: install
     - name: Build Frontend
       run: yarn prod
-    - name: Copy Example ENV
-      run: cp .env.example .env
     - name: Install Composer Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-    - name: Generate Application Key
-      run: php artisan key:generate
-    - name: PHPUnit
+    - name: Prepare Laravel Application
+      run: |
+        cp .env.example .env
+        php artisan key:generate
+    - name: Run Test Suite
       run: vendor/bin/phpunit
