@@ -323,6 +323,40 @@ export default {
             achievement_id: 2444,
             image: 'alexander_ultimate.png'
         },
+        {
+            name: 'Eden\'s Verse',
+            type: 'clear-by-clears',
+            expansion: 'Shadowbringers',
+            image: 'ev8.png',
+            achievementData: [
+                { id: 2591, times: 1 },                         // Trouble in Paradise I
+                { id: 2592, times: 5 },                         // Trouble in Paradise II
+                { id: 2593, times: 10 }                         // Trouble in Paradise III
+            ],
+            turnData: [
+                { name: 'Fulmination' },
+                { name: 'Furor' },
+                { name: 'Iconoclasm' },
+                { name: 'Refulgence' },
+            ]
+        },
+        {
+            name: 'Eden\'s Verse (Savage)',
+            type: 'clear-by-clears',
+            expansion: 'Shadowbringers',
+            image: 'ev8s.png',
+            achievementData: [
+                { id: 2594, times: 1 },                         // Savage Trouble in Paradise I
+                { id: 2595, times: 5 },                         // Savage Trouble in Paradise II
+                { id: 2596, times: 10 }                         // Savage Trouble in Paradise III
+            ],
+            turnData: [
+                { name: 'Fulmination' },
+                { name: 'Furor' },
+                { name: 'Iconoclasm' },
+                { name: 'Refulgence' },
+            ]
+        },
     ],
     '24-man': [
         {
@@ -606,6 +640,13 @@ export default {
             expansion: 'Shadowbringers',
             achievement_id: 2441,
             image: 'hades_ex.png'
+        },
+        {
+            name: 'Cinder Drift',                               // Seeing Red
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2590,
+            image: 'ruby_weapon_ex.png'
         }
     ]
 };
