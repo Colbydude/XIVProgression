@@ -1,6 +1,9 @@
 name: CI
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     branches:
       - master
@@ -25,3 +28,12 @@ jobs:
         php artisan key:generate
     - name: Run Test Suite
       run: vendor/bin/phpunit
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.ref == 'refs/heads/master'
+
+    steps:
+    - name: Deploy to Laravel Forge
+      run: curl ${{ secrets.FORGE_DEPLOYMENT_WEBHOOK }}
