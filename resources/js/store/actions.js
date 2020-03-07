@@ -18,7 +18,7 @@ export const getCharacterData = async ({ commit, state }, characterId) => {
                 'Character.ID', 'Character.Name', 'Character.Portrait',
                 'Character.Server', 'Character.Title', 'Info'
             ].join(','),
-            data: 'AC',
+            data: 'AC,CJ',
             extended: 1
         });
 
