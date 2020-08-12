@@ -7,11 +7,8 @@
 
 import './bootstrap';
 import store from './store';
-import moment from 'moment';
 
 window.Vue = require('vue');
-
-Vue.prototype.$time = moment;
 
 /**
  * The following block of code may be used to automatically register your

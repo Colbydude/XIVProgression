@@ -428,6 +428,13 @@ export default {
             expansion: 'Shadowbringers',
             achievement_id: 2443,
             image: 'the_copied_factory.png'
+        },
+        {
+            name: 'The Puppets\' Bunker',                       // Uncanny Valley
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2622,
+            image: 'the_puppets_bunker.png'
         }
     ],
     'trials': [
@@ -647,6 +654,20 @@ export default {
             expansion: 'Shadowbringers',
             achievement_id: 2590,
             image: 'ruby_weapon_ex.png'
-        }
+        },
+        {
+            name: 'Memoria Misera',                             // Misshapen Memory
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2586,
+            image: 'varis_yae_galvus_ex.png'
+        },
+        {
+            name: 'Seat of Sacrifice',                          // Bravest Warriors
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2621,
+            image: 'elidibus_ex.png'
+        },
     ]
 };

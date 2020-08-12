@@ -82,6 +82,7 @@
 
 <script>
     import { mapGetters } from 'vuex';
+    import { formatDate } from '../utils';
 
     export default {
         name: 'InstanceCard',
@@ -127,7 +128,7 @@
 
                         if (achievement !== undefined) {
                             this.cleared = true;
-                            this.clearDate = this.$time(achievement.Date * 1000).format('MMMM Do YYYY, h:mm a');
+                            this.clearDate = formatDate(achievement.Date * 1000);
                             this.clearTimes = data.times;
                         }
                     });
@@ -158,7 +159,7 @@
 
                     if (achievement !== undefined) {
                         this.cleared = true;
-                        this.clearDate = this.$time(achievement.Date * 1000).format('MMMM Do YYYY, h:mm a');
+                        this.clearDate = formatDate(achievement.Date * 1000);
                     }
                 }
             },
@@ -182,7 +183,7 @@
                     if (achievement !== undefined) {
                         data.icon = achievement.Icon;
                         data.cleared = true;
-                        data.clearDate = this.$time(achievement.Date * 1000).format('MMMM Do YYYY, h:mm a');
+                        data.clearDate = formatDate(achievement.Date * 1000);
                     }
                 });
 
