@@ -11,11 +11,18 @@
             "homepage": "https://colbydude.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Colbydude/xivapi-php.git"
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
         "laravel/framework": "^8.12",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "xivapi/xivapi-php": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

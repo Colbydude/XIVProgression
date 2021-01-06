@@ -27,7 +27,7 @@ jobs:
         cp .env.example .env
         php artisan key:generate
     - name: Run Test Suite
-      run: vendor/bin/phpunit
+      run: php artisan test
 
   deploy:
     runs-on: ubuntu-latest
