@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Character;
 use Faker\Generator as Faker;
 
 /*
@@ -23,7 +24,7 @@ $testServers = [
     'Anima'
 ];
 
-$factory->define(App\Character::class, function (Faker $faker) use ($testServers) {
+$factory->define(Character::class, function (Faker $faker) use ($testServers) {
     return [
         'lodestone_id' => $faker->randomNumber(),
         'name' => $faker->firstName . ' ' . $faker->lastName,

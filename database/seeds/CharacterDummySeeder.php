@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Character;
 use Illuminate\Database\Seeder;
 
 class CharacterDummySeeder extends Seeder
@@ -11,6 +12,6 @@ class CharacterDummySeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Character::class, 50)->create();
+        factory(Character::class, 50)->create();
     }
 }

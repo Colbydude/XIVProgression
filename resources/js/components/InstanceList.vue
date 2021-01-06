@@ -56,63 +56,70 @@
 </template>
 
 <script>
-    import Instances from './../data/instances';
-    import { stateMessages } from './../data/messages';
-    import { mapState } from 'vuex';
+import Filters from './Filters.vue';
+import InstanceCard from './InstanceCard.vue';
+import Instances from './../data/instances';
+import { stateMessages } from './../data/messages';
+import { mapState } from 'vuex';
 
-    export default {
-        name: 'InstanceList',
+export default {
+    name: 'InstanceList',
 
-        computed: {
-            /**
-             * List of alliance raids/24-man instances.
-             *
-             * @return {Array}
-             */
-            allianceRaids() {
-                if (this.filters.expansion.length === 0) {
-                    return Instances['24-man'];
-                }
+    components: {
+        Filters,
+        InstanceCard,
+    },
 
-                return Instances['24-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
-            },
+    computed: {
+        /**
+         * List of alliance raids/24-man instances.
+         *
+         * @return {Array}
+         */
+        allianceRaids() {
+            if (this.filters.expansion.length === 0) {
+                return Instances['24-man'];
+            }
 
-            /**
-             * List raids/8-man instances.
-             *
-             * @return {Array}
-             */
-            raids () {
-                if (this.filters.expansion.length === 0) {
-                    return Instances['8-man'];
-                }
+            return Instances['24-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
+        },
 
-                return Instances['8-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
-            },
+        /**
+         * List raids/8-man instances.
+         *
+         * @return {Array}
+         */
+        raids () {
+            if (this.filters.expansion.length === 0) {
+                return Instances['8-man'];
+            }
 
-            /**
-             * Message to display on different response states.
-             *
-             * @return {String}
-             */
-            stateMessage() {
-                return stateMessages[this.status.Achievements.State];
-            },
+            return Instances['8-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
+        },
 
-            /**
-             * List of trial instances.
-             *
-             * @return {Array}
-             */
-            trials() {
-                if (this.filters.expansion.length === 0) {
-                    return Instances['trials'];
-                }
+        /**
+         * Message to display on different response states.
+         *
+         * @return {String}
+         */
+        stateMessage() {
+            return stateMessages[this.status.Achievements.State];
+        },
 
-                return Instances['trials'].filter(instance => this.filters.expansion.includes(instance.expansion));
-            },
+        /**
+         * List of trial instances.
+         *
+         * @return {Array}
+         */
+        trials() {
+            if (this.filters.expansion.length === 0) {
+                return Instances['trials'];
+            }
 
-            ...mapState(['achievements', 'filters', 'status'])
-        }
-    };
+            return Instances['trials'].filter(instance => this.filters.expansion.includes(instance.expansion));
+        },
+
+        ...mapState(['achievements', 'filters', 'status'])
+    }
+};
 </script>
