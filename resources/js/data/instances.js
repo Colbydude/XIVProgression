@@ -357,6 +357,40 @@ export default {
                 { name: 'Refulgence' },
             ]
         },
+        {
+            name: 'Eden\'s Promise',
+            type: 'clear-by-clears',
+            expansion: 'Shadowbringers',
+            image: 'ep12.png',
+            achievementData: [
+                { id: 2719, times: 1 },                         // Paradise Within Thee I
+                { id: 2720, times: 5 },                         // Paradise Within Thee II
+                { id: 2721, times: 10 }                         // Paradise Within Thee III
+            ],
+            turnData: [
+                { name: 'Umbra' },
+                { name: 'Litany' },
+                { name: 'Anamorphosis' },
+                { name: 'Eternity' },
+            ]
+        },
+        {
+            name: 'Eden\'s Promise (Savage)',
+            type: 'clear-by-clears',
+            expansion: 'Shadowbringers',
+            image: 'ep12s.png',
+            achievementData: [
+                { id: 2722, times: 1 },                         // Savage Paradise Within Thee I
+                { id: 2723, times: 5 },                         // Savage Paradise Within Thee II
+                { id: 2724, times: 10 }                         // Savage Paradise Within Thee III
+            ],
+            turnData: [
+                { name: 'Umbra' },
+                { name: 'Litany' },
+                { name: 'Anamorphosis' },
+                { name: 'Eternity' },
+            ]
+        },
     ],
     '24-man': [
         {
@@ -668,6 +702,13 @@ export default {
             expansion: 'Shadowbringers',
             achievement_id: 2621,
             image: 'elidibus_ex.png'
+        },
+        {
+            name: 'Castrum Marinum',                           // It's Not Easy
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2718,
+            image: 'emerald_weapon_ex.png'
         },
     ]
 };

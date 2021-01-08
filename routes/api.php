@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\ProgressionController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +14,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/fetch', 'ProgressionController@fetch');
+Route::get('/fetch', [ProgressionController::class, 'fetch']);

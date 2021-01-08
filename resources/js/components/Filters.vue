@@ -42,25 +42,25 @@
 </template>
 
 <script>
-    import { mapMutations, mapState } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 
-    export default {
-        name: 'Filters',
+export default {
+    name: 'Filters',
 
-        computed: mapState(['filters']),
+    computed: mapState(['filters']),
 
-        methods: {
-            /**
-             * Toggles the given filter.
-             *
-             * @param  {String}  filter
-             * @return {Void}
-             */
-            toggleFilter(filter) {
-                this.toggleExpansionFilter(filter);
-            },
+    methods: {
+        /**
+         * Toggles the given filter.
+         *
+         * @param  {String}  filter
+         * @return {Void}
+         */
+        toggleFilter(filter) {
+            this.toggleExpansionFilter(filter);
+        },
 
-            ...mapMutations(['toggleExpansionFilter'])
-        }
-    };
+        ...mapMutations(['toggleExpansionFilter'])
+    }
+};
 </script>

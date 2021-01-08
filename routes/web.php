@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProgressionController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,5 +15,5 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/progression', 'ProgressionController@show');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/progression', [ProgressionController::class, 'show']);

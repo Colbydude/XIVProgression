@@ -7,31 +7,31 @@
 </template>
 
 <script>
-    export default {
-        name: 'JobListItem',
+export default {
+    name: 'JobListItem',
 
-        props: {
-            classJob: {
-                type: Object,
-                required: true
-            }
-        },
-
-        computed: {
-            /**
-             * Return the proper class/job name depending on level.
-             *
-             * @return {String}
-             */
-            name () {
-                let name = this.classJob.Job.Name;
-
-                if (this.classJob.Level < 30 && this.classJob.Job.Name !== 'scholar') {
-                    name = this.classJob.Class.Name;
-                }
-
-                return name;
-            },
+    props: {
+        classJob: {
+            type: Object,
+            required: true
         }
-    };
+    },
+
+    computed: {
+        /**
+         * Return the proper class/job name depending on level.
+         *
+         * @return {String}
+         */
+        name () {
+            let name = this.classJob.Job.Name;
+
+            if (this.classJob.Level < 30 && this.classJob.Job.Name !== 'scholar') {
+                name = this.classJob.Class.Name;
+            }
+
+            return name;
+        },
+    }
+};
 </script>

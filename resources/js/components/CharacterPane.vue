@@ -69,30 +69,37 @@
 </template>
 
 <script>
-    import { stateMessages } from './../data/messages';
-    import { mapState } from 'vuex';
+import JobListItem from './JobListItem.vue';
+import { stateMessages } from './../data/messages';
+import { mapState } from 'vuex';
 
-    export default {
-        computed: {
-            /**
-             * Gets the character's (NA) Lodestone URL.
-             *
-             * @return {String}
-             */
-            lodestoneUrl() {
-                return `https://na.finalfantasyxiv.com/lodestone/character/${this.character.ID}`;
-            },
+export default {
+    name: 'CharacterPane',
 
-            /**
-             * Message to display on different response states.
-             *
-             * @return {String}
-             */
-            stateMessage() {
-                return stateMessages[this.status.Character.State];
-            },
+    components: {
+        JobListItem,
+    },
 
-            ...mapState(['character', 'status'])
-        }
-    };
+    computed: {
+        /**
+         * Gets the character's (NA) Lodestone URL.
+         *
+         * @return {String}
+         */
+        lodestoneUrl() {
+            return `https://na.finalfantasyxiv.com/lodestone/character/${this.character.ID}`;
+        },
+
+        /**
+         * Message to display on different response states.
+         *
+         * @return {String}
+         */
+        stateMessage() {
+            return stateMessages[this.status.Character.State];
+        },
+
+        ...mapState(['character', 'status'])
+    }
+};
 </script>

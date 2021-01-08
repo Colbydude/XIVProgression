@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Character;
+use App\Models\Character;
 use Exception;
 use Illuminate\Http\Request;
 use XIVAPI\XIVAPI;

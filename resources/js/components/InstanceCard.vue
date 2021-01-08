@@ -81,114 +81,114 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex';
-    import { formatDate } from '../utils';
+import { mapGetters } from 'vuex';
+import { formatDate } from '../utils';
 
-    export default {
-        name: 'InstanceCard',
+export default {
+    name: 'InstanceCard',
 
-        props: {
-            card: {
-                type: Object,
-                required: true
-            }
-        },
+    props: {
+        card: {
+            type: Object,
+            required: true
+        }
+    },
 
-        mounted() {
-            this.setData();
-        },
+    mounted() {
+        this.setData();
+    },
 
-        data () {
-            return {
-                cleared: false,     // Whether or not the card (instance) has been cleared.
-                clearDate: '',      // The clear date to display on the card.
-                clearTimes: '',     // The clear times to display on the card (only on clear-by-clears cards).
-                isOpen: false,      // Whehther or not the card's turn data is open.
-                turnData: null      // Turn data to show on the card.
-            }
-        },
+    data () {
+        return {
+            cleared: false,     // Whether or not the card (instance) has been cleared.
+            clearDate: '',      // The clear date to display on the card.
+            clearTimes: '',     // The clear times to display on the card (only on clear-by-clears cards).
+            isOpen: false,      // Whehther or not the card's turn data is open.
+            turnData: null      // Turn data to show on the card.
+        }
+    },
 
-        computed: mapGetters(['getAchievementById']),
+    computed: mapGetters(['getAchievementById']),
 
-        methods: {
+    methods: {
+        /**
+         * Sets the clear data for the card based on the card type.
+         *
+         * @return {Void}
+         */
+        setData () {
             /**
-             * Sets the clear data for the card based on the card type.
-             *
-             * @return {Void}
+             * Clear-by-clears cards count as cleared when the first achievement in achievementData is cleared.
+             * However, additional clear data is given from the subsequent achievements, such as how many times*
+             * an instance has been cleared.
              */
-            setData () {
-                /**
-                 * Clear-by-clears cards count as cleared when the first achievement in achievementData is cleared.
-                 * However, additional clear data is given from the subsequent achievements, such as how many times*
-                 * an instance has been cleared.
-                 */
-                if (this.card.type == 'clear-by-clears') {
-                    this.card.achievementData.forEach(data => {
-                        const achievement = this.getAchievementById(data.id);
-
-                        if (achievement !== undefined) {
-                            this.cleared = true;
-                            this.clearDate = formatDate(achievement.Date * 1000);
-                            this.clearTimes = data.times;
-                        }
-                    });
-
-                    this.setTurnData(this.card.turnData);
-                }
-                /**
-                 * Clear-by-turns cards count as cleared when all the turns in the instance have been cleared.
-                 */
-                else if (this.card.type == 'clear-by-turns') {
-                    this.setTurnData(this.card.turnData);
-
-                    var turnClears = 0;
-
-                    this.turnData.forEach(turn => {
-                        if (turn.cleared) {
-                            turnClears++;
-                        }
-                    });
-
-                    this.cleared = turnClears == this.turnData.length;
-                }
-                /**
-                 * Single cards count as cleared simply when the achievement is present.
-                 */
-                else if (this.card.type == 'single') {
-                    const achievement = this.getAchievementById(this.card.achievement_id);
+            if (this.card.type == 'clear-by-clears') {
+                this.card.achievementData.forEach(data => {
+                    const achievement = this.getAchievementById(data.id);
 
                     if (achievement !== undefined) {
                         this.cleared = true;
                         this.clearDate = formatDate(achievement.Date * 1000);
-                    }
-                }
-            },
-
-            /**
-             * Sets the clear data for the card's turn data.
-             *
-             * @param  {Object}  turnData
-             * @return {Void}
-             */
-            setTurnData (turnData) {
-                turnData.forEach(data => {
-                    if (data.id === undefined) {
-                        return;
-                    }
-
-                    var achievement = this.getAchievementById(data.id);
-
-                    data.cleared = false;
-
-                    if (achievement !== undefined) {
-                        data.icon = achievement.Icon;
-                        data.cleared = true;
-                        data.clearDate = formatDate(achievement.Date * 1000);
+                        this.clearTimes = data.times;
                     }
                 });
 
-                this.turnData = turnData;
+                this.setTurnData(this.card.turnData);
             }
+            /**
+             * Clear-by-turns cards count as cleared when all the turns in the instance have been cleared.
+             */
+            else if (this.card.type == 'clear-by-turns') {
+                this.setTurnData(this.card.turnData);
+
+                var turnClears = 0;
+
+                this.turnData.forEach(turn => {
+                    if (turn.cleared) {
+                        turnClears++;
+                    }
+                });
+
+                this.cleared = turnClears == this.turnData.length;
+            }
+            /**
+             * Single cards count as cleared simply when the achievement is present.
+             */
+            else if (this.card.type == 'single') {
+                const achievement = this.getAchievementById(this.card.achievement_id);
+
+                if (achievement !== undefined) {
+                    this.cleared = true;
+                    this.clearDate = formatDate(achievement.Date * 1000);
+                }
+            }
+        },
+
+        /**
+         * Sets the clear data for the card's turn data.
+         *
+         * @param  {Object}  turnData
+         * @return {Void}
+         */
+        setTurnData (turnData) {
+            turnData.forEach(data => {
+                if (data.id === undefined) {
+                    return;
+                }
+
+                var achievement = this.getAchievementById(data.id);
+
+                data.cleared = false;
+
+                if (achievement !== undefined) {
+                    data.icon = achievement.Icon;
+                    data.cleared = true;
+                    data.clearDate = formatDate(achievement.Date * 1000);
+                }
+            });
+
+            this.turnData = turnData;
         }
     }
+}
 </script>

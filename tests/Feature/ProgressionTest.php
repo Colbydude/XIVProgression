@@ -2,9 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Character;
+use App\Models\Character;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ProgressionTest extends TestCase
@@ -36,7 +35,7 @@ class ProgressionTest extends TestCase
     {
         $this->assertEquals(Character::count(), 0);
 
-        $character = factory(Character::class)->create([
+        $character = Character::factory()->make([
             'lodestone_id' => '4106410',
             'name' => 'Marin Valde',
             'server' => 'Leviathan'

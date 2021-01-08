@@ -11,6 +11,10 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+**January 5th, 2021**
+- Update to Laravel 8.
+- Update for 5.4 Content.
+
 **August 12th, 2020**
 - Update for 5.3 Content.
 - Update for 5.25 Content.

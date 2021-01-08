@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class BuildTest extends TestCase
 {
     /**
      * A basic smoke test to ensure that the site builds and deploys.
