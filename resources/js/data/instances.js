@@ -469,7 +469,14 @@ export default {
             expansion: 'Shadowbringers',
             achievement_id: 2622,
             image: 'the_puppets_bunker.png'
-        }
+        },
+        {
+            name: 'The Tower at Paradigm\'s Breach',            // Deus et Machina
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2847,
+            image: 'the_tower_at_paradigms_breach.png'
+        },
     ],
     'trials': [
         {
@@ -704,11 +711,18 @@ export default {
             image: 'elidibus_ex.png'
         },
         {
-            name: 'Castrum Marinum',                           // It's Not Easy
+            name: 'Castrum Marinum',                            // It's Not Easy
             type: 'single',
             expansion: 'Shadowbringers',
             achievement_id: 2718,
             image: 'emerald_weapon_ex.png'
+        },
+        {
+            name: 'Cloud Deck',                                 // Shine Bright
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2846,
+            image: 'diamond_weapon_ex.png'
         },
     ]
 };
