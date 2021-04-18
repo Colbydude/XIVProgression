@@ -11,16 +11,16 @@ class ProgressionTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function fetches_character_info_and_store_character()
+    public function fetches_character_info_and_stores_character()
     {
         $response = $this->get('/api/fetch?name=Enyl+Noves&server=Leviathan');
 
         $response->assertStatus(200);
-        $response->assertJsonFragment([
-            'lodestone_id' => '2249861',
-            'name' => 'Enyl Noves',
-            'server' => 'Leviathan'
-        ]);
+
+        $decoded = $response->decodeResponseJson();
+        $this->assertEquals('2249861', $decoded['Character']['ID']);
+        $this->assertEquals('Enyl Noves', $decoded['Character']['Name']);
+        $this->assertEquals('Leviathan', $decoded['Character']['Server']);
 
         $this->assertEquals(1, Character::count());
 
@@ -35,7 +35,7 @@ class ProgressionTest extends TestCase
     {
         $this->assertEquals(Character::count(), 0);
 
-        $character = Character::factory()->make([
+        Character::factory()->make([
             'lodestone_id' => '4106410',
             'name' => 'Marin Valde',
             'server' => 'Leviathan'
@@ -44,11 +44,11 @@ class ProgressionTest extends TestCase
         $response = $this->get('/api/fetch?name=Marin+Valde&server=Leviathan');
 
         $response->assertStatus(200);
-        $response->assertJsonFragment([
-            'lodestone_id' => '4106410',
-            'name' => 'Marin Valde',
-            'server' => 'Leviathan'
-        ]);
+
+        $decoded = $response->decodeResponseJson();
+        $this->assertEquals('4106410', $decoded['Character']['ID']);
+        $this->assertEquals('Marin Valde', $decoded['Character']['Name']);
+        $this->assertEquals('Leviathan', $decoded['Character']['Server']);
 
         $this->assertEquals(Character::count(), 1);
     }

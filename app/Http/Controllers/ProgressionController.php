@@ -3,12 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Models\Character;
+use App\Services\XIVAPIServiceInterface;
 use Exception;
 use Illuminate\Http\Request;
-use XIVAPI\XIVAPI;
 
 class ProgressionController extends Controller
 {
+    /**
+     * The XIVAPI service implementation.
+     *
+     * @var XIVAPIServiceInterface
+     */
+    private XIVAPIServiceInterface $api;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @param  XIVAPIServiceInterface  $api
+     * @return void
+     */
+    public function __construct(XIVAPIServiceInterface $api)
+    {
+        $this->api = $api;
+    }
+
     /**
      * Display the progression page.
      *
@@ -40,14 +58,8 @@ class ProgressionController extends Controller
 
         if ($character == null) {
             try {
-                // Instantiate API.
-                $api = new XIVAPI();
-
-                // Set env.
-                $api->environment->key(config('services.xivapi.key'));
-
                 // Search for the character.
-                $response = $api->character->search($name, $server);
+                $response = $this->api->characterSearch($name, $server);
 
                 if (empty($response->Results)) {
                     return response()->json(['error' => 'Character not found.'], 404);
@@ -68,11 +80,18 @@ class ProgressionController extends Controller
                     'server' => $server
                 ]);
             }
-            catch (Exception $e) {
+            catch (Exception) {
                 return response()->json(['error' => 'Unexpected error occurred.'], 500);
             }
         }
 
-        return response()->json($character, 200);
+        try {
+            // Now, fetch character data and achievement data.
+            $characterData = $this->api->character($character->lodestone_id);
+
+            return response()->json($characterData, 200);
+        } catch (Exception) {
+            return response()->json(['error' => 'Unexpected error occurred.'], 500);
+        }
     }
 }

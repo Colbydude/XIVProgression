@@ -4735,12 +4735,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Colbydude/xivapi-php.git",
-                "reference": "ef01e4c90d53696063b1cd7f027a03b698e6fc2b"
+                "reference": "f144b41f8ebaffac049f1bd6ac857851fa1375a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Colbydude/xivapi-php/zipball/ef01e4c90d53696063b1cd7f027a03b698e6fc2b",
-                "reference": "ef01e4c90d53696063b1cd7f027a03b698e6fc2b",
+                "url": "https://api.github.com/repos/Colbydude/xivapi-php/zipball/f144b41f8ebaffac049f1bd6ac857851fa1375a8",
+                "reference": "f144b41f8ebaffac049f1bd6ac857851fa1375a8",
                 "shasum": ""
             },
             "require": {
@@ -4779,7 +4779,7 @@
             "support": {
                 "source": "https://github.com/Colbydude/xivapi-php/tree/master"
             },
-            "time": "2021-01-06T00:32:10+00:00"
+            "time": "2021-04-18T10:46:43+00:00"
         }
     ],
     "packages-dev": [

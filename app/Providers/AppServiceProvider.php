@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\XIVAPIServiceInterface;
+use App\Services\XIVAPIService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(XIVAPIServiceInterface::class, XIVAPIService::class);
     }
 
     /**
