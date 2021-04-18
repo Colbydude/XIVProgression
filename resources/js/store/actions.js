@@ -1,6 +1,6 @@
-import { character } from './../api/xivapi';
+import { fetchProgression } from './../api';
 
-export const getCharacterData = async ({ commit, state }, characterId) => {
+export const getCharacterData = async ({ commit, state }, { name, server }) => {
     const prevAchievements = state.achievements;
     const prevCharacter = state.character;
 
@@ -12,17 +12,7 @@ export const getCharacterData = async ({ commit, state }, characterId) => {
     });
 
     try {
-        const response = await character(characterId, {
-            columns: [
-                'Achievements', 'Character.ActiveClassJob', 'Character.ClassJobs',
-                'Character.ID', 'Character.Name', 'Character.Portrait',
-                'Character.Server', 'Character.Title', 'Info'
-            ].join(','),
-            data: 'AC,CJ',
-            extended: 1
-        });
-
-        console.log(response.data);
+        const response = await fetchProgression(name, server);
 
         commit('setAchievements', response.data.Achievements);
         commit('setCharacter', response.data.Character);

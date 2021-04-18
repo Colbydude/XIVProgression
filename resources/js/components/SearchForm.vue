@@ -16,9 +16,8 @@
 </template>
 
 <script>
-import API from './../api';
 import servers from './../data/servers';
-import { mapActions, mapMutations, mapState } from 'vuex';
+import { mapActions, mapMutations } from 'vuex';
 
 export default {
     name: 'SearchForm',
@@ -65,9 +64,7 @@ export default {
             history.pushState({}, '', '?name=' + this.name + '&server=' + this.server);
 
             try {
-                let response = await API.search(this.name, this.server);
-
-                this.getCharacterData(response.data.lodestone_id);
+                this.getCharacterData({ name: this.name, server: this.server });
             } catch (e) {
                 if (e.response.status === 404) {
                     this.setStatus({
