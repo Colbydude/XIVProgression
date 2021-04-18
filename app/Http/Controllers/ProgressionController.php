@@ -80,7 +80,7 @@ class ProgressionController extends Controller
                     'server' => $server
                 ]);
             }
-            catch (Exception) {
+            catch (Exception $e) {
                 return response()->json(['error' => 'Unexpected error occurred.'], 500);
             }
         }
@@ -90,7 +90,7 @@ class ProgressionController extends Controller
             $characterData = $this->api->character($character->lodestone_id);
 
             return response()->json($characterData, 200);
-        } catch (Exception) {
+        } catch (Exception $e) {
             return response()->json(['error' => 'Unexpected error occurred.'], 500);
         }
     }
