@@ -98,7 +98,7 @@ export default {
         this.setData();
     },
 
-    data () {
+    data() {
         return {
             cleared: false,     // Whether or not the card (instance) has been cleared.
             clearDate: '',      // The clear date to display on the card.
@@ -116,7 +116,7 @@ export default {
          *
          * @return {Void}
          */
-        setData () {
+        setData() {
             /**
              * Clear-by-clears cards count as cleared when the first achievement in achievementData is cleared.
              * However, additional clear data is given from the subsequent achievements, such as how many times*
@@ -170,7 +170,7 @@ export default {
          * @param  {Object}  turnData
          * @return {Void}
          */
-        setTurnData (turnData) {
+        setTurnData(turnData) {
             turnData.forEach(data => {
                 if (data.id === undefined) {
                     return;

@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <h2 class="text-light">8-Man Raids</h2>
+            <h2 class="text-light">Raids</h2>
             <div class="row multi-columns-row">
                 <div
                     class="col-md-6 col-lg-4"
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <h2 class="text-light">24-Man Raids</h2>
+            <h2 class="text-light">Alliance Raids</h2>
             <div class="row multi-columns-row">
                 <div
                     class="col-md-6 col-lg-4"
@@ -92,10 +92,10 @@ export default {
          */
         allianceRaids() {
             if (this.filters.expansion.length === 0) {
-                return Instances['24-man'];
+                return Instances['alliance'];
             }
 
-            return Instances['24-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
+            return Instances['alliance'].filter(instance => this.filters.expansion.includes(instance.expansion));
         },
 
         /**
@@ -103,7 +103,7 @@ export default {
          *
          * @return {Array}
          */
-        msq () {
+        msq() {
             if (this.filters.expansion.length === 0) {
                 return Quests['msq'];
             }
@@ -116,12 +116,12 @@ export default {
          *
          * @return {Array}
          */
-        raids () {
+        raids() {
             if (this.filters.expansion.length === 0) {
-                return Instances['8-man'];
+                return Instances['raids'];
             }
 
-            return Instances['8-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
+            return Instances['raids'].filter(instance => this.filters.expansion.includes(instance.expansion));
         },
 
         /**
