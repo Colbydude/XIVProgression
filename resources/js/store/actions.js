@@ -16,10 +16,19 @@ export const getCharacterData = async ({ commit, state }, { name, server }) => {
 
         commit('setAchievements', response.data.Achievements);
         commit('setCharacter', response.data.Character);
-        commit('setStatus', {
-            Achievements: { State: 2 },
-            Character: { State: 2 }
-        });
+
+        // If achievements are private or there are no achievements earned.
+        if (response.data.Achievements.List.length === 0) {
+            commit('setStatus', {
+                Achievements: { State: 5 },
+                Character: { State: 2 }
+            });
+        } else {
+            commit('setStatus', {
+                Achievements: { State: 2 },
+                Character: { State: 2 }
+            });
+        }
     } catch (e) {
         commit('setAchievements', prevAchievements);
         commit('setCharacter', prevCharacter);

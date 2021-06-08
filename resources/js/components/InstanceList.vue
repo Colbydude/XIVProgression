@@ -3,6 +3,17 @@
         <template v-if="achievements != null && status.Achievements.State == 2">
             <filters />
 
+            <h2 class="text-light">Main Story Quests</h2>
+            <div class="row multi-columns-row">
+                <div
+                    class="col-md-6 col-lg-4"
+                    v-for="questData in msq"
+                    :key="typeof questData.quest === 'object' ? questData.quest[0] : questData.quest"
+                >
+                    <quest-card :quest-data="questData"></quest-card>
+                </div>
+            </div>
+
             <h2 class="text-light">8-Man Raids</h2>
             <div class="row multi-columns-row">
                 <div
@@ -58,6 +69,8 @@
 <script>
 import Filters from './Filters.vue';
 import InstanceCard from './InstanceCard.vue';
+import QuestCard from './QuestCard.vue';
+import Quests from './../data/quests';
 import Instances from './../data/instances';
 import { stateMessages } from './../data/messages';
 import { mapState } from 'vuex';
@@ -68,6 +81,7 @@ export default {
     components: {
         Filters,
         InstanceCard,
+        QuestCard,
     },
 
     computed: {
@@ -82,6 +96,19 @@ export default {
             }
 
             return Instances['24-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
+        },
+
+        /**
+         * List Main Story Quests.
+         *
+         * @return {Array}
+         */
+        msq () {
+            if (this.filters.expansion.length === 0) {
+                return Quests['msq'];
+            }
+
+            return Quests['msq'].filter(quest => this.filters.expansion.includes(quest.expansion));
         },
 
         /**
