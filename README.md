@@ -4,7 +4,7 @@ FFXIV Progression Checker
 
 _I really couldn't think of a better name..._
 
-This tool is used for quickly checking a character's main story quest and duty progression in FFXIV. This saves the effort of having to actually go to the Lodestone and look things up. Information is collected using the [XIVAPI](https://xivapi.com) and checks for certain achievements. However, keep in mind that this tool will not work if the specified character does not have achievements viewable to the public.
+This tool is used for quickly checking a character's main scenario quest and duty progression in FFXIV. This saves the effort of having to actually go to the Lodestone and look things up. Information is collected using the [XIVAPI](https://xivapi.com) and checks for certain achievements. However, keep in mind that this tool will not work if the specified character does not have achievements viewable to the public.
 
 **Website:** http://ffxiv.voidteam.net/progression  
 **Powered By:** [Laravel](https://laravel.com/) and [Vue](https://vuejs.org/)
@@ -12,7 +12,7 @@ This tool is used for quickly checking a character's main story quest and duty p
 Release Notes
 -------------
 **June 10th, 2021**
-- Include tracking of all Main Story Quest achievements.
+- Include tracking of all Main Scenario Quest achievements.
 
 **April 18th, 2021**
 - Calls to the XIVAPI are now cached for an hour.

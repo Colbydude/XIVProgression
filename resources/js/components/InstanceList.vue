@@ -3,7 +3,7 @@
         <template v-if="achievements != null && status.Achievements.State == 2">
             <filters />
 
-            <h2 class="text-light">Main Story Quests</h2>
+            <h2 class="text-light">Main Scenario Quests</h2>
             <div class="row multi-columns-row">
                 <div
                     class="col-md-6 col-lg-4"
@@ -99,7 +99,7 @@ export default {
         },
 
         /**
-         * List Main Story Quests.
+         * List Main Scenario Quests.
          *
          * @return {Array}
          */

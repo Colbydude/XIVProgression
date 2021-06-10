@@ -5,7 +5,7 @@
                 <span class="instance-clear-date">{{ clearDate }}</span>
             </div>
             <span class="panel-title">
-                <img class="msq-icon" src="/img/icons/msq.png" alt="Main Story Quest"> {{ questName }} (Level {{ questData.level }})
+                <img class="msq-icon" src="/img/icons/msq.png" alt="Main Scenario Quest"> {{ questName }} (Level {{ questData.level }})
             </span>
         </div>
     </div>

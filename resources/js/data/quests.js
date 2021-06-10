@@ -188,35 +188,35 @@ export default {
             image: 'The_Far_Edge_of_Fate_Image.png'
         },
         {
-            quest: 'Not without Incident',      // Incidentally Speaking
+            quest: 'Not without Incident',              // Incidentally Speaking
             level: 61,
             expansion: 'Stormblood',
             achievement_id: 1787,
             image: 'Not_without_Incident_Image.png'
         },
         {
-            quest: 'Once More, to the Ruby Sea',      // Destination Unknown
+            quest: 'Once More, to the Ruby Sea',        // Destination Unknown
             level: 62,
             expansion: 'Stormblood',
             achievement_id: 1788,
             image: 'Once_More,_to_the_Ruby_Sea_Image.png'
         },
         {
-            quest: 'Tide Goes in, Imperials Go Out',      // Unexplained
+            quest: 'Tide Goes in, Imperials Go Out',    // Unexplained
             level: 63,
             expansion: 'Stormblood',
             achievement_id: 1789,
             image: 'The_Lord_of_the_Revel_Image.png'
         },
         {
-            quest: 'All the Little Angels',      // Put Your Wings Up
+            quest: 'All the Little Angels',             // Put Your Wings Up
             level: 64,
             expansion: 'Stormblood',
             achievement_id: 1790,
             image: 'Here_There_Be_Xaela_Image.png'
         },
         {
-            quest: 'In Crimson They Walked',      // Crimson Footprints
+            quest: 'In Crimson They Walked',            // Crimson Footprints
             level: 66,
             expansion: 'Stormblood',
             achievement_id: 1791,
@@ -230,84 +230,84 @@ export default {
             image: 'The_Die_Is_Cast_Image.png'
         },
         {
-            quest: 'The Lady in Red',      // Cheek to Cheek
+            quest: 'The Lady in Red',                   // Cheek to Cheek
             level: 69,
             expansion: 'Stormblood',
             achievement_id: 1793,
             image: 'Upon_the_Great_Loch%27s_Shore_Image.png'
         },
         {
-            quest: 'Stormblood',      // The Measure of His Reach
+            quest: 'Stormblood',                        // The Measure of His Reach
             level: 70,
             expansion: 'Stormblood',
             achievement_id: 1794,
             image: 'Stormblood_(Quest)_Image.png'
         },
         {
-            quest: 'Return of the Bull',      // More Heroes
+            quest: 'Return of the Bull',                // More Heroes
             level: 70,
             expansion: 'Stormblood',
             achievement_id: 1990,
             image: 'Return_of_the_Bull_Image.png'
         },
         {
-            quest: 'Rise of a New Son',      // Solar Cycle
+            quest: 'Rise of a New Son',                 // Solar Cycle
             level: 70,
             expansion: 'Stormblood',
             achievement_id: 2013,
             image: 'Rise_of_a_New_Sun_Image.png'
         },
         {
-            quest: 'Under the Moonlight',      // Lunar Cycle
+            quest: 'Under the Moonlight',               // Lunar Cycle
             level: 70,
             expansion: 'Stormblood',
             achievement_id: 2098,
             image: 'Under_the_Moonlight_Image.png'
         },
         {
-            quest: 'Prelude in Violet',      // A History of Violet
+            quest: 'Prelude in Violet',                 // A History of Violet
             level: 70,
             expansion: 'Stormblood',
             achievement_id: 2124,
             image: 'Prelude_in_Violet_Image.png'
         },
         {
-            quest: 'The Face of War',      // What Is It Good For
+            quest: 'The Face of War',                   // What Is It Good For
             level: 70,
             expansion: 'Stormblood',
             achievement_id: 2160,
             image: 'The_Face_of_War_Image.png'
         },
         {
-            quest: 'A Requiem for Heroes',      // Swan Song
+            quest: 'A Requiem for Heroes',              // Swan Song
             level: 70,
             expansion: 'Stormblood',
             achievement_id: 2233,
             image: 'A_Requiem_for_Heroes_Image.png'
         },
         {
-            quest: 'Warrior of Darkness',      // Between Two Worlds
+            quest: 'Warrior of Darkness',               // Between Two Worlds
             level: 71,
             expansion: 'Shadowbringers',
             achievement_id: 2293,
             image: 'The_Lightwardens_Image.png'
         },
         {
-            quest: 'The Wheel Turns',      // Realpolitik
+            quest: 'The Wheel Turns',                   // Realpolitik
             level: 73,
             expansion: 'Shadowbringers',
             achievement_id: 2294,
             image: 'Acht-la_Ormh_Inn_Image.png'
         },
         {
-            quest: 'Out of the Wood',      // Journey to the Past
+            quest: 'Out of the Wood',                   // Journey to the Past
             level: 76,
             expansion: 'Shadowbringers',
             achievement_id: 2295,
             image: 'The_Burden_of_Knowledge_Image.png'
         },
         {
-            quest: 'More than a Hunch',      // Shrouded in Darkness
+            quest: 'More than a Hunch',                 // Shrouded in Darkness
             level: 77,
             expansion: 'Shadowbringers',
             achievement_id: 2296,
@@ -321,49 +321,49 @@ export default {
             image: 'Extinguishing_the_Last_Light_Image.png'
         },
         {
-            quest: 'Shadowbringers',      // Shadowbringers
+            quest: 'Shadowbringers',                    // Shadowbringers
             level: 80,
             expansion: 'Shadowbringers',
             achievement_id: 2298,
             image: 'Shadowbringers_(Quest)_Image.png'
         },
         {
-            quest: 'Vows of Virtue, Deeds of Cruelty',      // Black and White
+            quest: 'Vows of Virtue, Deeds of Cruelty',  // Black and White
             level: 80,
             expansion: 'Shadowbringers',
             achievement_id: 2424,
             image: 'Vows_of_Virtue,_Deeds_of_Cruelty_Image.png'
         },
         {
-            quest: 'Echoes of a Fallen Star',      // Way More Heroes
+            quest: 'Echoes of a Fallen Star',           // Way More Heroes
             level: 80,
             expansion: 'Shadowbringers',
             achievement_id: 2587,
             image: 'Echoes_of_a_Fallen_Star_Image.png'
         },
         {
-            quest: 'Reflections in Crystal',      // Hope's Legacy
+            quest: 'Reflections in Crystal',            // Hope's Legacy
             level: 80,
             expansion: 'Shadowbringers',
             achievement_id: 2642,
             image: 'Reflections_in_Crystal_Image.png'
         },
         {
-            quest: 'Futures Rewritten',      // Pen and Sword
+            quest: 'Futures Rewritten',                 // Pen and Sword
             level: 80,
             expansion: 'Shadowbringers',
             achievement_id: 2714,
             image: 'Futures_rewritten1.png'
         },
         {
-            quest: 'When the Dust Settles',      // Not for Naught
+            quest: 'When the Dust Settles',             // Not for Naught
             level: 80,
             expansion: 'Shadowbringers',
             achievement_id: 2850,
             image: 'When_the_dust_settles1.png'
         },
         {
-            quest: 'Death Unto Dawn',      // Under the Darkened Moon
+            quest: 'Death Unto Dawn',                   // Under the Darkened Moon
             level: 80,
             expansion: 'Shadowbringers',
             achievement_id: 2851,
