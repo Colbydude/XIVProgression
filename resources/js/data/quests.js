@@ -284,6 +284,90 @@ export default {
             expansion: 'Stormblood',
             achievement_id: 2233,
             image: 'A_Requiem_for_Heroes_Image.png'
+        },
+        {
+            quest: 'Warrior of Darkness',      // Between Two Worlds
+            level: 71,
+            expansion: 'Shadowbringers',
+            achievement_id: 2293,
+            image: 'The_Lightwardens_Image.png'
+        },
+        {
+            quest: 'The Wheel Turns',      // Realpolitik
+            level: 73,
+            expansion: 'Shadowbringers',
+            achievement_id: 2294,
+            image: 'Acht-la_Ormh_Inn_Image.png'
+        },
+        {
+            quest: 'Out of the Wood',      // Journey to the Past
+            level: 76,
+            expansion: 'Shadowbringers',
+            achievement_id: 2295,
+            image: 'The_Burden_of_Knowledge_Image.png'
+        },
+        {
+            quest: 'More than a Hunch',      // Shrouded in Darkness
+            level: 77,
+            expansion: 'Shadowbringers',
+            achievement_id: 2296,
+            image: 'A_Fresh_Start_Image.png'
+        },
+        {
+            quest: 'Extinguishing the Last Light',      // Warden of Light
+            level: 79,
+            expansion: 'Shadowbringers',
+            achievement_id: 2297,
+            image: 'Extinguishing_the_Last_Light_Image.png'
+        },
+        {
+            quest: 'Shadowbringers',      // Shadowbringers
+            level: 80,
+            expansion: 'Shadowbringers',
+            achievement_id: 2298,
+            image: 'Shadowbringers_(Quest)_Image.png'
+        },
+        {
+            quest: 'Vows of Virtue, Deeds of Cruelty',      // Black and White
+            level: 80,
+            expansion: 'Shadowbringers',
+            achievement_id: 2424,
+            image: 'Vows_of_Virtue,_Deeds_of_Cruelty_Image.png'
+        },
+        {
+            quest: 'Echoes of a Fallen Star',      // Way More Heroes
+            level: 80,
+            expansion: 'Shadowbringers',
+            achievement_id: 2587,
+            image: 'Echoes_of_a_Fallen_Star_Image.png'
+        },
+        {
+            quest: 'Reflections in Crystal',      // Hope's Legacy
+            level: 80,
+            expansion: 'Shadowbringers',
+            achievement_id: 2642,
+            image: 'Reflections_in_Crystal_Image.png'
+        },
+        {
+            quest: 'Futures Rewritten',      // Pen and Sword
+            level: 80,
+            expansion: 'Shadowbringers',
+            achievement_id: 2714,
+            image: 'Futures_rewritten1.png'
+        },
+        {
+            quest: 'When the Dust Settles',      // Not for Naught
+            level: 80,
+            expansion: 'Shadowbringers',
+            achievement_id: 2850,
+            image: 'When_the_dust_settles1.png'
+        },
+        {
+            quest: 'Death Unto Dawn',      // Under the Darkened Moon
+            level: 80,
+            expansion: 'Shadowbringers',
+            achievement_id: 2851,
+            image: 'Death_Unto_Dawn.png'
         }
     ]
 }

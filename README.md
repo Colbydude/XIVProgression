@@ -11,6 +11,9 @@ This tool is used for quickly checking a character's raid progression in FFXIV. 
 
 Release Notes
 -------------
+**June 10th, 2021**
+- Include tracking of all Main Story Quest achievements.
+
 **April 18th, 2021**
 - Calls to the XIVAPI are now cached for an hour.
 - Update for 5.5 Content.
