@@ -1,5 +1,5 @@
 export default {
-    '8-man': [
+    'raids': [
         {
             name: 'The Binding Coil of Bahamut',
             type: 'clear-by-clears',
@@ -392,7 +392,7 @@ export default {
             ]
         },
     ],
-    '24-man': [
+    'alliance': [
         {
             name: 'Labyrinth of Ancients',                      // You Call That a Labyrinth
             type: 'single',

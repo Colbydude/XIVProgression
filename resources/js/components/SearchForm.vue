@@ -55,7 +55,7 @@ export default {
          *
          * @return {Void}
          */
-        async submit () {
+        async submit() {
             this.setStatus({
                 Achievements: { State: 7 },
                 Character: { State: 7 }

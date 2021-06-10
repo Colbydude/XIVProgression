@@ -3,7 +3,18 @@
         <template v-if="achievements != null && status.Achievements.State == 2">
             <filters />
 
-            <h2 class="text-light">8-Man Raids</h2>
+            <h2 class="text-light">Main Scenario Quests</h2>
+            <div class="row multi-columns-row">
+                <div
+                    class="col-md-6 col-lg-4"
+                    v-for="questData in msq"
+                    :key="typeof questData.quest === 'object' ? questData.quest[0] : questData.quest"
+                >
+                    <quest-card :quest-data="questData"></quest-card>
+                </div>
+            </div>
+
+            <h2 class="text-light">Raids</h2>
             <div class="row multi-columns-row">
                 <div
                     class="col-md-6 col-lg-4"
@@ -14,7 +25,7 @@
                 </div>
             </div>
 
-            <h2 class="text-light">24-Man Raids</h2>
+            <h2 class="text-light">Alliance Raids</h2>
             <div class="row multi-columns-row">
                 <div
                     class="col-md-6 col-lg-4"
@@ -58,6 +69,8 @@
 <script>
 import Filters from './Filters.vue';
 import InstanceCard from './InstanceCard.vue';
+import QuestCard from './QuestCard.vue';
+import Quests from './../data/quests';
 import Instances from './../data/instances';
 import { stateMessages } from './../data/messages';
 import { mapState } from 'vuex';
@@ -68,6 +81,7 @@ export default {
     components: {
         Filters,
         InstanceCard,
+        QuestCard,
     },
 
     computed: {
@@ -78,10 +92,23 @@ export default {
          */
         allianceRaids() {
             if (this.filters.expansion.length === 0) {
-                return Instances['24-man'];
+                return Instances['alliance'];
             }
 
-            return Instances['24-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
+            return Instances['alliance'].filter(instance => this.filters.expansion.includes(instance.expansion));
+        },
+
+        /**
+         * List Main Scenario Quests.
+         *
+         * @return {Array}
+         */
+        msq() {
+            if (this.filters.expansion.length === 0) {
+                return Quests['msq'];
+            }
+
+            return Quests['msq'].filter(quest => this.filters.expansion.includes(quest.expansion));
         },
 
         /**
@@ -89,12 +116,12 @@ export default {
          *
          * @return {Array}
          */
-        raids () {
+        raids() {
             if (this.filters.expansion.length === 0) {
-                return Instances['8-man'];
+                return Instances['raids'];
             }
 
-            return Instances['8-man'].filter(instance => this.filters.expansion.includes(instance.expansion));
+            return Instances['raids'].filter(instance => this.filters.expansion.includes(instance.expansion));
         },
 
         /**

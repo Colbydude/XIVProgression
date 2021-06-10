@@ -23,7 +23,7 @@ export default {
          *
          * @return {String}
          */
-        name () {
+        name() {
             let name = this.classJob.Job.Name;
 
             if (this.classJob.Level < 30 && this.classJob.Job.Name !== 'scholar') {
