@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
 @section('meta_title', 'FFXIV Progression Checker')
-@section('meta_description', 'A simple tool to check a character\'s raid progression in FFXIV.')
-@section('meta_keywords', 'FFXIV, Final Fantasy XIV, A Realm Reborn, ARR, Progression, Checker, Tool')
+@section('meta_description', 'A simple tool to check a character\'s main scenario quest and duty progression in FFXIV.')
+@section('meta_keywords', 'FFXIV, Final Fantasy XIV, A Realm Reborn, ARR, Progression, Checker, Tool, Heavensward, Stormblood, Shadowbringers')
 @section('canonical', 'https://ffxiv.voidteam.net/progression')
 
 @section('content')
