@@ -186,6 +186,104 @@ export default {
             expansion: 'Heavensward',
             achievement_id: 1691,
             image: 'The_Far_Edge_of_Fate_Image.png'
+        },
+        {
+            quest: 'Not without Incident',      // Incidentally Speaking
+            level: 61,
+            expansion: 'Stormblood',
+            achievement_id: 1787,
+            image: 'Not_without_Incident_Image.png'
+        },
+        {
+            quest: 'Once More, to the Ruby Sea',      // Destination Unknown
+            level: 62,
+            expansion: 'Stormblood',
+            achievement_id: 1788,
+            image: 'Once_More,_to_the_Ruby_Sea_Image.png'
+        },
+        {
+            quest: 'Tide Goes in, Imperials Go Out',      // Unexplained
+            level: 63,
+            expansion: 'Stormblood',
+            achievement_id: 1789,
+            image: 'The_Lord_of_the_Revel_Image.png'
+        },
+        {
+            quest: 'All the Little Angels',      // Put Your Wings Up
+            level: 64,
+            expansion: 'Stormblood',
+            achievement_id: 1790,
+            image: 'Here_There_Be_Xaela_Image.png'
+        },
+        {
+            quest: 'In Crimson They Walked',      // Crimson Footprints
+            level: 66,
+            expansion: 'Stormblood',
+            achievement_id: 1791,
+            image: 'Naadam_Image.png'
+        },
+        {
+            quest: 'A Swift and Secret Departure',      // Catch Me if You Can
+            level: 67,
+            expansion: 'Stormblood',
+            achievement_id: 1792,
+            image: 'The_Die_Is_Cast_Image.png'
+        },
+        {
+            quest: 'The Lady in Red',      // Cheek to Cheek
+            level: 69,
+            expansion: 'Stormblood',
+            achievement_id: 1793,
+            image: 'Upon_the_Great_Loch%27s_Shore_Image.png'
+        },
+        {
+            quest: 'Stormblood',      // The Measure of His Reach
+            level: 70,
+            expansion: 'Stormblood',
+            achievement_id: 1794,
+            image: 'Stormblood_(Quest)_Image.png'
+        },
+        {
+            quest: 'Return of the Bull',      // More Heroes
+            level: 70,
+            expansion: 'Stormblood',
+            achievement_id: 1990,
+            image: 'Return_of_the_Bull_Image.png'
+        },
+        {
+            quest: 'Rise of a New Son',      // Solar Cycle
+            level: 70,
+            expansion: 'Stormblood',
+            achievement_id: 2013,
+            image: 'Rise_of_a_New_Sun_Image.png'
+        },
+        {
+            quest: 'Under the Moonlight',      // Lunar Cycle
+            level: 70,
+            expansion: 'Stormblood',
+            achievement_id: 2098,
+            image: 'Under_the_Moonlight_Image.png'
+        },
+        {
+            quest: 'Prelude in Violet',      // A History of Violet
+            level: 70,
+            expansion: 'Stormblood',
+            achievement_id: 2124,
+            image: 'Prelude_in_Violet_Image.png'
+        },
+        {
+            quest: 'The Face of War',      // What Is It Good For
+            level: 70,
+            expansion: 'Stormblood',
+            achievement_id: 2160,
+            image: 'The_Face_of_War_Image.png'
+        },
+        {
+            quest: 'A Requiem for Heroes',      // Swan Song
+            level: 70,
+            expansion: 'Stormblood',
+            achievement_id: 2233,
+            image: 'A_Requiem_for_Heroes_Image.png'
         }
     ]
 }
