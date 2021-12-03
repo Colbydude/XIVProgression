@@ -13,7 +13,7 @@ class BuildTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get('/progression');
 
         $response->assertStatus(200);
     }

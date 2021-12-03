@@ -11,6 +11,10 @@ This tool is used for quickly checking a character's main scenario quest and dut
 
 Release Notes
 -------------
+**December 3rd, 2021**
+- Add Reaper and Sage jobs.
+- Prepare for 6.0 Content.
+
 **June 10th, 2021**
 - Include tracking of all Main Scenario Quest achievements.
 

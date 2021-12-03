@@ -1,5 +1,5 @@
 <template>
-    <li>
+    <li v-if="">
         <div class="job-icon"><img :src="`/img/classes/${name.replace(' ', '')}.png`" :alt="name" width="64" height="64"></div>
         <div class="job-level">{{ classJob.Level }}</div>
         <div class="job-name text-capitalize">{{ name }}</div>
@@ -24,13 +24,15 @@ export default {
          * @return {String}
          */
         name() {
-            let name = this.classJob.Job.Name;
-
-            if (this.classJob.Level < 30 && this.classJob.Job.Name !== 'scholar') {
-                name = this.classJob.Class.Name;
+            if (this.classJob.Job == null || this.classJob.Class == null) {
+                return this.classJob.UnlockedState.Name;
             }
 
-            return name;
+            if (this.classJob.Level < 30 && this.classJob.Job.Name !== 'scholar') {
+                return this.classJob.Class.Name;
+            }
+
+            return this.classJob.Job.Name;
         },
     }
 };

@@ -91,6 +91,12 @@ select.form-control {
     padding-right: 1.5em
 }
 
+.character-img {
+    margin: 0 auto;
+    max-height: 300px;
+    width: auto;
+}
+
 .character-pane {
     h1 {
         font-size: 20px;
@@ -200,6 +206,14 @@ select.form-control {
             vertical-align: top;
         }
     }
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
 }
 
 .not-cleared {

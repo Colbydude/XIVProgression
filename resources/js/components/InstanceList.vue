@@ -6,7 +6,7 @@
             <h2 class="text-light">Main Scenario Quests</h2>
             <div class="row multi-columns-row">
                 <div
-                    class="col-md-6 col-lg-4"
+                    class="col-sm-6 col-lg-4"
                     v-for="questData in msq"
                     :key="typeof questData.quest === 'object' ? questData.quest[0] : questData.quest"
                 >
@@ -17,7 +17,7 @@
             <h2 class="text-light">Raids</h2>
             <div class="row multi-columns-row">
                 <div
-                    class="col-md-6 col-lg-4"
+                    class="col-sm-6 col-lg-4"
                     v-for="card in raids"
                     :key="card.name"
                 >
@@ -28,7 +28,7 @@
             <h2 class="text-light">Alliance Raids</h2>
             <div class="row multi-columns-row">
                 <div
-                    class="col-md-6 col-lg-4"
+                    class="col-sm-6 col-lg-4"
                     v-for="card in allianceRaids"
                     :key="card.name"
                 >
@@ -39,7 +39,7 @@
             <h2 class="text-light">Trials</h2>
             <div class="row multi-columns-row">
                 <div
-                    class="col-md-6 col-lg-4"
+                    class="col-sm-6 col-lg-4"
                     v-for="card in trials"
                     :key="card.name"
                 >
