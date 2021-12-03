@@ -33,6 +33,11 @@ body {
     background-color: #333;
 }
 
+footer {
+    color: white;
+    text-align: center;
+}
+
 h1 {
     @media (max-width: $screen-md) {
         font-size: 36px;

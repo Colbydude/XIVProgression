@@ -1,17 +1,16 @@
-FFXIV Progression Checker
+XIVProgression
 =========================
-[![Actions Status](https://github.com/Colbydude/FFXIVProgressionChecker/workflows/CI/badge.svg)](https://github.com/Colbydude/FFXIVProgressionChecker/actions)
-
-_I really couldn't think of a better name..._
+[![Actions Status](https://github.com/Colbydude/XIVProgression/workflows/CI/badge.svg)](https://github.com/Colbydude/XIVProgression/actions)
 
 This tool is used for quickly checking a character's main scenario quest and duty progression in FFXIV. This saves the effort of having to actually go to the Lodestone and look things up. Information is collected using the [XIVAPI](https://xivapi.com) and checks for certain achievements. However, keep in mind that this tool will not work if the specified character does not have achievements viewable to the public.
 
-**Website:** http://ffxiv.voidteam.net/progression  
+**Website:** http://xivprogression.com  
 **Powered By:** [Laravel](https://laravel.com/) and [Vue](https://vuejs.org/)
 
 Release Notes
 -------------
 **December 3rd, 2021**
+- Rebrand to XIVProgression.
 - Add Reaper and Sage jobs.
 - Prepare for 6.0 Content.
 

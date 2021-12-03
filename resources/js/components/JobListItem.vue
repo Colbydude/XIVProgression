@@ -1,6 +1,6 @@
 <template>
     <li v-if="">
-        <div class="job-icon"><img :src="`/img/classes/${name.replace(' ', '')}.png`" :alt="name" width="64" height="64"></div>
+        <div class="job-icon"><img :src="`/img/classes/${name.replace(' ', '').toLowerCase()}.png`" :alt="name" width="64" height="64"></div>
         <div class="job-level">{{ classJob.Level }}</div>
         <div class="job-name text-capitalize">{{ name }}</div>
     </li>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/progression');
+Route::get('/', [ProgressionController::class, 'show']);
+Route::get('/progression', function () {
+    return redirect('/');
 });
-Route::get('/progression', [ProgressionController::class, 'show']);

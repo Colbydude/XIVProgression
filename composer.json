@@ -1,7 +1,7 @@
 {
-    "name": "colbydude/ffxiv-progression-checker",
-    "description": "Simple interface for checking a character's raid progression for FFXIV.",
-    "homepage": "http://ffxiv.voidteam.net/progression",
+    "name": "colbydude/xivprogression",
+    "description": "Simple interface for checking a character's msq and duty progression for FFXIV.",
+    "homepage": "http://xivprogression.com",
     "license": "MIT",
     "type": "project",
     "authors": [

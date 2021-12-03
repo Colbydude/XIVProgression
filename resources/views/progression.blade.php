@@ -1,10 +1,5 @@
 @extends('layouts.default')
 
-@section('meta_title', 'FFXIV Progression Checker')
-@section('meta_description', 'A simple tool to check a character\'s main scenario quest and duty progression in FFXIV.')
-@section('meta_keywords', 'FFXIV, Final Fantasy XIV, A Realm Reborn, ARR, Progression, Checker, Tool, Heavensward, Stormblood, Shadowbringers')
-@section('canonical', 'https://ffxiv.voidteam.net/progression')
-
 @section('content')
     @include('layouts.partials.header')
 
@@ -22,7 +17,7 @@
 
                 <p class="text-light">
                     <small>
-                        Tool Last Updated: <a href="https://github.com/Colbydude/FFXIVProgressionChecker" target="_blank">December 3rd, 2021</a><br>
+                        Tool Last Updated: <a href="https://github.com/Colbydude/XIVProgression" target="_blank">December 3rd, 2021</a><br>
                         By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan
                     </small>
                 </p>
