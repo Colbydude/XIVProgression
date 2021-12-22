@@ -391,6 +391,24 @@ export default {
                 { name: 'Eternity' },
             ]
         },
+        {
+            name: 'Pandæmonium: Asphodelos',
+            type: 'clear-by-clears',
+            expansion: 'Endwalker',
+            image: 'asphodelos_4.png',
+            achievementData: [
+                { id: 3035, times: 1 },                         // Could Be Worse I
+                { id: 3036, times: 5 },                         // Could Be Worse II
+                { id: 3037, times: 10 }                         // Could Be Worse III
+            ],
+            turnData: [
+                { name: 'The First Circle' },
+                { name: 'The Second Circle' },
+                { name: 'The Third Circle' },
+                { name: 'The Fourth Circle' },
+            ],
+            spoilers: true
+        },
     ],
     'alliance': [
         {
@@ -724,5 +742,21 @@ export default {
             achievement_id: 2846,
             image: 'diamond_weapon_ex.png'
         },
+        {
+            name: 'Minstrel\'s Ballad: Zodiark\'s Fall',        // Darkness Falls
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 2988,
+            image: 'the_dark_inside_ex.png',
+            spoilers: true
+        },
+        {
+            name: 'Minstrel\'s Ballad: Hydaelyn\'s Call',       // I Heard, I Felt, I Thought
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 2989,
+            image: 'mothercrystal_ex.png',
+            spoilers: true
+        }
     ]
 };

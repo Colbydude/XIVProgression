@@ -10,7 +10,7 @@
                     v-for="questData in msq"
                     :key="typeof questData.quest === 'object' ? questData.quest[0] : questData.quest"
                 >
-                    <quest-card :quest-data="questData"></quest-card>
+                    <quest-card :card="questData" />
                 </div>
             </div>
 
@@ -21,7 +21,15 @@
                     v-for="card in raids"
                     :key="card.name"
                 >
-                    <instance-card :card="card"></instance-card>
+                    <template v-if="card.type === 'clear-by-clears'">
+                        <clear-by-clears-card :card="card" />
+                    </template>
+                    <template v-else-if="card.type === 'clear-by-turns'">
+                        <clear-by-turns-card :card="card" />
+                    </template>
+                    <template v-else>
+                        <single-instance-card :card="card" />
+                    </template>
                 </div>
             </div>
 
@@ -32,7 +40,7 @@
                     v-for="card in allianceRaids"
                     :key="card.name"
                 >
-                    <instance-card :card="card"></instance-card>
+                    <single-instance-card :card="card" />
                 </div>
             </div>
 
@@ -43,7 +51,7 @@
                     v-for="card in trials"
                     :key="card.name"
                 >
-                    <instance-card :card="card"></instance-card>
+                    <single-instance-card :card="card" />
                 </div>
             </div>
         </template>
@@ -68,8 +76,10 @@
 
 <script>
 import Filters from './Filters.vue';
-import InstanceCard from './InstanceCard.vue';
-import QuestCard from './QuestCard.vue';
+import ClearByClearsCard from './cards/ClearByClearsCard.vue';
+import ClearByTurnsCard from './cards/ClearByTurnsCard.vue';
+import QuestCard from './cards/QuestCard.vue';
+import SingleInstanceCard from './cards/SingleInstanceCard.vue';
 import Quests from './../data/quests';
 import Instances from './../data/instances';
 import { stateMessages } from './../data/messages';
@@ -80,7 +90,9 @@ export default {
 
     components: {
         Filters,
-        InstanceCard,
+        ClearByClearsCard,
+        ClearByTurnsCard,
+        SingleInstanceCard,
         QuestCard,
     },
 

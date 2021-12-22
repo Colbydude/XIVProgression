@@ -9,6 +9,10 @@ This tool is used for quickly checking a character's main scenario quest and dut
 
 Release Notes
 -------------
+**December 22nd, 2021**
+- Include Endwalker Content.
+- Update for 6.01 Content.
+
 **December 3rd, 2021**
 - Rebrand to XIVProgression.
 - Add Reaper and Sage jobs.

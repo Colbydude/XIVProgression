@@ -1,44 +1,52 @@
 <template>
     <div class="panel panel-default instance-card">
-        <div class="panel-image" :class="{ 'not-cleared': !cleared }" :style="'background-image: url(\'/img/quests/' + questImage + '\')'">
+        <div
+            class="panel-image"
+            :class="{ 'not-cleared': !cleared, 'spoiler': card.spoilers && !cleared }"
+            :style="'background-image: url(\'/img/quests/' + cardImage + '\')'"
+        >
             <div class="instance-info text-light">
                 <span class="instance-clear-date">{{ clearDate }}</span>
             </div>
             <span class="panel-title">
-                <img class="msq-icon" src="/img/icons/msq.png" alt="Main Scenario Quest"> {{ questName }} (Level {{ questData.level }})
+                <img class="msq-icon" src="/img/icons/msq.png" alt="Main Scenario Quest"> {{ cardName }} (Level {{ card.level }})
             </span>
         </div>
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import { formatDate } from '../utils';
+import ClearCard from './ClearCard.vue';
+import { formatDate } from '../../utils';
 
 export default {
     name: 'QuestCard',
 
-    props: {
-        questData: {
-            type: Object,
-            required: true
-        }
-    },
+    extends: ClearCard,
 
-    mounted() {
-        this.setData();
+    computed: {
+        cardImage() {
+            return this.card.spoilers ? (this.cleared ? this.questImage : '???') : this.questImage;
+        },
+
+        cardName() {
+            return this.card.spoilers ? (this.cleared ? this.questName : '???') : this.questName;
+        },
     },
 
     data() {
         return {
-            cleared: false,     // Whether or not the card (quest) has been cleared.
-            clearDate: '',      // The clear date to display on the card.
-            questImage: '',     // The quest image to display on the card.
-            questName: ''       // The quest name to display on the card.
-        }
+            questImage: '',
+            questName: ''
+        };
     },
 
-    computed: mapGetters(['getAchievementById']),
+    mounted() {
+        this.questImage = this.card.image;
+        this.questName = this.card.name;
+
+        this.setData();
+    },
 
     methods: {
         determineClear(questName, questImage, achievementId) {
@@ -60,25 +68,25 @@ export default {
         setData() {
             // It's possible that multiple quests/achievements can finish
             // a specific segment of the MSQ, so we compensate for that here.
-            if (typeof this.questData.quest === 'object') {
-                this.questData.quest.some((questName, index) => {
+            if (typeof this.card.quest === 'object') {
+                this.card.quest.some((questName, index) => {
                     return this.determineClear(
                         questName,
-                        this.questData.image[index],
-                        this.questData.achievement_id[index]
+                        this.card.image[index],
+                        this.card.achievement_id[index]
                     );
                 });
 
                 // None of the achievements were cleared, so list them all.
                 if (!this.cleared) {
-                    this.questName = this.questData.quest.join('/');
-                    this.questImage = this.questData.image[0];
+                    this.questName = this.card.quest.join('/');
+                    this.questImage = this.card.image[0];
                 }
             } else {
                 this.determineClear(
-                    this.questData.quest,
-                    this.questData.image,
-                    this.questData.achievement_id
+                    this.card.quest,
+                    this.card.image,
+                    this.card.achievement_id
                 );
             }
         }

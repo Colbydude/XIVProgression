@@ -368,6 +368,62 @@ export default {
             expansion: 'Shadowbringers',
             achievement_id: 2851,
             image: 'Death_Unto_Dawn.png'
+        },
+        {
+            quest: 'The Color of Joy',                  // On Wings of Hope
+            level: 81,
+            expansion: 'Endwalker',
+            achievement_id: 2952,
+            image: 'In_the_Dark_of_the_Tower.png',
+            spoilers: true
+        },
+        {
+            quest: 'The Martyr',                        // Rise Up Through the Night
+            level: 83,
+            expansion: 'Endwalker',
+            achievement_id: 2953,
+            image: 'The_Martyr.png',
+            spoilers: true
+        },
+        {
+            quest: 'Returning Home',                    // Higher
+            level: 84,
+            expansion: 'Endwalker',
+            achievement_id: 2954,
+            image: 'Heart_of_the_Matter.png',
+            spoilers: true
+        },
+        {
+            quest: 'At World\'s End',                   // Oh, Higher
+            level: 85,
+            expansion: 'Endwalker',
+            achievement_id: 2955,
+            image: 'Under_His_Wing.png',
+            spoilers: true
+        },
+        {
+            quest: 'Thou Must Live, Die, and Know',     // Carrying Our Song
+            level: 87,
+            expansion: 'Endwalker',
+            achievement_id: 2956,
+            image: 'Caging_the_Messenger.png',
+            spoilers: true
+        },
+        {
+            quest: 'Her Children, One and All',         // Fast Within Your Arms
+            level: 89,
+            expansion: 'Endwalker',
+            achievement_id: 2957,
+            image: 'Her_Children_One_and_All.png',
+            spoilers: true
+        },
+        {
+            quest: 'Endwalker',                         // That Its Chorus Might Ring for All
+            level: 90,
+            expansion: 'Endwalker',
+            achievement_id: 2958,
+            image: 'Endwalker.png',
+            spoilers: true
         }
     ]
 }

@@ -56,6 +56,8 @@ class ProgressionController extends Controller
         // Check the database for the character already.
         $character = Character::where('name', $name)->where('server', $server)->first();
 
+        // dd($name);
+
         if ($character == null) {
             try {
                 // Search for the character.
