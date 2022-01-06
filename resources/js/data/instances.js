@@ -409,6 +409,24 @@ export default {
             ],
             spoilers: true
         },
+        {
+            name: 'Pandæmonium: Asphodelos (Savage)',
+            type: 'clear-by-clears',
+            expansion: 'Endwalker',
+            image: 'asphodelos_4_savage.png',
+            achievementData: [
+                { id: 3038, times: 1 },                         // Could Be Savage I
+                { id: 3039, times: 5 },                         // Could Be Savage II
+                { id: 3040, times: 10 }                         // Could Be Savage III
+            ],
+            turnData: [
+                { name: 'The First Circle' },
+                { name: 'The Second Circle' },
+                { name: 'The Third Circle' },
+                { name: 'The Fourth Circle' },
+            ],
+            spoilers: true
+        },
     ],
     'alliance': [
         {

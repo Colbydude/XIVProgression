@@ -9,9 +9,13 @@ This tool is used for quickly checking a character's main scenario quest and dut
 
 Release Notes
 -------------
+**January 6th, 2022**
+- Update for 6.05 Content.
+
 **December 22nd, 2021**
 - Include Endwalker Content.
 - Update for 6.01 Content.
+- Hide any spoilable content, unless already unlocked.
 
 **December 3rd, 2021**
 - Rebrand to XIVProgression.
