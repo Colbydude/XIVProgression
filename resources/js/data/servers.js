@@ -1,6 +1,6 @@
 export default [
     'Adamantoise', 'Aegis', 'Alexander', 'Anima', 'Asura', 'Atomos',
-    'Bahamut', 'Balmung', 'Behemoth', 'Belias', 'Brynhildr',
+    'Bahamut', 'Balmung', 'Behemoth', 'Belias', 'Bismarck', 'Brynhildr',
     'Cactuar', 'Carbuncle', 'Cerberus', 'Chocobo', 'Coeurl',
     'Diabolos', 'Durandal',
     'Excalibur', 'Exodus',
@@ -14,11 +14,11 @@ export default [
     'Malboro', 'Mandragora', 'Mateus', 'Masamune', 'Midgardsormr', 'Moogle',
     'Odin', 'Omega',
     'Pandaemonium', 'Phoenix',
-    'Ramuh', 'Ragnarok', 'Ridill',
-    'Sargatanas', 'Siren', 'Shinryu', 'Shiva', 'Spriggan',
+    'Ragnarok', 'Ramuh', 'Ravana', 'Ridill',
+    'Sargatanas', 'Sephirot', 'Siren', 'Shinryu', 'Shiva', 'Sophia', 'Spriggan',
     'Tiamat', 'Titan', 'Tonberry', 'Twintania', 'Typhon',
     'Ultima', 'Ultros', 'Unicorn',
     'Valefor',
     'Yojimbo',
-    'Zalera', 'Zeromus', 'Zodiark'
+    'Zalera', 'Zeromus', 'Zodiark', 'Zurvan'
 ];

@@ -9,6 +9,9 @@ This tool is used for quickly checking a character's main scenario quest and dut
 
 Release Notes
 -------------
+**January 25th, 2022**
+- Add new worlds from the Materia data center.
+
 **January 6th, 2022**
 - Update for 6.05 Content.
 
