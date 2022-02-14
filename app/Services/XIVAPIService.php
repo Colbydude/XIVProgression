@@ -22,7 +22,7 @@ class XIVAPIService implements XIVAPIServiceInterface
         }
 
         $response = Cache::remember("xivapi-character-$characterId", 60 * 60, function () use ($characterId) {
-            return $this->api->character->get($characterId, ['AC'], true);
+            return $this->api->timeout(20)->character->get($characterId, ['AC'], true);
         });
 
         return $response;
