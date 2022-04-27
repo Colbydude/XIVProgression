@@ -1,5 +1,3 @@
-import { Instance } from '../typedefs';
-
 export default {
     raids: [
         {
