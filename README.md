@@ -9,6 +9,10 @@ This tool is used for quickly checking a character's main scenario quest and dut
 
 Release Notes
 -------------
+**April 27th, 2022**
+- Update for 6.11 Content.
+- Move Ultimate Raids to their own section.
+
 **April 13th, 2022**
 - Update for 6.1 Content.
 

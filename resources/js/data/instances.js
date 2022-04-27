@@ -1,3 +1,5 @@
+import { Instance } from '../typedefs';
+
 export default {
     raids: [
         {
@@ -191,13 +193,6 @@ export default {
             turnData: [{ name: 'V1.0' }, { name: 'V2.0' }, { name: 'V3.0' }, { name: 'V4.0' }],
         },
         {
-            name: 'The Unending Coil of Bahamut', // Resistance is Futile
-            type: 'single',
-            expansion: 'Stormblood',
-            achievement_id: 1993,
-            image: 'bahamut_prime_ultimate.png',
-        },
-        {
             name: 'Omega: Sigmascape',
             type: 'clear-by-clears',
             expansion: 'Stormblood',
@@ -221,13 +216,7 @@ export default {
             ],
             turnData: [{ name: 'V1.0' }, { name: 'V2.0' }, { name: 'V3.0' }, { name: 'V4.0' }],
         },
-        {
-            name: "The Weapon's Refrain", // Resistance is Futile
-            type: 'single',
-            expansion: 'Stormblood',
-            achievement_id: 2107,
-            image: 'ultima_weapon_ultimate.png',
-        },
+
         {
             name: 'Omega: Alphascape',
             type: 'clear-by-clears',
@@ -286,13 +275,7 @@ export default {
                 { name: 'Sepulture' },
             ],
         },
-        {
-            name: 'The Epic of Alexander', // When I Ruled The World
-            type: 'single',
-            expansion: 'Shadowbringers',
-            achievement_id: 2444,
-            image: 'alexander_ultimate.png',
-        },
+
         {
             name: "Eden's Verse",
             type: 'clear-by-clears',
@@ -756,6 +739,37 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3072,
             image: 'endsinger_ex.png',
+            spoilers: true,
+        },
+    ],
+    ultimates: [
+        {
+            name: 'The Unending Coil of Bahamut', // Resistance is Futile
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 1993,
+            image: 'bahamut_prime_ultimate.png',
+        },
+        {
+            name: "The Weapon's Refrain", // Resistance is Futile
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 2107,
+            image: 'ultima_weapon_ultimate.png',
+        },
+        {
+            name: 'The Epic of Alexander', // When I Ruled The World
+            type: 'single',
+            expansion: 'Shadowbringers',
+            achievement_id: 2444,
+            image: 'alexander_ultimate.png',
+        },
+        {
+            name: "Dragonsong's Reprise", // As Suits a Hero
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 3074,
+            image: 'thordan_ultimate.png',
             spoilers: true,
         },
     ],

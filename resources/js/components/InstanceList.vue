@@ -8,7 +8,9 @@
                 <div
                     class="col-sm-6 col-lg-4"
                     v-for="questData in msq"
-                    :key="typeof questData.quest === 'object' ? questData.quest[0] : questData.quest"
+                    :key="
+                        typeof questData.quest === 'object' ? questData.quest[0] : questData.quest
+                    "
                 >
                     <quest-card :card="questData" />
                 </div>
@@ -16,41 +18,33 @@
 
             <h2 class="text-light">Raids</h2>
             <div class="row multi-columns-row">
-                <div
-                    class="col-sm-6 col-lg-4"
-                    v-for="card in raids"
-                    :key="card.name"
-                >
+                <div class="col-sm-6 col-lg-4" v-for="card in raids" :key="card.name">
                     <template v-if="card.type === 'clear-by-clears'">
                         <clear-by-clears-card :card="card" />
                     </template>
                     <template v-else-if="card.type === 'clear-by-turns'">
                         <clear-by-turns-card :card="card" />
                     </template>
-                    <template v-else>
-                        <single-instance-card :card="card" />
-                    </template>
                 </div>
             </div>
 
             <h2 class="text-light">Alliance Raids</h2>
             <div class="row multi-columns-row">
-                <div
-                    class="col-sm-6 col-lg-4"
-                    v-for="card in allianceRaids"
-                    :key="card.name"
-                >
+                <div class="col-sm-6 col-lg-4" v-for="card in allianceRaids" :key="card.name">
                     <single-instance-card :card="card" />
                 </div>
             </div>
 
             <h2 class="text-light">Trials</h2>
             <div class="row multi-columns-row">
-                <div
-                    class="col-sm-6 col-lg-4"
-                    v-for="card in trials"
-                    :key="card.name"
-                >
+                <div class="col-sm-6 col-lg-4" v-for="card in trials" :key="card.name">
+                    <single-instance-card :card="card" />
+                </div>
+            </div>
+
+            <h2 class="text-light">Ultimate Raids</h2>
+            <div class="row multi-columns-row">
+                <div class="col-sm-6 col-lg-4" v-for="card in ultimates" :key="card.name">
                     <single-instance-card :card="card" />
                 </div>
             </div>
@@ -68,7 +62,7 @@
 
         <div class="panel panel-default" v-else-if="status.Achievements.State === 5">
             <div class="panel-body text-center">
-                <p class="lead" style="margin-bottom: 0;">{{ stateMessage }}</p>
+                <p class="lead" style="margin-bottom: 0">{{ stateMessage }}</p>
             </div>
         </div>
     </div>
@@ -103,11 +97,7 @@ export default {
          * @return {Array}
          */
         allianceRaids() {
-            if (this.filters.expansion.length === 0) {
-                return Instances['alliance'];
-            }
-
-            return Instances['alliance'].filter(instance => this.filters.expansion.includes(instance.expansion));
+            return this.getInstances('alliance');
         },
 
         /**
@@ -120,7 +110,9 @@ export default {
                 return Quests['msq'];
             }
 
-            return Quests['msq'].filter(quest => this.filters.expansion.includes(quest.expansion));
+            return Quests['msq'].filter((quest) =>
+                this.filters.expansion.includes(quest.expansion)
+            );
         },
 
         /**
@@ -129,11 +121,7 @@ export default {
          * @return {Array}
          */
         raids() {
-            if (this.filters.expansion.length === 0) {
-                return Instances['raids'];
-            }
-
-            return Instances['raids'].filter(instance => this.filters.expansion.includes(instance.expansion));
+            return this.getInstances('raids');
         },
 
         /**
@@ -151,14 +139,37 @@ export default {
          * @return {Array}
          */
         trials() {
-            if (this.filters.expansion.length === 0) {
-                return Instances['trials'];
-            }
-
-            return Instances['trials'].filter(instance => this.filters.expansion.includes(instance.expansion));
+            return this.getInstances('trials');
         },
 
-        ...mapState(['achievements', 'filters', 'status'])
-    }
+        /**
+         * List of ultimate raid instances.
+         *
+         * @return {Array}
+         */
+        ultimates() {
+            return this.getInstances('ultimates');
+        },
+
+        ...mapState(['achievements', 'filters', 'status']),
+    },
+
+    methods: {
+        /**
+         * Get a section of the Instances list, filtered by expansion.
+         *
+         * @param {string} expansion
+         * @return {Array}
+         */
+        getInstances(expansion) {
+            if (this.filters.expansion.length === 0) {
+                return Instances[expansion];
+            }
+
+            return Instances[expansion].filter((instance) =>
+                this.filters.expansion.includes(instance.expansion)
+            );
+        },
+    },
 };
 </script>
