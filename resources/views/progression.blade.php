@@ -17,7 +17,7 @@
 
                 <p class="text-light">
                     <small>
-                        Tool Last Updated: <a href="https://github.com/Colbydude/XIVProgression" target="_blank">April 27th, 2022</a><br>
+                        Tool Last Updated: <a href="https://github.com/Colbydude/XIVProgression" target="_blank">July 6th, 2022</a><br>
                         By <a href="https://twitter.com/Colbydude" target="_blank">@Colbydude</a> | <a href="http://na.finalfantasyxiv.com/lodestone/character/2249861/" target="_blank">Enyl Noves</a> of Leviathan
                     </small>
                 </p>

@@ -9,6 +9,9 @@ This tool is used for quickly checking a character's main scenario quest and dut
 
 Release Notes
 -------------
+**July 6th, 2022**
+- Add new worlds for the Chaos and Light data centers.
+
 **April 27th, 2022**
 - Update for 6.11 Content.
 - Move Ultimate Raids to their own section.
