@@ -420,6 +420,13 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3075,
             image: 'A_Satraps_Duty.png',
+        },
+        {
+            quest: 'Buried Memory', // Into the Light
+            level: 90,
+            expansion: 'Endwalker',
+            achievement_id: 3105,
+            image: 'Buried_Memory.png',
             spoilers: true,
         },
     ],

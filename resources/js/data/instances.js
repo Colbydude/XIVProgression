@@ -273,7 +273,6 @@ export default {
                 { name: 'Sepulture' },
             ],
         },
-
         {
             name: "Eden's Verse",
             type: 'clear-by-clears',
@@ -376,6 +375,42 @@ export default {
                 { name: 'The Fourth Circle' },
             ],
         },
+        {
+            name: 'Pandæmonium: Abyssos',
+            type: 'clear-by-clears',
+            expansion: 'Endwalker',
+            image: 'abyssos_8.png',
+            achievementData: [
+                { id: 3108, times: 1 }, // Gaze of the Abyss I
+                { id: 3109, times: 5 }, // Gaze of the Abyss II
+                { id: 3110, times: 10 }, // Gaze of the Abyss III
+            ],
+            turnData: [
+                { name: 'The Fifth Circle' },
+                { name: 'The Sixth Circle' },
+                { name: 'The Seventh Circle' },
+                { name: 'The Eighth Circle' },
+            ],
+            spoilers: true,
+        },
+        {
+            name: 'Pandæmonium: Abyssos (Savage)',
+            type: 'clear-by-clears',
+            expansion: 'Endwalker',
+            image: 'abyssos_8_savage.png',
+            achievementData: [
+                { id: 3111, times: 1 }, // Savage Gaze of the Abyss I
+                { id: 3112, times: 5 }, // Savage Gaze of the Abyss II
+                { id: 3113, times: 10 }, // Savage Gaze of the Abyss III
+            ],
+            turnData: [
+                { name: 'The Fifth Circle' },
+                { name: 'The Sixth Circle' },
+                { name: 'The Seventh Circle' },
+                { name: 'The Eighth Circle' },
+            ],
+            spoilers: true,
+        },
     ],
     alliance: [
         {
@@ -468,17 +503,9 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3073,
             image: 'aglaia.png',
-            spoilers: true,
         },
     ],
     trials: [
-        {
-            name: 'The Bowl of Embers', // Going Up in Flames
-            type: 'single',
-            expansion: 'A Realm Reborn',
-            achievement_id: 855,
-            image: 'ifrit_ex.png',
-        },
         {
             name: 'The Howling Eye', // Gone with the Wind
             type: 'single',
@@ -494,11 +521,11 @@ export default {
             image: 'titan_ex.png',
         },
         {
-            name: 'The Whorleater', // I Eat Whorls for Breakfast
+            name: 'The Bowl of Embers', // Going Up in Flames
             type: 'single',
             expansion: 'A Realm Reborn',
-            achievement_id: 893,
-            image: 'leviathan_ex.png',
+            achievement_id: 855,
+            image: 'ifrit_ex.png',
         },
         {
             name: 'Thornmarch', // Good Kingslayer
@@ -506,6 +533,13 @@ export default {
             expansion: 'A Realm Reborn',
             achievement_id: 894,
             image: 'king_mog_ex.png',
+        },
+        {
+            name: 'The Whorleater', // I Eat Whorls for Breakfast
+            type: 'single',
+            expansion: 'A Realm Reborn',
+            achievement_id: 893,
+            image: 'leviathan_ex.png',
         },
         {
             name: 'The Striking Tree', // Contempt of Court
@@ -520,34 +554,6 @@ export default {
             expansion: 'A Realm Reborn',
             achievement_id: 1045,
             image: 'shiva_ex.png',
-        },
-        {
-            name: "Urth's Fount", // Missed The Cut
-            type: 'single',
-            expansion: 'A Realm Reborn',
-            achievement_id: 1064,
-            image: 'odin_hm.png',
-        },
-        {
-            name: 'Battle in the Big Keep', // Enough Expository Banter
-            type: 'single',
-            expansion: 'A Realm Reborn',
-            achievement_id: 1066,
-            image: 'gilgamesh_hm.png',
-        },
-        {
-            name: 'The Chrysalis', // Secret Ascian Man
-            type: 'single',
-            expansion: 'A Realm Reborn',
-            achievement_id: 1067,
-            image: 'chrysalis.png',
-        },
-        {
-            name: 'The Steps of Faith', // Broken Bridges
-            type: 'single',
-            expansion: 'A Realm Reborn',
-            achievement_id: 1065,
-            image: 'steps_of_faith.png',
         },
         {
             name: 'The Limitless Blue', // Limitless
@@ -571,18 +577,18 @@ export default {
             image: 'kotr_hm.png',
         },
         {
-            name: 'Containment Bay S1T7', // Veni Veni Venias
-            type: 'single',
-            expansion: 'Heavensward',
-            achievement_id: 1485,
-            image: 'sephirot_ex.png',
-        },
-        {
             name: "Minstrel's Ballad: Nidhogg's Rage", // Let Me Be Your Hogg
             type: 'single',
             expansion: 'Heavensward',
             achievement_id: 1601,
             image: 'nidhogg_hm.png',
+        },
+        {
+            name: 'Containment Bay S1T7', // Veni Veni Venias
+            type: 'single',
+            expansion: 'Heavensward',
+            achievement_id: 1485,
+            image: 'sephirot_ex.png',
         },
         {
             name: 'Containment Bay P1T6', // Sophia's Choice
@@ -599,13 +605,6 @@ export default {
             image: 'zurvan_ex.png',
         },
         {
-            name: 'Emanation', // Lakshmi Intolerant
-            type: 'single',
-            expansion: 'Stormblood',
-            achievement_id: 1901,
-            image: 'lakshmi_ex.png',
-        },
-        {
             name: 'The Pool of Tribute', // Just Say The Word
             type: 'single',
             expansion: 'Stormblood',
@@ -613,18 +612,18 @@ export default {
             image: 'susano_ex.png',
         },
         {
+            name: 'Emanation', // Lakshmi Intolerant
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 1901,
+            image: 'lakshmi_ex.png',
+        },
+        {
             name: "Minstrel's Ballad: Shinryu's Domain", // How to Slay Your Dragon 2
             type: 'single',
             expansion: 'Stormblood',
             achievement_id: 1989,
             image: 'shinryu_ex.png',
-        },
-        {
-            name: 'The Jade Stoa', // Rock Warrior
-            type: 'single',
-            expansion: 'Stormblood',
-            achievement_id: 2023,
-            image: 'byakko_ex.png',
         },
         {
             name: "Minstrel's Ballad: Tsukuyomi's Pain", // Happy Death Day To Who
@@ -641,6 +640,13 @@ export default {
             image: 'rathalos_ex.png',
         },
         {
+            name: 'The Jade Stoa', // Rock Warrior
+            type: 'single',
+            expansion: 'Stormblood',
+            achievement_id: 2023,
+            image: 'byakko_ex.png',
+        },
+        {
             name: "Hells's Kier", // The Scarlet Bloodletter
             type: 'single',
             expansion: 'Stormblood',
@@ -653,13 +659,6 @@ export default {
             expansion: 'Stormblood',
             achievement_id: 2165,
             image: 'seiryu_ex.png',
-        },
-        {
-            name: 'Kugane Ohashi', // Bite Me
-            type: 'single',
-            expansion: 'Stormblood',
-            achievement_id: 2236,
-            image: 'yojimbo_hm.png',
         },
         {
             name: 'The Dancing Plague', // Ill Met by Moonlight
@@ -697,7 +696,7 @@ export default {
             image: 'varis_yae_galvus_ex.png',
         },
         {
-            name: 'Seat of Sacrifice', // Bravest Warriors
+            name: 'The Seat of Sacrifice', // Bravest Warriors
             type: 'single',
             expansion: 'Shadowbringers',
             achievement_id: 2621,
@@ -711,7 +710,7 @@ export default {
             image: 'emerald_weapon_ex.png',
         },
         {
-            name: 'Cloud Deck', // Shine Bright
+            name: 'The Cloud Deck', // Shine Bright
             type: 'single',
             expansion: 'Shadowbringers',
             achievement_id: 2846,
@@ -737,6 +736,13 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3072,
             image: 'endsinger_ex.png',
+        },
+        {
+            name: "Storm's Crown", // Razor's Edge
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 3107,
+            image: 'barbariccia_ex.png',
             spoilers: true,
         },
     ],
@@ -768,7 +774,6 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3074,
             image: 'thordan_ultimate.png',
-            spoilers: true,
         },
     ],
 };
