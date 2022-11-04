@@ -9,6 +9,9 @@ This tool is used for quickly checking a character's main scenario quest and dut
 
 Release Notes
 -------------
+**November 3rd, 2022**
+- Add new worlds for the Dynamis data center.
+
 **September 1st, 2022**
 - Add 6.2 content.
 - Remove Trials that have been converted to single-player instances or not considered "High-End Duty".
