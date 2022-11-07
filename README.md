@@ -1,6 +1,6 @@
 XIVProgression
 =========================
-[![Actions Status](https://github.com/Colbydude/XIVProgression/workflows/CI/badge.svg)](https://github.com/Colbydude/XIVProgression/actions)
+[![Actions Status](https://github.com/Colbydude/XIVProgression/workflows/CI/badge.svg)](https://github.com/Colbydude/XIVProgression/actions) [![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2F3b049055-0d68-4786-8a66-0d299673eeba%3Fdate%3D1%26commit%3D1&style=plastic)](https://forge.laravel.com)
 
 This tool is used for quickly checking a character's main scenario quest and duty progression in FFXIV. This saves the effort of having to actually go to the Lodestone and look things up. Information is collected using the [XIVAPI](https://xivapi.com) and checks for certain achievements. However, keep in mind that this tool will not work if the specified character does not have achievements viewable to the public.
 
