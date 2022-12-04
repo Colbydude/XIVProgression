@@ -15,9 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install Yarn Dependencies
-      uses: Borales/actions-yarn@master
-      with:
-        args: install
+      uses: borales/actions-yarn@v4
+        with:
+          cmd: install
     - name: Build Frontend
       run: yarn prod
     - name: Install Composer Dependencies
