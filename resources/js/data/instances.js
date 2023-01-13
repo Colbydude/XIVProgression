@@ -391,7 +391,6 @@ export default {
                 { name: 'The Seventh Circle' },
                 { name: 'The Eighth Circle' },
             ],
-            spoilers: true,
         },
         {
             name: 'Pandæmonium: Abyssos (Savage)',
@@ -409,7 +408,6 @@ export default {
                 { name: 'The Seventh Circle' },
                 { name: 'The Eighth Circle' },
             ],
-            spoilers: true,
         },
     ],
     alliance: [
@@ -503,6 +501,14 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3073,
             image: 'aglaia.png',
+        },
+        {
+            name: 'Euphrosyne', // Divine Revelry
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 3161,
+            image: 'euphrosyne.png',
+            spoilers: true,
         },
     ],
     trials: [
@@ -743,6 +749,13 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3107,
             image: 'barbariccia_ex.png',
+        },
+        {
+            name: 'Mount Ordeals', // Ordeal by Fire
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 3160,
+            image: 'rubicante_ex.png',
             spoilers: true,
         },
     ],

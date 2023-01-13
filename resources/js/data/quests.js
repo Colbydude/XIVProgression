@@ -427,6 +427,13 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3105,
             image: 'Buried_Memory.png',
+        },
+        {
+            quest: 'Gods Revel, Lands Tremble', // Hallowed and Harrowed
+            level: 90,
+            expansion: 'Endwalker',
+            achievement_id: 3157,
+            image: 'Gods_Revel_Lands_Tremble.png',
             spoilers: true,
         },
     ],
