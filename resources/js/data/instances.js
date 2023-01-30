@@ -788,5 +788,13 @@ export default {
             achievement_id: 3074,
             image: 'thordan_ultimate.png',
         },
+        {
+            name: 'The Omega Protocol', // Heart to Heartless
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 3162,
+            image: 'The_Omega_Protocol.png',
+            spoilers: true,
+        },
     ],
 };
