@@ -409,6 +409,42 @@ export default {
                 { name: 'The Eighth Circle' },
             ],
         },
+        {
+            name: 'Pandæmonium: Anabaseios',
+            type: 'clear-by-clears',
+            expansion: 'Endwalker',
+            image: 'anabaseios4.png',
+            achievementData: [
+                { id: 3248, times: 1 }, // Apotheosis I
+                { id: 3249, times: 5 }, // Apotheosis II
+                { id: 3250, times: 10 }, // Apotheosis III
+            ],
+            turnData: [
+                { name: 'The Ninth Circle' },
+                { name: 'The Tenth Circle' },
+                { name: 'The Eleventh Circle' },
+                { name: 'The Twelfth Circle' },
+            ],
+            spoilers: true,
+        },
+        {
+            name: 'Pandæmonium: Anabaseios (Savage)',
+            type: 'clear-by-clears',
+            expansion: 'Endwalker',
+            image: 'anabaseios4_savage.png',
+            achievementData: [
+                { id: 3251, times: 1 }, // Apotheosis Agria I
+                { id: 3252, times: 5 }, // Apotheosis Agria II
+                { id: 3253, times: 10 }, // Apotheosis Agria III
+            ],
+            turnData: [
+                { name: 'The Ninth Circle' },
+                { name: 'The Tenth Circle' },
+                { name: 'The Eleventh Circle' },
+                { name: 'The Twelfth Circle' },
+            ],
+            spoilers: true,
+        },
     ],
     alliance: [
         {
@@ -508,7 +544,6 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3161,
             image: 'euphrosyne.png',
-            spoilers: true,
         },
     ],
     trials: [
@@ -756,6 +791,13 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3160,
             image: 'rubicante_ex.png',
+        },
+        {
+            name: 'The Voidcast Dais', // Shadow's Fall
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 3246,
+            image: 'golbez_ex.png',
             spoilers: true,
         },
     ],
@@ -794,7 +836,6 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3162,
             image: 'The_Omega_Protocol.png',
-            spoilers: true,
         },
     ],
 };

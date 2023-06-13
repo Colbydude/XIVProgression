@@ -9,6 +9,9 @@ This tool is used for quickly checking a character's main scenario quest and dut
 
 Release Notes
 -------------
+**June 12th, 2022**
+- Update for 6.4 Content.
+
 **January 30th, 2022**
 - Update for 6.31 Content.
 

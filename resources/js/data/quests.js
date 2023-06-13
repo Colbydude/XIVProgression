@@ -434,6 +434,13 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3157,
             image: 'Gods_Revel_Lands_Tremble.png',
+        },
+        {
+            quest: 'The Dark Throne', // You Win or You Dais
+            level: 90,
+            expansion: 'Endwalker',
+            achievement_id: 3244,
+            image: 'The_Dark_Throne.png',
             spoilers: true,
         },
     ],
