@@ -441,6 +441,13 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3244,
             image: 'The_Dark_Throne.png',
+        },
+        {
+            quest: 'Growing Light', // For Others to Follow
+            level: 90,
+            expansion: 'Endwalker',
+            achievement_id: 3413,
+            image: 'Growing_Light.png',
             spoilers: true,
         },
     ],

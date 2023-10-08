@@ -425,7 +425,6 @@ export default {
                 { name: 'The Eleventh Circle' },
                 { name: 'The Twelfth Circle' },
             ],
-            spoilers: true,
         },
         {
             name: 'Pandæmonium: Anabaseios (Savage)',
@@ -443,7 +442,6 @@ export default {
                 { name: 'The Eleventh Circle' },
                 { name: 'The Twelfth Circle' },
             ],
-            spoilers: true,
         },
     ],
     alliance: [
@@ -544,6 +542,14 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3161,
             image: 'euphrosyne.png',
+        },
+        {
+            name: 'Thaleia', // Divine Satisfaction
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 3403,
+            image: 'thaleia.png',
+            spoilers: true,
         },
     ],
     trials: [
@@ -798,6 +804,13 @@ export default {
             expansion: 'Endwalker',
             achievement_id: 3246,
             image: 'golbez_ex.png',
+        },
+        {
+            name: 'The Abyssal Fracture', // Dusk to Dusk
+            type: 'single',
+            expansion: 'Endwalker',
+            achievement_id: 3402,
+            image: 'zeromus_ex.png',
             spoilers: true,
         },
     ],
