@@ -10,7 +10,7 @@
         "production": "mix --production"
     },
     "dependencies": {
-        "axios": "^0.21",
+        "axios": "^1.6",
         "bootstrap-sass": "^3.3.7",
         "font-awesome": "^4.7.0",
         "moment": "^2.29.4",
