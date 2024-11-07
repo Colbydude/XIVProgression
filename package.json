@@ -14,7 +14,7 @@
         "bootstrap-sass": "^3.3.7",
         "font-awesome": "^4.7.0",
         "moment": "^2.29.4",
-        "vue": "^2.5.17",
+        "vue": "^3.0.0",
         "vuex": "^2.4.1"
     },
     "devDependencies": {
